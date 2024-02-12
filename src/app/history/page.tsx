@@ -14,7 +14,7 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import { useTheme } from '@mui/material/styles';
 import React from 'react';
 import Box from '@mui/material/Box';
-import SwipeableViews from 'react-swipeable-views';
+// import SwipeableViews from 'react-swipeable-views';
 // import { autoPlay } from 'react-swipeable-views-utils';
 
 // const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -275,7 +275,7 @@ function WorkProjectItem(props) {
                     <>
                         <Typography variant="h4" className='project-details-headers'>Tools</Typography>
                         <Grid container rowSpacing={12}>
-                            <MobileStepperComponent tools={tools}/>
+                            {/* <MobileStepperComponent tools={tools}/> */}
                             {/* {tools.map((tool, idx) => (<ToolItem key={tool} tool={tool} flipped={idx % 2}/>))} */}
                         </Grid>
                     </>
@@ -296,86 +296,86 @@ function WorkProjectItem(props) {
     );
 }
 
-function MobileStepperComponent(props) {
-    const {tools} = props;
-    const theme = useTheme();
-    const [activeStep, setActiveStep] = React.useState(0);
-    const maxSteps = tools.length;
+// function MobileStepperComponent(props) {
+//     const {tools} = props;
+//     const theme = useTheme();
+//     const [activeStep, setActiveStep] = React.useState(0);
+//     const maxSteps = tools.length;
   
 
-    const handleNext = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-      };
+//     const handleNext = () => {
+//         setActiveStep((prevActiveStep) => prevActiveStep + 1);
+//       };
     
-      const handleBack = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
-      };
+//       const handleBack = () => {
+//         setActiveStep((prevActiveStep) => prevActiveStep - 1);
+//       };
     
-      const handleStepChange = (step: number) => {
-        setActiveStep(step);
-      };
+//       const handleStepChange = (step: number) => {
+//         setActiveStep(step);
+//       };
 
-    return (
-        <>
-            <SwipeableViews
-                axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                index={activeStep}
-                onChangeIndex={handleStepChange}
-                enableMouseEvents
-            >
-                {tools.map((tool, index) => (
-                <div key={index}>
-                    {Math.abs(activeStep - index) <= 2 ? (
-                        // <Box
-                        //     component="img"
-                        //     sx={{
-                        //     height: 255,
-                        //     display: 'block',
-                        //     maxWidth: 400,
-                        //     overflow: 'hidden',
-                        //     width: '100%',
-                        //     }}
-                        //     src={step.imgPath}
-                        //     alt={step.label}
-                        // />
-                        <ToolItem key={tool} tool={tool} flipped={index % 2} />
-                    ) : null}
-                </div>
-                ))}
-        </SwipeableViews>
-            <MobileStepper
-                steps={maxSteps}
-                position="static"
-                activeStep={activeStep}
-                nextButton={
-                <Button
-                    size="small"
-                    onClick={handleNext}
-                    disabled={activeStep === maxSteps - 1}
-                >
-                    Next
-                    {theme.direction === 'rtl' ? (
-                    <KeyboardArrowLeft />
-                    ) : (
-                    <KeyboardArrowRight />
-                    )}
-                </Button>
-                }
-                backButton={
-                <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-                    {theme.direction === 'rtl' ? (
-                    <KeyboardArrowRight />
-                    ) : (
-                    <KeyboardArrowLeft />
-                    )}
-                    Back
-                    </Button>
-            }
-        />
-      </>
-    );
+//     return (
+//         <>
+//             <SwipeableViews
+//                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+//                 index={activeStep}
+//                 onChangeIndex={handleStepChange}
+//                 enableMouseEvents
+//             >
+//                 {tools.map((tool, index) => (
+//                 <div key={index}>
+//                     {Math.abs(activeStep - index) <= 2 ? (
+//                         // <Box
+//                         //     component="img"
+//                         //     sx={{
+//                         //     height: 255,
+//                         //     display: 'block',
+//                         //     maxWidth: 400,
+//                         //     overflow: 'hidden',
+//                         //     width: '100%',
+//                         //     }}
+//                         //     src={step.imgPath}
+//                         //     alt={step.label}
+//                         // />
+//                         <ToolItem key={tool} tool={tool} flipped={index % 2} />
+//                     ) : null}
+//                 </div>
+//                 ))}
+//         </SwipeableViews>
+//             <MobileStepper
+//                 steps={maxSteps}
+//                 position="static"
+//                 activeStep={activeStep}
+//                 nextButton={
+//                 <Button
+//                     size="small"
+//                     onClick={handleNext}
+//                     disabled={activeStep === maxSteps - 1}
+//                 >
+//                     Next
+//                     {theme.direction === 'rtl' ? (
+//                     <KeyboardArrowLeft />
+//                     ) : (
+//                     <KeyboardArrowRight />
+//                     )}
+//                 </Button>
+//                 }
+//                 backButton={
+//                 <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+//                     {theme.direction === 'rtl' ? (
+//                     <KeyboardArrowRight />
+//                     ) : (
+//                     <KeyboardArrowLeft />
+//                     )}
+//                     Back
+//                     </Button>
+//             }
+//         />
+//       </>
+//     );
 
-}
+// }
 
 function WorkHistoryItem(props){
     const {name, summary, dates} = props;
