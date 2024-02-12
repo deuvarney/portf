@@ -11,7 +11,7 @@ export default function Home(){
         <Grid container>
             <Grid xs={12}>
                 <Typography variant="h1" gutterBottom>
-                    Welcome to Deuvarney's Online Portfolio
+                    Welcome to Deuvarney&apos;s Online Portfolio
                 </Typography>
             </Grid>
             <Grid xs={12}>
