@@ -271,15 +271,15 @@ function WorkProjectItem(props) {
             {summary && <Typography variant="body2">{summary}</Typography>}
 
             <div className='project-details-container'>
-                {!!tools.length === -1 && (
+                {/* {!!tools.length && (
                     <>
                         <Typography variant="h4" className='project-details-headers'>Tools</Typography>
-                        <Grid container rowSpacing={12}>
+                        <Grid container rowSpacing={12}> */}
                             {/* <MobileStepperComponent tools={tools}/> */}
                             {/* {tools.map((tool, idx) => (<ToolItem key={tool} tool={tool} flipped={idx % 2}/>))} */}
-                        </Grid>
+                        {/* </Grid>
                     </>
-                )}
+                )} */}
 
                 {!!languages.length && (
                     <>
