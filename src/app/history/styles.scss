@@ -1,0 +1,75 @@
+.company-name {
+    font-size: 2.5rem;
+    display: inline-block;
+    margin-left: 36px;
+}
+
+.section-container {
+    margin: 16px 32px;
+    padding: 24px;
+    background-color: #0d1117;
+    border-radius: 12px;
+
+    // .company-name {
+    //     margin: 12px 0;
+    //     font-size: 32px;
+    //     font-weight: normal;
+    // }
+
+}
+
+.section-top-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.roles-container {
+    margin-top: 12px;
+
+    
+}
+
+.roles-name {
+    font-size: 24px;
+    margin: 12px 0;
+}
+
+.role-container {
+    margin: 16px 0;
+}
+
+.role-date {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.project-details-container {
+    margin: 12px 0;
+}
+
+.project-details-headers {
+    margin: 12px 0;
+    font-size: 18px;
+
+    // & + .project-details-headers {
+    //     margin-top: 18px;
+    // }
+}
+
+.tool-name {
+    display: inline-block;
+}
+
+.tool-description-container {
+    padding: 0 24px;
+}
+
+.projects-divider {
+    margin: 48px 0;
+}
+
+.language-chip {
+    margin-right: 12px;
+}
