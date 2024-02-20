@@ -63,7 +63,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            D's Portfolio
+            D&apos;s Portfolio
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
