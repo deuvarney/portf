@@ -404,6 +404,7 @@ function WorkHistoryItem2(props){
           <Typography sx={{ color: 'text.secondary' }}><span className="role-date"><CalendarMonthOutlined/> {dates}</span></Typography>
         </AccordionSummary>
         <AccordionDetails>
+            <Divider className='role-details-divider'/>
             
             {/* <p>Role Description:</p> */}
             {
