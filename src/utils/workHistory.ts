@@ -221,7 +221,7 @@ export const workHistoryData = [
 {
     name: 'Lessard Design',
     summary: 'I began my professional career as an intern in Information Technology at Lessard Design',
-    logo: '/aol-eraser-logo-red.png',
+    logo: '/lessard-design-logo.webp',
     roles: [{
         name: "Information Technology Intern",
         dates: "May 2012 - February 2013",
