@@ -31,8 +31,9 @@ const darkTheme = createTheme({
 import './styles.scss';
 
 import {workHistoryData} from '../../utils/workHistory';
-import { Accordion, AccordionDetails, AccordionSummary, Chip, Divider, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Chip, Divider, List, ListItem, ListItemText, Typography } from "@mui/material";
 import Image from "next/image";
+import ResponsiveAppBar from '@/components/Appbar';
 
 function ToolItem({tool, flipped}) {
     let image;
@@ -261,16 +262,16 @@ function LanguageChip({language}: {language: string;}) {
 }
 
 function WorkProjectItem(props) {
-    const {name, summary, tools, languages} = props;
+    const {name, summary, tools, languages, renderDivider} = props;
     return (
         <>
-        <div 
+        <Grid xs={12} sm={12} md={6} lg={6} xl={4} 
         // className="role-container"
         >
-            <Typography variant="h3" className="roles-name">{name}</Typography>
+            <Typography align='center' variant="h5" className="project-name">{name}</Typography>
             {summary && <Typography variant="body2">{summary}</Typography>}
 
-            <div className='project-details-container'>
+            {/* <div className='project-details-container container-get-better-name'> */}
                 {/* {!!tools.length && (
                     <>
                         <Typography variant="h4" className='project-details-headers'>Tools</Typography>
@@ -281,17 +282,15 @@ function WorkProjectItem(props) {
                     </>
                 )} */}
 
-                {!!languages.length && (
+                {/* {!!languages.length && (
                     <>
                         <Typography variant="h4" className='project-details-headers'>Languages</Typography>
-                        
                         {languages.map((language, idx) => (<LanguageChip key={idx} language={language}/>))}
-                        
                     </>
-                )}
-            </div>
-        </div>
-        <Divider className='projects-divider'/> {/* TODO: Conditionally render this */}
+                )} */}
+            {/* </div> */}
+        </Grid>
+       {/* {!!renderDivider && <Divider className='projects-divider'/>} */}
         </>
     );
 }
@@ -381,7 +380,7 @@ function WorkHistoryItem(props){
     const {name, summary, dates} = props;
     return (
     <div className="role-container">
-        <Typography variant="h3" className="roles-name">{name}</Typography>
+        <Typography variant="h5" className="roles-name">{name}</Typography>
         <span className="role-date"><CalendarMonthOutlined/> {dates}</span>
         {summary && <Typography variant="body2">{summary}</Typography>}
     </div>
@@ -391,9 +390,11 @@ function WorkHistoryItem(props){
 function WorkHistoryItem2(props){
     const {name, summary, dates, projects = [], resumeTasks = []} = props;
     return (
-        <Accordion>
+        <Accordion 
+        // expanded={true}
+        >
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon />}
         //   aria-controls="panel1bh-content"
         //   id="panel1bh-header"
         >
@@ -403,24 +404,81 @@ function WorkHistoryItem2(props){
           <Typography sx={{ color: 'text.secondary' }}><span className="role-date"><CalendarMonthOutlined/> {dates}</span></Typography>
         </AccordionSummary>
         <AccordionDetails>
-            {summary && <Typography variant="body2">{summary}</Typography>}
-            {!!resumeTasks?.length && (
-                <>
-                    <Typography variant='h4'>Role Responsibilities</Typography>
-                    <ul>
-                        {resumeTasks.map((resumeTask: string, index: number) => <li key={index}>{resumeTask}</li>)}
-                    </ul>
-                </>
-            )}
-            {!!projects.length && projects.map((projectItem, idx) => 
-                <WorkProjectItem
-                    key={name + idx}
-                    name={projectItem.name}
-                    summary={projectItem.summary}
-                    tools={projectItem.tools}
-                    languages={projectItem.languages}
-                />)
+            
+            {/* <p>Role Description:</p> */}
+            {
+                !!summary && (
+                    <div className='container-get-better-name'>
+                        <Typography variant="h4" className="roles-name">Role Description</Typography>
+                        <Typography variant="body2">{summary}</Typography>
+                    </div>
+                )
             }
+            
+            {!!resumeTasks?.length && (
+                <div className='container-get-better-name'>
+                    <Typography variant='h4'>Role Responsibilities</Typography>
+                    {/* <ul>
+                        {resumeTasks.map((resumeTask: string, index: number) => <li key={index}>{resumeTask}</li>)}
+                    </ul> */}
+
+                    <List sx={{ width: '100%' }}>
+                        {
+                            resumeTasks.map((resumeTask: string, index: number) => 
+                                // <li key={index}>{resumeTask}
+                                // </li>
+                                <>
+                                <ListItem key={index} alignItems="flex-start">
+                                    {/* <ListItemAvatar>
+                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                                    </ListItemAvatar> */}
+                                    <ListItemText
+                                        primary={resumeTask}
+                                        // secondary={
+                                        //     <React.Fragment>
+                                        //         <Typography
+                                        //             sx={{ display: 'inline' }}
+                                        //             component="span"
+                                        //             variant="body2"
+                                        //             color="text.primary"
+                                        //         >
+                                        //             Ali Connors
+                                        //         </Typography>
+                                        //         {/* {" — I'll be in your neighborhood doing errands this…"} */}
+                                        //         {resumeTask}
+                                        //     </React.Fragment>
+                                        // }
+                                        />
+                                </ListItem>
+                                {(resumeTasks.length - 1 !== index) && <Divider style={{margin: `0 16px`}} component="li" />}
+                                </>
+                            )
+                        }
+                        
+                    </List>
+                </div>
+            )}
+            
+            {
+                !!projects?.length && (
+                    <div className='container-get-better-name'>
+                        <Typography variant="h4" className="projects-header">Projects</Typography>
+                        <Grid container spacing={4} justifyContent={'center'}>
+                            {projects.map((projectItem, idx) => 
+                                <WorkProjectItem
+                                    key={name + idx}
+                                    name={projectItem.name}
+                                    summary={projectItem.summary}
+                                    tools={projectItem.tools}
+                                    languages={projectItem.languages}
+                                    renderDivider={idx !== projects.length -1}
+                                />)
+                            }
+                        </Grid>
+                    </div>
+                )
+            }
+           
         </AccordionDetails>
       </Accordion>
    
@@ -433,27 +491,29 @@ export default function workHistory(){
     <>
         <ThemeProvider theme={darkTheme}>
             <CssBaseline />
-        <h1>Test Design Page</h1>
+        <ResponsiveAppBar/>
         <main>
+            <h1>Work History Page</h1>
             {
                 workHistoryData.map((workCompany, idx) => (
                     <section key={idx} className="section-container ">
                         <div className='section-top-header'>
                             {/* <h2 className="company-name"></h2> */}
                             <Image 
+                                className="company-logo"
                                 src={workCompany.logo}
                                 alt={`${workCompany.name} Logo`}
                                 width={120}
                                 height={90}/>
                             <Typography variant="h2" className='company-name'>{workCompany.name}</Typography>
                         </div>
-                        <Typography variant="body2">{workCompany.summary}</Typography>
+                        {/* <Typography variant="body2">{workCompany.summary}</Typography> */}
                         
-                        <div className="roles-container">
+                        {/* <div className="roles-container"> */}
                             {workCompany.roles?.map(role => (
                                 <WorkHistoryItem2 key={role.name} name={role.name} dates={role.dates} summary={role.summary} projects={role.projects} resumeTasks={role.resumeTasks}/>
                             ))}
-                        </div>
+                        {/* </div> */}
                     </section>
                 ))
             }

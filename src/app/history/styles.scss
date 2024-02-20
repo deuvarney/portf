@@ -1,14 +1,24 @@
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
 .company-name {
-    font-size: 2.5rem;
-    display: inline-block;
-    margin-left: 36px;
+    // font-size: 2.5rem;
+    // display: inline-block;
+    // margin-left: 36px;
+}
+
+.company-logo {
+    margin-right: 36px;
 }
 
 .section-container {
     margin: 16px 32px;
     padding: 24px;
-    background-color: #0d1117;
-    border-radius: 12px;
+    background-color: #404246;
+    // background-color: #0d1117;
+    // border-radius: 12px;
 
     // .company-name {
     //     margin: 12px 0;
@@ -24,19 +34,57 @@
     margin-bottom: 24px;
 }
 
-.roles-container {
-    margin-top: 12px;
+// .roles-container {
+//     margin-top: 12px;
 
+    
+// }
+
+
+
+// .roles-name {
+//     // font-size: 24px;
+//     margin: 12px 0;
+// }
+
+
+// .role-container {
+//     margin: 16px 0;
+// }
+
+
+.projects-name {
+    font-size: 18px;
+}
+
+.container-get-better-name {
+    margin-bottom: 24px;
+    
+    h2,h3,h4,h5,h6 {
+        margin-bottom: 8px;
+
+        text-decoration: underline #393939 4px;
+        text-underline-offset: 6px;
+    }
+
+    .project-name {
+        text-decoration-thickness: 2px;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    .projects-header {
+        margin-bottom: 24px;
+    }
     
 }
 
-.roles-name {
-    font-size: 24px;
-    margin: 12px 0;
-}
 
-.role-container {
-    margin: 16px 0;
+
+.role-header {
+    font-size: 24px;
 }
 
 .role-date {
@@ -45,9 +93,9 @@
     font-size: 14px;
 }
 
-.project-details-container {
-    margin: 12px 0;
-}
+// .project-details-container {
+//     margin: 12px 0;
+// }
 
 .project-details-headers {
     margin: 12px 0;
