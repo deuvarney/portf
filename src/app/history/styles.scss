@@ -4,7 +4,7 @@ main {
 }
 
 .company-name {
-    // font-size: 2.5rem;
+    font-size: 48px
     // display: inline-block;
     // margin-left: 36px;
 }
@@ -12,7 +12,7 @@ main {
 .company-logo {
     margin-right: 36px;
     box-shadow: 1px 1px 10px darkgrey;
-
+    filter: grayscale(1);
 }
 
 .section-container {
