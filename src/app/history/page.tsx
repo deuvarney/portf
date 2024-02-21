@@ -12,6 +12,12 @@ import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import { useTheme } from '@mui/material/styles';
+
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import { CardActionArea } from '@mui/material';
+
 import React from 'react';
 import Box from '@mui/material/Box';
 // import SwipeableViews from 'react-swipeable-views';
@@ -295,6 +301,33 @@ function WorkProjectItem(props) {
     );
 }
 
+function WorkProjectItemCard(props) {
+    const {name, summary, tools, languages, renderDivider} = props;
+
+    return (
+        <Grid xs={12} sm={12} md={6} lg={6} xl={4}>
+            <Card sx={{ maxWidth: 345, height: '100%', margin: 'auto'}} elevation={8}>
+                <CardActionArea>
+                    <CardMedia
+                        component="img"
+                        height="140"
+                        image="/345x140.svg"
+                        alt={`${name} logo`}
+                    />
+                    <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        {summary}
+                    </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
+        </Grid>
+    )
+}
+
 // function MobileStepperComponent(props) {
 //     const {tools} = props;
 //     const theme = useTheme();
@@ -391,7 +424,7 @@ function WorkHistoryItem2(props){
     const {name, summary, dates, projects = [], resumeTasks = []} = props;
     return (
         <Accordion 
-        // expanded={true}
+        // expanded={true} //dev
         >
         <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -401,7 +434,7 @@ function WorkHistoryItem2(props){
           <Typography sx={{ width: '33%', flexShrink: 0 }}>
             {name}
           </Typography>
-          <Typography sx={{ color: 'text.secondary' }}><span className="role-date"><CalendarMonthOutlined/> {dates}</span></Typography>
+          <Typography sx={{ color: 'text.secondary' }}><span className="role-date"><CalendarMonthOutlined className='role-calendar'/> {dates}</span></Typography>
         </AccordionSummary>
         <AccordionDetails>
             <Divider className='role-details-divider'/>
@@ -466,7 +499,7 @@ function WorkHistoryItem2(props){
                         <Typography variant="h4" className="projects-header">Projects</Typography>
                         <Grid container spacing={4} justifyContent={'center'}>
                             {projects.map((projectItem, idx) => 
-                                <WorkProjectItem
+                                <WorkProjectItemCard
                                     key={name + idx}
                                     name={projectItem.name}
                                     summary={projectItem.summary}

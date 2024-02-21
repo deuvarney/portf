@@ -1,3 +1,6 @@
+$mobile-breakpoint: 600px;
+$tablet-breakpoint: 768px;
+
 main {
     max-width: 1200px;
     margin: auto;
@@ -27,13 +30,29 @@ h2.company-name {
     //     font-size: 32px;
     //     font-weight: normal;
     // }
-
+    
+    @media (max-width: $tablet-breakpoint) {
+        margin-left: 0;
+        margin-right: 0;
+        
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .section-top-header {
     display: flex;
     align-items: center;
     margin-bottom: 24px;
+
+    @media (max-width: $tablet-breakpoint) {
+        margin-left: 32px;
+    }
+}
+
+.role-calendar {
+    margin-right: 6px;
+    margin-left: 12px;
 }
 
 // .roles-container {
