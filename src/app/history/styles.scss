@@ -1,4 +1,4 @@
-$mobile-breakpoint: 600px;
+$mobile-breakpoint: 480px;
 $tablet-breakpoint: 768px;
 
 main {
@@ -6,20 +6,54 @@ main {
     margin: auto;
 }
 
-h2.company-name {
-    font-size: 48px;
-    // display: inline-block;
-    // margin-left: 36px;
+.main-heading {
+    // copied from .section-container
+    margin: 16px 32px;
+    // padding: 24px;
+    // background-color: #404246;
+    // background-color: #0d1117;
+    // border-radius: 12px;
+
+    // .company-name {
+    //     margin: 12px 0;
+    //     font-size: 32px;
+    //     font-weight: normal;
+    // }
     
     @media (max-width: $tablet-breakpoint) {
-        font-size: 36px;
+        // margin-left: 0;
+        // margin-right: 0;
+        // margin: auto;
+        text-align: center;
+        
+        // padding-left: 0;
+        // padding-right: 0;
     }
+}
+
+h2.company-name {
+    // font-size: 48px;
+    // display: inline-block;
+    // margin-left: 36px;
+    // font-size: clamp(32px, 2rem, 48px);
+    // 480 28px 768px 48px
+    font-size: clamp(1.75rem, -0.3333rem + 6.9444vw, 3rem);
+        // @media (max-width: $tablet-breakpoint) {
+    //     font-size: 36px;
+    // }
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .company-logo {
     margin-right: 36px;
     box-shadow: 1px 1px 10px darkgrey;
     filter: grayscale(1);
+
+    @media (max-width: $tablet-breakpoint) {
+        width: 90px;
+        height: 60px;
+    }
 }
 
 .section-container {
@@ -118,6 +152,7 @@ h2.company-name {
 .role-date {
     display: flex;
     align-items: center;
+    align-self: center;
     font-size: 14px;
 }
 
@@ -132,6 +167,10 @@ h2.company-name {
     // & + .project-details-headers {
     //     margin-top: 18px;
     // }
+}
+
+.card-project-name {
+    font-size: 22px;
 }
 
 .tool-name {

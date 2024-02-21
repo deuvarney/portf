@@ -315,7 +315,7 @@ function WorkProjectItemCard(props) {
                         alt={`${name} logo`}
                     />
                     <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography className='card-project-name' gutterBottom variant="h5" component="div">
                         {name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -424,9 +424,10 @@ function WorkHistoryItem2(props){
     const {name, summary, dates, projects = [], resumeTasks = []} = props;
     return (
         <Accordion 
-        // expanded={true} //dev
+                // expanded={true} //dev
         >
         <AccordionSummary
+            style={{alignItems: 'center'}}
             expandIcon={<ExpandMoreIcon />}
         //   aria-controls="panel1bh-content"
         //   id="panel1bh-header"
@@ -527,7 +528,7 @@ export default function workHistory(){
             <CssBaseline />
         <ResponsiveAppBar/>
         <main>
-            <h1>Work History Page</h1>
+            <h1 className='main-heading'>Professional Experience</h1>
             {
                 workHistoryData.map((workCompany, idx) => (
                     <section key={idx} className="section-container ">

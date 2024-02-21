@@ -16,6 +16,8 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 const pages = [['Home', '/home'], ['Work History', '/history'], ['(Dev)Contact', '/contact']];
+// Education
+// Awards
 const settings = ['(Dev)Profile', '(Dev)Account', '(Dev)Dashboard', '(Dev)Logout'];
 
 function ResponsiveAppBar() {
@@ -98,7 +100,12 @@ function ResponsiveAppBar() {
               {pages.map(([pageName, pathnamez]) => (
                 <MenuItem key={pageName} onClick={() => onPageClick(pathnamez)}>
                     <Link key={pageName} href={pathnamez}>
-                        <Typography style={{color: pathnamez === pathname ? '#19B5FE': ''}} textAlign="center">{pageName}</Typography>
+                        <Typography style={{
+                            textDecoration: pathnamez === pathname ? 'underline 4px': '',
+                            fontWeight: pathnamez === pathname ? 'bolder': '',
+                            textUnderlineOffset: pathnamez === pathname ? '6px': '',
+                        }} 
+                            textAlign="center">{pageName}</Typography>
                     </Link>
                 </MenuItem>
               ))}
@@ -130,7 +137,12 @@ function ResponsiveAppBar() {
                 key={pageName}
                 onClick={() => onPageClick(pathnamez)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-                style={{color: pathnamez === pathname ? '#19B5FE': ''}}
+                style={{
+                    // color: pathnamez === pathname ? '#19B5FE': '',
+                    textDecoration: pathnamez === pathname ? 'underline 4px': '',
+                    fontWeight: pathnamez === pathname ? 'bolder': '',
+                    textUnderlineOffset: pathnamez === pathname ? '6px': '',
+                }}
               >
                 {pageName}
               </Button>
