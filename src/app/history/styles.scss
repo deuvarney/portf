@@ -7,9 +7,13 @@ main {
 }
 
 h2.company-name {
-    font-size: 48px
+    font-size: 48px;
     // display: inline-block;
     // margin-left: 36px;
+    
+    @media (max-width: $tablet-breakpoint) {
+        font-size: 36px;
+    }
 }
 
 .company-logo {
