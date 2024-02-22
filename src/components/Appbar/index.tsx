@@ -15,7 +15,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
-const pages = [['Home', '/home'], ['Work History', '/history'], ['(Dev)Contact', '/contact']];
+const pages = [['Home', '/home'], ['Work History', '/history'], ['Contact', '/contact']];
 // Education
 // Awards
 const settings = ['(Dev)Profile', '(Dev)Account', '(Dev)Dashboard', '(Dev)Logout'];
