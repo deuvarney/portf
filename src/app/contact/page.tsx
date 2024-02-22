@@ -17,6 +17,10 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions, Grid } from '@mui/material';
 
 
+function saveToClipboard(text: string) {
+    navigator.clipboard.writeText(text);
+}
+
 function ContactCard(props) {
     const {text, icon, value, openText = 'Open'} = props;
     return (
@@ -40,7 +44,7 @@ function ContactCard(props) {
                             {openText}
                         </Button>
                     </Link>
-                    <Button size="small" color="primary">
+                    <Button onClick={() => saveToClipboard(value)} size="small" color="primary">
                         Copy
                     </Button>
                 </CardActions>
