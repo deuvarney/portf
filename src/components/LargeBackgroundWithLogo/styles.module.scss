@@ -1,0 +1,70 @@
+// TODO: Centralize measurements
+$mobile-breakpoint: 480px;
+
+.locationBackgroundImg {
+    background-repeat: no-repeat;
+    
+    background-size: cover;
+    max-height: 385px;
+    min-height: 80vh;
+    filter: grayscale(1);
+    position: relative;
+}
+
+.locationLogoContainer {
+    padding-top: 24px;
+    @media (max-width: $mobile-breakpoint) {
+        // bottom: 0;
+        // left: unset;
+        // width: 100%;
+        text-align: center;
+    }
+}
+
+.locationLogo {
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    left: 10%;
+    width: 100%;
+
+    @media (max-width: $mobile-breakpoint) {
+        // bottom: 0;
+        left: unset;
+        // width: 100%;
+        
+    }
+}
+
+.locationBackgroundImgContent {
+    position: absolute;
+    bottom: 32px;
+    right: 24px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 32px 24px;
+
+    @media (max-width: $mobile-breakpoint) {
+        bottom: 0;
+        right: unset;
+        width: 100%;
+    }
+}
+
+// .backgroundImgMainHeader {
+//     font-size: 48px;
+// }
+
+// TODO: Add this to a central functs file
+.centerIconWithText {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    margin-bottom: 8px;// TODO: Abstract this
+    margin-top: 8px;// TODO: Abstract this
+
+    svg {
+        margin-right: 12px;
+    }
+}
+

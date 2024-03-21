@@ -14,11 +14,12 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { Settings } from '@mui/icons-material';
 
-const pages = [['Home', '/home'], ['Work History', '/history'], ['Contact', '/contact']];
+const pages = [['Home', '/home'], ['Work History', '/history'], ['Education', '/education'], ['Contact', '/contact'],];
 // Education
 // Awards
-const settings = ['(Dev)Profile', '(Dev)Account', '(Dev)Dashboard', '(Dev)Logout'];
+const settings = ['(Dev) Go Todo Page', '(Dev)Font Size +/-', '(Dev)Light/Dark Mode', '(Dev)Language',];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -54,7 +55,7 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/home"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -101,9 +102,9 @@ function ResponsiveAppBar() {
                 <MenuItem key={pageName} onClick={() => onPageClick(pathnamez)}>
                     <Link key={pageName} href={pathnamez}>
                         <Typography style={{
-                            textDecoration: pathnamez === pathname ? 'underline 4px': '',
-                            fontWeight: pathnamez === pathname ? 'bolder': '',
-                            textUnderlineOffset: pathnamez === pathname ? '6px': '',
+                            textDecoration: pathnamez.includes(pathname) ? 'underline 4px': '',
+                            fontWeight: pathnamez.includes(pathname) ? 'bolder': '',
+                            textUnderlineOffset: pathnamez.includes(pathname) ? '6px': '',
                         }} 
                             textAlign="center">{pageName}</Typography>
                     </Link>
@@ -116,7 +117,7 @@ function ResponsiveAppBar() {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/home"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -153,7 +154,8 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                <Settings/>
               </IconButton>
             </Tooltip>
             <Menu

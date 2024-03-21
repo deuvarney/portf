@@ -1,7 +1,7 @@
 'use client';
 
-import ResponsiveAppBar from "@/components/Appbar";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+// import ResponsiveAppBar from "@/components/Appbar";
+// import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 
 import EmailIcon from '@mui/icons-material/Email';
@@ -22,7 +22,7 @@ function saveToClipboard(text: string) {
 }
 
 function ContactCard(props) {
-    const {text, icon, value, openText = 'Open'} = props;
+    const {text, icon, value, openText = 'Open', copyValue = value} = props;
     return (
         <Grid item xs={12} sm={12} md={6} lg={4} xl={3}>
             <Card sx={{ maxWidth: 240, maxHeight: 345, margin: 'auto'}}>
@@ -44,7 +44,7 @@ function ContactCard(props) {
                             {openText}
                         </Button>
                     </Link>
-                    <Button onClick={() => saveToClipboard(value)} size="small" color="primary">
+                    <Button onClick={() => saveToClipboard(copyValue)} size="small" color="primary">
                         Copy
                     </Button>
                 </CardActions>
@@ -53,24 +53,25 @@ function ContactCard(props) {
     )
 }
 
-const darkTheme = createTheme({
-    palette: {
-      mode: 'dark',
-    },
-  });
+// const darkTheme = createTheme({
+//     palette: {
+//       mode: 'dark',
+//     },
+//   });
 
 function ContactPage(){
     return (
         <>
-            <ThemeProvider theme={darkTheme}>
-            <ResponsiveAppBar></ResponsiveAppBar>                
+            {/* <ThemeProvider theme={darkTheme}>
+            <ResponsiveAppBar></ResponsiveAppBar>                 */}
                 <main>
-                    <Grid container spacing={4} justifyContent={'center'} sx={{marginTop: 6}}>
+                    <Grid container spacing={4} justifyContent={'center'} sx={{marginTop: 6, marginBottom: 6}}>
                         <ContactCard 
                             text="+1 (123) 456-7890"
                             icon={<PhoneIcon sx={{ fontSize: 128}}/>}
                             value="tel:11234567890"
                             openText="Call"
+                            copyValue="+1 (123) 456-7890"
                             />
                         
                         <ContactCard 
@@ -78,6 +79,7 @@ function ContactPage(){
                             icon={<EmailIcon sx={{ fontSize: 128}}/>}
                             value="mailto:deuvarney1@aol.com"
                             openText="Email"
+                            copyValue="deuvarney1@aol.com"
                             />
                         
                         <ContactCard 
@@ -95,7 +97,7 @@ function ContactPage(){
                             />
                     </Grid>
                 </main>
-            </ThemeProvider>
+            {/* </ThemeProvider> */}
         </>
     )
 }

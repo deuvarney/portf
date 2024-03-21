@@ -1,0 +1,121 @@
+$mobile-breakpoint: 480px;
+$tablet-breakpoint: 768px;
+
+.main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.mainHeading {
+    // copied from .section-container
+    margin: 16px 32px;
+    
+    @media (max-width: $tablet-breakpoint) {
+        // margin-left: 0;
+        // margin-right: 0;
+        // margin: auto;
+        text-align: center;
+        
+        // padding-left: 0;
+        // padding-right: 0;
+    }
+}
+
+.companyName {
+    font-size: clamp(1.75rem, -0.3333rem + 6.9444vw, 3rem);
+        // @media (max-width: $tablet-breakpoint) {
+    //     font-size: 36px;
+    // }
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+
+.companyLogo {
+    margin-right: 36px;
+    box-shadow: 1px 1px 10px darkgrey;
+    filter: grayscale(1);
+
+    // &:hover{
+    //     filter: grayscale(0);
+    // }
+
+    @media (max-width: $tablet-breakpoint) {
+        width: 90px;
+        height: 60px;
+    }
+}
+
+.sectionContainer {
+    margin: 16px 32px;
+    padding: 24px;
+    padding-top: 0;
+    background-color: #404246;
+    // background-color: #0d1117;
+    // border-radius: 12px;
+
+    // .company-name {
+    //     margin: 12px 0;
+    //     font-size: 32px;
+    //     font-weight: normal;
+    // }
+    
+    @media (max-width: $tablet-breakpoint) {
+        margin-left: 0;
+        margin-right: 0;
+        
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.sectionTopHeader {
+    display: flex;
+    align-items: center;
+    // margin-bottom: 24px;
+
+    // @media (max-width: $tablet-breakpoint) {
+    //     margin-left: 32px;
+    // }
+}
+
+// TODO: Add this to a central functs file
+.roleCalendar {
+    margin-right: 6px;
+    margin-left: 12px;
+}
+
+
+.roleDetailsDivider {
+    position: relative;
+    bottom: 12px;
+}
+
+
+.roleDate {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    font-size: 14px;
+}
+
+
+.toolName {
+    display: inline-block;
+}
+
+.toolDescriptionContainer {
+    padding: 0 24px;
+}
+
+
+.languageChip {
+    margin-right: 12px;
+}
+
+.workHistoryLink {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+}

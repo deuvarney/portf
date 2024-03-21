@@ -1,0 +1,66 @@
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import { CardActionArea } from '@mui/material';
+import { ContainerWithBetterName } from "../SectionContainer";
+
+import styles from './styles.module.scss';
+
+function WorkProjectItemCard(props) {
+    const {name, summary, tools, languages, renderDivider} = props;
+
+    return (
+        <Grid item xs={12} sm={12} md={6} lg={6} xl={4}>
+            <Card sx={{ maxWidth: 345, height: '100%', margin: 'auto'}} elevation={8}>
+                <CardActionArea>
+                    <CardMedia
+                        component="img"
+                        height="140"
+                        image="/345x140.svg"
+                        alt={`${name} logo`}
+                    />
+                    <CardContent>
+                    <Typography className={styles.cardProjectName} gutterBottom variant="h5" component="div">
+                        {name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        {summary}
+                    </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
+        </Grid>
+    )
+}
+
+function ProjectItems(props) {
+    const {projects} = props;
+    return (
+        <>
+            {
+                !!projects?.length && (
+                    <ContainerWithBetterName>
+                        <Typography variant="h4">Projects</Typography>
+                        <Grid container spacing={4} justifyContent={'center'}>
+                            {projects.map((projectItem, idx) => 
+                                <WorkProjectItemCard
+                                    key={projectItem.name + idx}
+                                    name={projectItem.name}
+                                    summary={projectItem.summary}
+                                    tools={projectItem.tools}
+                                    languages={projectItem.languages}
+                                    renderDivider={idx !== projects.length -1}
+                                />)
+                            }
+                        </Grid>
+                    </ContainerWithBetterName>
+                )
+            }
+        </>
+    );
+}
+
+export default ProjectItems;

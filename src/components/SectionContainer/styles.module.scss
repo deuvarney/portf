@@ -1,0 +1,37 @@
+$mobile-breakpoint: 480px;
+$tablet-breakpoint: 768px;
+
+.sectionContainer {
+    margin: 16px 32px;
+    padding: 24px;
+    background-color: #404246;
+    // background-color: #0d1117;
+    // border-radius: 12px;
+
+    // .company-name {
+    //     margin: 12px 0;
+    //     font-size: 32px;
+    //     font-weight: normal;
+    // }
+    
+    @media (max-width: $tablet-breakpoint) {
+        margin-left: 0;
+        margin-right: 0;
+        
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.containerGetBetterName {
+    padding: 24px 32px;
+    background-color: #3f4246;
+    margin-bottom: 24px;
+}
+
+
+.mainContentContainerGetBetterName {
+    margin: auto;
+    margin-top: 36px;
+    max-width: 1200px;    
+}

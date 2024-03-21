@@ -1,0 +1,35 @@
+.mainContent {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutMe {
+    margin: 24px 0;
+}
+
+.introCont {
+    text-align: center;
+    padding: 0 16px;
+    
+    // TODO: Research why native stylesheet is overriding display flex
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.avatarImg {
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    filter: grayscale(1);
+}
+
+.avatarImgCont {
+    text-align: center;
+}
+
+.speedDialCont {
+    align-self: flex-end;
+}

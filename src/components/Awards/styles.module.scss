@@ -1,0 +1,76 @@
+$tablet-breakpoint: 768px;
+
+// TODO: Add this to a central functs file
+.centerIconWithText {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    margin-bottom: 8px;// TODO: Abstract this
+    margin-top: 8px;// TODO: Abstract this
+
+    svg {
+        margin-right: 12px;
+    }
+}
+
+// TODO: Copied from Group name
+.awardName {
+    margin-bottom: 24px;
+}
+
+// TODO: Copied from Group summary
+.awardSummary {
+    margin-bottom: 24px;
+}
+
+.yearsAwarded {
+    margin-bottom: 32px
+}
+
+// TODO: Copied from Group divider
+.awardDivider {
+    // margin-bottom: 24px;
+    margin: 32px 0;
+}
+
+// .awardTitle {
+//     // margin-bottom: 18px;
+//     margin: 0 32px 18px;
+//     text-align: center;
+
+//     @media (max-width: $tablet-breakpoint) {
+//         // margin: 0 32px 18px;
+//         margin-left: 24px;
+//         margin-right: 24px;
+        
+//         // padding-left: 0;
+//         // padding-right: 0;
+//     }
+// }
+
+// TODO: Copied from .groupSection
+.awardSection {
+    // margin-bottom: 48px;
+    // background-color: rgb(50, 50, 50);
+
+    // background-color: #222;
+
+    margin: 16px 32px;
+    padding: 24px;
+    // background-color: #404246;
+    // background-color: #393939;;
+    background-color: #272727;;
+
+    // &.even {
+    //     // background-color: rgb(60, 60, 60);
+    // }
+    @media (max-width: $tablet-breakpoint) {
+        margin-left: 0;
+        margin-right: 0;
+        
+        // padding-left: 0;
+        // padding-right: 0;
+    }
+}
+
