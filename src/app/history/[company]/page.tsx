@@ -30,7 +30,7 @@ function Company({params, searchParams}) {
         })
         const breadcrumbs = [
             <Link 
-                underline="hover"
+                // underline="hover"
                 key="1"
                 color="inherit"
                 href="/history"
