@@ -111,6 +111,40 @@ const AOLHelpProject = {
     ]
 }
 
+const AolPrefProject = {
+    name: "AOL Preferences",
+    summary: "AOL Preferences allowed users to personalize their web experience by adjusting settings across various AOL features like email, instant messaging, browsing, and more. Users could control aspects like notification preferences, content filtering, security options, and visual themes.",
+    tools: ['Jenkins', 'Angular'],
+    languages: ['JavaScript', "Java"],
+    contributions: [
+
+    ],
+    tileImg: '/projectImages/aolPrefProjectTile.png',
+    // links: [
+    //     {
+    //         title: 'Check It Out',
+    //         link: 'https://demo.microstrategy.com:3000'
+    //     }
+    // ]
+}
+
+const AolPaidSvcProject = {
+    name: "AOL Paid Services",
+    summary: "AOL Paid Services provided premium features and content for a subscription fee. These included enhanced email storage, ad-free experiences, tech support, and access to exclusive content.",
+    tools: ['Jenkins'],
+    languages: ['Ruby'],
+    contributions: [
+
+    ],
+    tileImg: '/projectImages/aolProjectTile2.png',
+    // links: [
+    //     {
+    //         title: 'Check It Out',
+    //         link: 'https://demo.microstrategy.com:3000'
+    //     }
+    // ]
+}
+
 export const workHistoryData = [
 {
     name: 'MicroStrategy',
@@ -166,12 +200,6 @@ export const workHistoryData = [
         summary: "Implemented robust build/CI-CD processes for quality assurance and successful product releases. Mentored on 508 compliance solutions, ensuring accessibility. Managed E2E test cases for functional integrity and maintained environments.",
         projects:[
             LibraryWebProject,
-        // {
-        //     name: "AOL Paid Services",
-        //     summary: "AOL Paid Services provided premium features and content for a subscription fee. These included enhanced email storage, ad-free experiences, tech support, and access to exclusive content.",
-        //     tools: ['Jenkins'],
-        //     languages: ['Ruby'],
-        // },
     ],
         resumeTasks: [
             "Evaluate, implement and enforce build/CI-CD processes for the assurance of high quality, expected functionality and successful release of products.",
@@ -232,15 +260,7 @@ export const workHistoryData = [
             summary: "",
             projects:[
                 AOLHelpProject,
-                {
-                    name: "AOL Paid Services",
-                    summary: "AOL Paid Services provided premium features and content for a subscription fee. These included enhanced email storage, ad-free experiences, tech support, and access to exclusive content.",
-                    tools: ['Jenkins'],
-                    languages: ['Ruby'],
-                    contributions: [
-
-                    ],
-                }
+                AolPaidSvcProject
             ],
             resumeTasks: [
                 `Add and update back-end REST APIs consumed by front-end services for account/product specific data`,
@@ -255,23 +275,18 @@ export const workHistoryData = [
         dates: "June 2014 - March 2015",
         urlPath: "se",
         summary: "",
-        projects:[{
-            name: "AOL Preferences",
-            summary: "AOL Preferences allowed users to personalize their web experience by adjusting settings across various AOL features like email, instant messaging, browsing, and more. Users could control aspects like notification preferences, content filtering, security options, and visual themes.",
-            tools: ['Jenkins', 'Angular'],
-            languages: ['JavaScript', "Java"],
-            contributions: [
+        projects:[
+            AolPrefProject,
+            AolPaidSvcProject,
+        // {
+        //     name: "AOL Paid Services",
+        //     summary: "AOL Paid Services provided premium features and content for a subscription fee. These included enhanced email storage, ad-free experiences, tech support, and access to exclusive content.",
+        //     tools: ['Jenkins', 'ElasticSearch', 'LogStash', 'Kibana'],
+        //     languages: ['JavaScript'],
+        //     contributions: [
 
-            ],
-        },{
-            name: "AOL Paid Services",
-            summary: "AOL Paid Services provided premium features and content for a subscription fee. These included enhanced email storage, ad-free experiences, tech support, and access to exclusive content.",
-            tools: ['Jenkins', 'ElasticSearch', 'LogStash', 'Kibana'],
-            languages: ['JavaScript'],
-            contributions: [
-
-            ],
-        },
+        //     ],
+        // },
         AOLHelpProject,
     ],
         resumeTasks: [
@@ -318,6 +333,13 @@ export const workHistoryData = [
                 contributions: [
 
                 ],
+                tileImg: '/projectImages/gathrProjectTile.png',
+                // links: [
+                //     {
+                //         title: 'Check It Out',
+                //         link: 'https://demo.microstrategy.com:3000'
+                //     }
+                // ]
             },{
                 name: "LastPass",
                 summary: "LastPass is a password manager that stores your passwords securely in an encrypted vault. It autofills login information on websites and apps, eliminating the need to remember individual passwords. This helps improve online security by reducing the risk of password reuse and phishing attacks.",
@@ -326,6 +348,13 @@ export const workHistoryData = [
                 contributions: [
 
                 ],
+                tileImg: '/projectImages/lastPassProjectTile.jpeg',
+                // links: [
+                //     {
+                //         title: 'Check It Out',
+                //         link: 'https://demo.microstrategy.com:3000'
+                //     }
+                // ]
             }],
             resumeTasks: [
             //    "Collaborated with developers and fellow QA engineers to effectively complete time sensitive iterations",
@@ -359,6 +388,13 @@ export const workHistoryData = [
             contributions: [
 
             ],
+            tileImg: '/projectImages/aolAdsProjectTile.png',
+            // links: [
+            //     {
+            //         title: 'Check It Out',
+            //         link: 'https://demo.microstrategy.com:3000'
+            //     }
+            // ]
         }],
         resumeTasks:[
             // "Verified product quality and release readiness of new features and fixes in an agile work environment with 3-4 week iterations using Kanban methodologies",
@@ -412,6 +448,13 @@ export const workHistoryData = [
             contributions: [
 
             ],
+            tileImg: '/projectImages/lessardITProjectTile.jpeg',
+            // links: [
+            //     {
+            //         title: 'Check It Out',
+            //         link: 'https://demo.microstrategy.com:3000'
+            //     }
+            // ]
         }],
         resumeTasks: [
             `Provided desktop/hardware support to clients and staff based off of helpdesk ticket requests`,
