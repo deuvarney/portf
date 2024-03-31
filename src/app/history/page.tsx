@@ -1,29 +1,9 @@
 'use client'
 
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
-import { ArrowForwardIos, CalendarMonthOutlined, ChevronRight, RollerShades } from "@mui/icons-material";
+import { ArrowForwardIos, CalendarMonthOutlined, } from "@mui/icons-material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
-import MobileStepper from '@mui/material/MobileStepper';
-import Button from '@mui/material/Button';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import { useTheme } from '@mui/material/styles';
-
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import { CardActionArea } from '@mui/material';
-
 import React from 'react';
-import Box from '@mui/material/Box';
-// import SwipeableViews from 'react-swipeable-views';
-// import { autoPlay } from 'react-swipeable-views-utils';
-
-// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-
-// import Paper from '@mui/material/Paper';
 
 import styles from './styles.module.scss';
 
@@ -36,7 +16,6 @@ import { usePathname } from 'next/navigation';
 import ProjectItems from '@/components/ProjectItems';
 import HeaderTypography from '@/components/HeaderTypography';
 import { getProgramLangInfo, getToolInfo } from '@/utils/toolsUtil';
-// import ResponsiveAppBar from '@/components/Appbar';
 
 function ToolItem({tool, flipped}) {
 

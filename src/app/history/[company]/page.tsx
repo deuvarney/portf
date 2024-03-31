@@ -69,6 +69,7 @@ function Company({params, searchParams}) {
                         <p>{company.summary}</p>
                     </ContainerWithBetterName>
                     <DescAndResponsibilites 
+                        listHeader="Roles"
                         resumeTasks={items}
                     />
                     {

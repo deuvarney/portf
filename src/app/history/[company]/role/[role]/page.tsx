@@ -3,9 +3,7 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 
 import DescAndResponsibilites from "@/components/DescAndResponsibilities";
 import LargeBackgroundWithLogo from "@/components/LargeBackgroundWithLogo";
-import ProjectItems from "@/components/ProjectItems";
 import { workHistoryData } from "@/utils/workHistory";
-import { CalendarMonthOutlined } from "@mui/icons-material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import { Accordion, AccordionDetails, AccordionSummary, Divider, Link, Typography } from "@mui/material";
@@ -23,8 +21,6 @@ function Role({params /*, searchParams*/}) {
     if(company && role) {
         const {images, awards} = company;
         const {resumeTasks} = role;
-        const project = role.projects[0];
-        // console.log('project', project)
 
         const breadcrumbs = [
             <Link 
@@ -96,10 +92,14 @@ function Role({params /*, searchParams*/}) {
                                 
                                     <>
                                     <Divider className={styles.roleDetailsDivider}/>
-                                    <ContainerWithBetterName>
-                                        <p>{project.summary}</p>
-                                    </ContainerWithBetterName>
-                                
+                                    {
+                                        !!project.summary && (
+                                            <ContainerWithBetterName>
+                                                <p>{project.summary}</p>
+                                            </ContainerWithBetterName>
+                                        )
+                                    }
+
                                     <Grid container spacing={2}>
                                         {
                                            !!project.contributions?.length && (
@@ -139,7 +139,7 @@ function Role({params /*, searchParams*/}) {
                                 </AccordionDetails>
                             </Accordion>
                             ))
-                                }
+                        }
                                 
                                     
                            
