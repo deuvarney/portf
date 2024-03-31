@@ -73,29 +73,29 @@ function WorkHistoryItem2(props){
         <Accordion 
                 // expanded={true} //dev
         >
-        <AccordionSummary
-            style={{alignItems: 'center'}}
-            expandIcon={<ExpandMoreIcon />}
-        //   aria-controls="panel1bh-content"
-        //   id="panel1bh-header"
-        >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
-            {name}
-          </Typography>
-          <Typography sx={{ color: 'text.secondary' }}><span className={styles.roleDate}><CalendarMonthOutlined className={styles.roleCalendar}/> {dates}</span></Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-            <Divider className={styles.roleDetailsDivider} />
+            <AccordionSummary
+                style={{alignItems: 'center'}}
+                expandIcon={<ExpandMoreIcon />}
+            //   aria-controls="panel1bh-content"
+            //   id="panel1bh-header"
+            >
+            <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                {name}
+            </Typography>
+            <Typography sx={{ color: 'text.secondary' }}><span className={styles.roleDate}><CalendarMonthOutlined className={styles.roleCalendar}/> {dates}</span></Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+                <Divider className={styles.roleDetailsDivider} />
+                
+                <DescAndResponsibilites
+                    summary={summary}
+                    resumeTasks={resumeTasks}
+                />
+                
+                <ProjectItems projects={projects} />
             
-            <DescAndResponsibilites
-                summary={summary}
-                resumeTasks={resumeTasks}
-            />
-            
-            <ProjectItems projects={projects} />
-           
-        </AccordionDetails>
-      </Accordion>
+            </AccordionDetails>
+        </Accordion>
    
     );
 }
@@ -106,7 +106,7 @@ export default function WorkHistory(){
     return (
     <>
         <main className={styles.main}>
-            <HeaderTypography variant='h1' className={styles.mainHeading} centerText={true}>Professional Experience</HeaderTypography>
+            <HeaderTypography variant='h1' className={styles.mainHeading} centerText={true} sizeLevel={2}>Professional Experience</HeaderTypography>
             {
                 workHistoryData.map((workCompany, idx) => (
                     <section key={idx} className={styles.sectionContainer}>
@@ -116,18 +116,14 @@ export default function WorkHistory(){
                                 href={`${pathname}/${workCompany.urlPath}`}
                                 className={styles.workHistoryLink}
                             >
-                                {/* <div
-                                    // className='work-history-link'
-                                > */}
-                                    <Image 
-                                        className={styles.companyLogo}
-                                        src={workCompany.logo}
-                                        alt={`${workCompany.name} Logo`}
-                                        width={120}
-                                        height={90}/>
-                                    <HeaderTypography variant="h2" className={styles.companyName}>{workCompany.name}</HeaderTypography>
-                                    <ArrowForwardIos/>
-                                {/* </div> */}
+                                <Image 
+                                    className={styles.companyLogo}
+                                    src={workCompany.logo}
+                                    alt={`${workCompany.name} Logo`}
+                                    width={120}
+                                    height={90}/>
+                                <HeaderTypography variant="h2" className={styles.companyName}>{workCompany.name}</HeaderTypography>
+                                <ArrowForwardIos/>
                             </Link>
                         </div>
                         

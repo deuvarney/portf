@@ -1,3 +1,116 @@
+const MDAProject = {
+    name: "MicroStrategy Desktop Application",
+    summary: "The MicroStrategy Desktop Application was a software program that allowed users to access, interact with, and analyze data from the MicroStrategy platform on their local computers. It provided features like offline data access, report viewing and editing, and dashboard exploration. This enabled users to work with data even without an internet connection, and offered data filtering, sorting, and drilling down for in-depth analysis.",
+    tools: ['Electron','Jenkins', 'Service Workers', 'IndexedDB'],
+    languages: ['Ruby', 'TypeScript'],
+    tileImg: '/projectImages/mdaProjectTile.gif',
+    contributions: [
+        'Orchestrated and led the engineering efforts in architecting middleware layers.',
+        'Spearheaded the implementation of Service Workers for efficient request intercepts.',
+        'Devised and executed high-performance caching strategies to enhance system efficiency and offline functionality.',
+        'Developed essential developer tooling to streamline workflow and improve productivity.',
+        'Directed multidisciplinary teams in the integration of major feature additions.',
+    ],
+    links: [
+        {
+            title: 'Read About It',
+            link: 'https://www.primecubeit.com/blog/2020/10/13/new-microstrategy-application-which-mirrors-functionality-from-microstrategy-library'
+        }
+    ]
+};
+
+const MAIProject = {
+    name: "MicroStrategy AI Authoring",
+    summary: "MicroStrategy AI Authoring is a tool leveraging natural language processing and machine learning to aid users in creating data-driven reports and dashboards. It translates user questions and requests into technical queries, generates insights, and builds reports without complex coding. This empowers less technical users to analyze data, democratize access to insights, and streamline report creation within organizations.",
+    tools: ['Jenkins', 'LangChain'],
+    languages: ['Ruby', 'Python'],
+    tileImg: '/projectImages/mstrAIProjectTile.jpeg',
+    contributions: [
+        'Developed and integrated Machine Learning pipelines',
+        'Identify the most effective prompt phrasing and structure',
+        'Implemented a CI/CD pipeline to automate the building, testing, and deployment',
+        'Created & Presented educational content explaining how the underlying technology behind ChatGPT functions within the MicroStrategy AI Authoring platform',
+    ],
+    links: [
+        // {
+        //     title: 'Read About It',
+        //     link: 'https://www.primecubeit.com/blog/2020/10/13/new-microstrategy-application-which-mirrors-functionality-from-microstrategy-library'
+        // }
+    ]
+}
+
+const PendoProject = {
+    name: "PendoIO Integration",
+    summary: "Pendo.IO is a digital adoption platform focused on improving user experience within software applications. It equips software companies with tools to guide users through their product, gather feedback, and understand user behavior.",
+    tools: ['Jenkins', 'Tomcat'],
+    languages: ['Ruby', 'JavaScript', 'Java'],
+    tileImg: '/projectImages/pendoProjectTile2.webp',
+    contributions: [
+        'Established and implemented best practices for analytics development',
+    ],
+    links: [
+        // {
+        //     title: 'Read About It',
+        //     link: 'https://www.primecubeit.com/blog/2020/10/13/new-microstrategy-application-which-mirrors-functionality-from-microstrategy-library'
+        // }
+    ]
+}
+
+const LibraryWebProject = {
+    name: "Library Web Application",
+    summary: "MicroStrategy Library Web is a web-based portal within the MicroStrategy platform that functions as a central repository for various enterprise content and resources. It acts like a digital library, housing documents, reports, presentations, and other assets relevant to different business areas.",
+    tools: ['Jenkins', 'ReactJS'],
+    languages: ['JavaScript', 'Java'],
+    contributions: [
+        'Architected and Implemented Automated Pipelines for Deployment and Testing',
+        'Established 508 compliance guidelines',
+        '',
+    ],
+    tileImg: '/projectImages/libraryWebProjectTile.png',
+    links: [
+        {
+            title: 'Check It Out',
+            link: 'https://demo.microstrategy.com/MicroStrategyLibrary/app'
+        }
+    ]
+}
+
+const CollabSvcProject = {
+    name: "Collaboration Service",
+    summary: `MicroStrategy's Collaboration Service fosters secure, real-time collaboration within the MicroStrategy platform. Teams can discuss and analyze data, share insights, and make informed decisions directly within dashboards and dossiers, streamlining workflows and boosting productivity. Think of it as adding a layer of interactive discussion threads and an intuitive comments panel right on top of your data visualizations.
+
+    With features like real-time alerts, notifications, and easily shared personalized views, Collaboration Service breaks down communication silos and empowers data-driven decision making across teams.`,
+    tools: ['ExpressJS'],
+    languages: ['EcmaScript'],
+    contributions: [
+        
+    ],
+    tileImg: '/projectImages/collabSvcProjectTile.png',
+    links: [
+        {
+            title: 'Check It Out',
+            link: 'https://demo.microstrategy.com:3000'
+        }
+    ]
+}
+
+const AOLHelpProject = {
+    name: "AOL Help",
+    summary: "AOL Help is a resource center offering support to AOL users through various channels like online articles, tutorials, forums, and live chat. Its goal was to assist users with troubleshooting technical issues, navigating AOL's features, and finding answers to their questions, aiming to empower users and enhance their overall experience.",
+    tools: ['HapiJS', 'Jenkins'],
+    languages: ['JavaScript'],
+    contributions: [
+
+    ],
+    tileImg: '/projectImages/aolHelpProjectTile2.png',
+    links: [
+        {
+            title: 'Check It Out',
+            link: 'https://demo.microstrategy.com:3000'
+        }
+    ]
+}
+
 export const workHistoryData = [
 {
     name: 'MicroStrategy',
@@ -18,38 +131,11 @@ export const workHistoryData = [
             dates: "October 2019 - Current",
             urlPath: "sse",
             summary: "Led creation of architectural documents for global teams, enabling simultaneous service modifications. Developed scalable desktop apps with Electron. Mentored junior engineers and facilitated feature design discussions for efficient implementation.",
-            projects:[{
-                name: "MicroStrategy Desktop Application",
-                summary: "The MicroStrategy Desktop Application was a software program that allowed users to access, interact with, and analyze data from the MicroStrategy platform on their local computers. It provided features like offline data access, report viewing and editing, and dashboard exploration. This enabled users to work with data even without an internet connection, and offered data filtering, sorting, and drilling down for in-depth analysis.",
-                tools: ['Electron','Jenkins', 'Service Workers', 'IndexedDB'],
-                languages: ['Ruby', 'TypeScript'],
-                contributions: [
-                    'Orchestrated and led the engineering efforts in architecting middleware layers.',
-                    'Spearheaded the implementation of Service Workers for efficient request intercepts.',
-                    'Devised and executed high-performance caching strategies to enhance system efficiency and offline functionality.',
-                    'Developed essential developer tooling to streamline workflow and improve productivity.',
-                    'Directed multidisciplinary teams in the integration of major feature additions.',
-                ],
-            },{
-                name: "MicroStrategy AI Authoring",
-                summary: "MicroStrategy AI Authoring is a tool leveraging natural language processing and machine learning to aid users in creating data-driven reports and dashboards. It translates user questions and requests into technical queries, generates insights, and builds reports without complex coding. This empowers less technical users to analyze data, democratize access to insights, and streamline report creation within organizations.",
-                tools: ['Jenkins', 'LangChain'],
-                languages: ['Ruby', 'Python'],
-                contributions: [
-                    'Developed and integrated Machine Learning pipelines',
-                    'Identify the most effective prompt phrasing and structure',
-                    'Implemented a CI/CD pipeline to automate the building, testing, and deployment',
-                    'Created & Presented educational content explaining how the underlying technology behind ChatGPT functions within the MicroStrategy AI Authoring platform',
-                ],
-            },{
-                name: "PendoIO Integration",
-                summary: "Pendo.IO is a digital adoption platform focused on improving user experience within software applications. It equips software companies with tools to guide users through their product, gather feedback, and understand user behavior.",
-                tools: ['Jenkins', 'Tomcat'],
-                languages: ['Ruby', 'JavaScript', 'Java'],
-                contributions: [
-                    'Established and implemented best practices for analytics development',
-                ],
-            }],
+            projects:[
+                MDAProject,
+                MAIProject,
+                PendoProject,
+            ],
             resumeTasks: [
                 "Architect Engineering documents and lead for multiple teams to reference when implementing new features in order to effectively modify a Service simultaneously across multiple teams around the world.",
                 "Building highly scalable and efficient desktop applications utilizing Electron",
@@ -62,27 +148,10 @@ export const workHistoryData = [
             dates: "January 2016 - September 2019",
             urlPath: "ss2",
             summary: "Collaborated with stakeholders to update client apps using React, Webpack, ES6+. Researched and resolved performance issues, standardized solutions. Enhanced test automation for efficiency, reliability, and speed.",
-            projects:[{
-                name: "Library Web Application",
-                summary: "MicroStrategy Library Web is a web-based portal within the MicroStrategy platform that functions as a central repository for various enterprise content and resources. It acts like a digital library, housing documents, reports, presentations, and other assets relevant to different business areas.",
-                tools: ['Jenkins', 'ReactJS'],
-                languages: ['JavaScript', 'Java'],
-                contributions: [
-                    'Architected and Implemented Automated Pipelines for Deployment and Testing',
-                    'Established 508 compliance guidelines',
-                    '',
-                ],
-            },{
-                name: "Collaboration Service",
-                summary: `MicroStrategy's Collaboration Service fosters secure, real-time collaboration within the MicroStrategy platform. Teams can discuss and analyze data, share insights, and make informed decisions directly within dashboards and dossiers, streamlining workflows and boosting productivity. Think of it as adding a layer of interactive discussion threads and an intuitive comments panel right on top of your data visualizations.
-    
-                With features like real-time alerts, notifications, and easily shared personalized views, Collaboration Service breaks down communication silos and empowers data-driven decision making across teams.`,
-                tools: ['ExpressJS'],
-                languages: ['EcmaScript'],
-                contributions: [
-                    
-                ],
-            }],
+            projects:[
+                LibraryWebProject,
+                CollabSvcProject,
+            ],
             resumeTasks: [
                 "Collaborate with product owners, stakeholders and designers to effectively review, create and update client-facing applications by utilizing the latest libraries including React, Webpack, ES6+",
                 "Research, design and implement solutions for performance bottlenecks and create standardized approaches for handling common issues in the application.",
@@ -95,15 +164,8 @@ export const workHistoryData = [
         dates: "March 2016 - December 2016",
         urlPath: "se",
         summary: "Implemented robust build/CI-CD processes for quality assurance and successful product releases. Mentored on 508 compliance solutions, ensuring accessibility. Managed E2E test cases for functional integrity and maintained environments.",
-        projects:[{
-            name: "Library Web Application",
-            summary: "MicroStrategy Library Web is a web-based portal within the MicroStrategy platform that functions as a central repository for various enterprise content and resources. It acts like a digital library, housing documents, reports, presentations, and other assets relevant to different business areas.",
-            tools: ['Jenkins'],
-            languages: ['Ruby'],
-            contributions: [
-                'Test'
-            ],
-        },
+        projects:[
+            LibraryWebProject,
         // {
         //     name: "AOL Paid Services",
         //     summary: "AOL Paid Services provided premium features and content for a subscription fee. These included enhanced email storage, ad-free experiences, tech support, and access to exclusive content.",
@@ -168,23 +230,18 @@ export const workHistoryData = [
             dates: "March 2015 - December 2015",
             urlPath: "sse",
             summary: "",
-            projects:[{
-                name: "AOL Help",
-                summary: "AOL Help is a resource center offering support to AOL users through various channels like online articles, tutorials, forums, and live chat. Its goal was to assist users with troubleshooting technical issues, navigating AOL's features, and finding answers to their questions, aiming to empower users and enhance their overall experience.",
-                tools: ['Docker', 'Jenkins'],
-                languages: ['JavaScript'],
-                contributions: [
+            projects:[
+                AOLHelpProject,
+                {
+                    name: "AOL Paid Services",
+                    summary: "AOL Paid Services provided premium features and content for a subscription fee. These included enhanced email storage, ad-free experiences, tech support, and access to exclusive content.",
+                    tools: ['Jenkins'],
+                    languages: ['Ruby'],
+                    contributions: [
 
-                ],
-            },{
-                name: "AOL Paid Services",
-                summary: "AOL Paid Services provided premium features and content for a subscription fee. These included enhanced email storage, ad-free experiences, tech support, and access to exclusive content.",
-                tools: ['Jenkins'],
-                languages: ['Ruby'],
-                contributions: [
-
-                ],
-            }],
+                    ],
+                }
+            ],
             resumeTasks: [
                 `Add and update back-end REST APIs consumed by front-end services for account/product specific data`,
                 `Refactor legacy applications by bringing them up to date with modern practices, making the code easier to understand, more efficient, and quicker to deploy `,
@@ -214,15 +271,9 @@ export const workHistoryData = [
             contributions: [
 
             ],
-        },{
-            name: "AOL Help",
-            summary: "AOL Help is a resource center offering support to AOL users through various channels like online articles, tutorials, forums, and live chat. Its goal was to assist users with troubleshooting technical issues, navigating AOL's features, and finding answers to their questions, aiming to empower users and enhance their overall experience.",
-            tools: ['HapiJS', 'Jenkins'],
-            languages: ['JavaScript'],
-            contributions: [
-
-            ],
-        }],
+        },
+        AOLHelpProject,
+    ],
         resumeTasks: [
             `Create and update customer facing applications for a clean/friendly user experience with the latest web practices including HTML5, Jade, SASS, JavaScript/jQuery, AngularJS`,
             `Quickly learn and apply best practices for various production server platforms including NodeJS, Apache, Tomcat and Spring to complete assigned tickets`,

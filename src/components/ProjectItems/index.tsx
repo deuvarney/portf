@@ -10,8 +10,8 @@ import { ContainerWithBetterName } from "../SectionContainer";
 import styles from './styles.module.scss';
 
 function WorkProjectItemCard(props) {
-    const {name, summary, tools, languages, renderDivider} = props;
-
+    const {name, summary, tileImg, tools, languages, renderDivider} = props;
+    const projectTileImg = tileImg || '/345x140.svg';
     return (
         <Grid item xs={12} sm={12} md={6} lg={6} xl={4}>
             <Card sx={{ maxWidth: 345, height: '100%', margin: 'auto'}} elevation={8}>
@@ -19,8 +19,9 @@ function WorkProjectItemCard(props) {
                     <CardMedia
                         component="img"
                         height="140"
-                        image="/345x140.svg"
+                        image={projectTileImg}
                         alt={`${name} logo`}
+                        className={styles.cardMedia}
                     />
                     <CardContent>
                     <Typography className={styles.cardProjectName} gutterBottom variant="h5" component="div">
@@ -52,6 +53,7 @@ function ProjectItems(props) {
                                     summary={projectItem.summary}
                                     tools={projectItem.tools}
                                     languages={projectItem.languages}
+                                    tileImg={projectItem.tileImg}
                                     renderDivider={idx !== projects.length -1}
                                 />)
                             }
