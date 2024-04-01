@@ -45,7 +45,7 @@ function ProjectItems(props) {
                 !!projects?.length && (
                     <ContainerWithBetterName>
                         <Typography variant="h4">Projects</Typography>
-                        <Grid container spacing={4} justifyContent={'center'}>
+                        <Grid container spacing={4} justifyContent={'start'}>
                             {projects.map((projectItem, idx) => 
                                 <WorkProjectItemCard
                                     key={projectItem.name + idx}
