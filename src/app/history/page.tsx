@@ -69,6 +69,8 @@ function LanguageChip({language}: {language: string;}) {
 
 function WorkHistoryItem2(props){
     const {name, summary, dates, projects = [], resumeTasks = []} = props;
+    const resumeTasksTrimmed = resumeTasks.slice(0, 3);
+
     return (
         <Accordion 
                 // expanded={true} //dev
@@ -89,7 +91,7 @@ function WorkHistoryItem2(props){
                 
                 <DescAndResponsibilites
                     summary={summary}
-                    resumeTasks={resumeTasks}
+                    resumeTasks={resumeTasksTrimmed}
                 />
                 
                 <ProjectItems projects={projects} />
