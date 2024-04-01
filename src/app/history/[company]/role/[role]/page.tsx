@@ -68,7 +68,7 @@ function Role({params /*, searchParams*/}) {
                     <hr/> */}
                     
 
-                    <SectionContainer>
+                    <SectionContainer id="projects"> {/* TODO: Look into using a component for handling ids */}
                         <HeaderTypography variant="h3" centerText={true}>Projects</HeaderTypography>
                         
 

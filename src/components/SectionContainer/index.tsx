@@ -1,9 +1,10 @@
 import styles from './styles.module.scss';
 
 function SectionContainer(props) {
-
+    const {className = '', ...rest} = props;
     return (
-        <section className={styles.sectionContainer}>
+        <section className={`${styles.sectionContainer} ${className}`} 
+            {...rest}>
             {props.children}
         </section>
     );

@@ -16,7 +16,8 @@ const MDAProject = {
             title: 'Read About It',
             link: 'https://www.primecubeit.com/blog/2020/10/13/new-microstrategy-application-which-mirrors-functionality-from-microstrategy-library'
         }
-    ]
+    ],
+    id: 'mda',
 };
 
 const MAIProject = {
@@ -36,7 +37,8 @@ const MAIProject = {
         //     title: 'Read About It',
         //     link: 'https://www.primecubeit.com/blog/2020/10/13/new-microstrategy-application-which-mirrors-functionality-from-microstrategy-library'
         // }
-    ]
+    ],
+    id: 'mai',
 }
 
 const PendoProject = {
@@ -53,7 +55,8 @@ const PendoProject = {
         //     title: 'Read About It',
         //     link: 'https://www.primecubeit.com/blog/2020/10/13/new-microstrategy-application-which-mirrors-functionality-from-microstrategy-library'
         // }
-    ]
+    ],
+    id: 'pendo',
 }
 
 const LibraryWebProject = {
@@ -72,7 +75,8 @@ const LibraryWebProject = {
             title: 'Check It Out',
             link: 'https://demo.microstrategy.com/MicroStrategyLibrary/app'
         }
-    ]
+    ],
+    id: 'libraryWeb',
 }
 
 const CollabSvcProject = {
@@ -91,7 +95,8 @@ const CollabSvcProject = {
             title: 'Check It Out',
             link: 'https://demo.microstrategy.com:3000'
         }
-    ]
+    ],
+    id: 'collabSvc',
 }
 
 const AOLHelpProject = {
@@ -108,7 +113,8 @@ const AOLHelpProject = {
             title: 'Check It Out',
             link: 'https://demo.microstrategy.com:3000'
         }
-    ]
+    ],
+    id: 'aolHelp',
 }
 
 const AolPrefProject = {
@@ -126,6 +132,7 @@ const AolPrefProject = {
     //         link: 'https://demo.microstrategy.com:3000'
     //     }
     // ]
+    id: 'aolPref',
 }
 
 const AolPaidSvcProject = {
@@ -143,6 +150,7 @@ const AolPaidSvcProject = {
     //         link: 'https://demo.microstrategy.com:3000'
     //     }
     // ]
+    id: 'aolPaidSvc',
 }
 
 export const workHistoryData = [
@@ -339,7 +347,8 @@ export const workHistoryData = [
                 //         title: 'Check It Out',
                 //         link: 'https://demo.microstrategy.com:3000'
                 //     }
-                // ]
+                // ],
+                id: 'gathr',
             },{
                 name: "LastPass",
                 summary: "LastPass is a password manager that stores your passwords securely in an encrypted vault. It autofills login information on websites and apps, eliminating the need to remember individual passwords. This helps improve online security by reducing the risk of password reuse and phishing attacks.",
@@ -354,7 +363,8 @@ export const workHistoryData = [
                 //         title: 'Check It Out',
                 //         link: 'https://demo.microstrategy.com:3000'
                 //     }
-                // ]
+                // ],
+                id: 'lastpass',
             }],
             resumeTasks: [
             //    "Collaborated with developers and fellow QA engineers to effectively complete time sensitive iterations",
@@ -394,7 +404,8 @@ export const workHistoryData = [
             //         title: 'Check It Out',
             //         link: 'https://demo.microstrategy.com:3000'
             //     }
-            // ]
+            // ],
+            id: 'aolAds',
         }],
         resumeTasks:[
             // "Verified product quality and release readiness of new features and fixes in an agile work environment with 3-4 week iterations using Kanban methodologies",
@@ -454,7 +465,8 @@ export const workHistoryData = [
             //         title: 'Check It Out',
             //         link: 'https://demo.microstrategy.com:3000'
             //     }
-            // ]
+            // ],
+            id: 'lessardIT',
         }],
         resumeTasks: [
             `Provided desktop/hardware support to clients and staff based off of helpdesk ticket requests`,

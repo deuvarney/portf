@@ -129,9 +129,15 @@ export default function WorkHistory(){
                             </Link>
                         </div>
                         
-                        {workCompany.roles?.map(role => (
-                            <WorkHistoryItem2 key={role.name} name={role.name} dates={role.dates} projects={role.projects} resumeTasks={role.resumeTasks}/>
-                        ))}
+                        {workCompany.roles?.map(role => {
+                            const projects = role.projects.map(project => {
+                                return {
+                                    ...project,
+                                    url: `${pathname}/${workCompany.urlPath}/role/${role.urlPath}#projects`,
+                                }
+                            })
+                            return (<WorkHistoryItem2 key={role.name} name={role.name} dates={role.dates} projects={projects} resumeTasks={role.resumeTasks}/>);
+                        })}
                     </section>
                 ))
             }
