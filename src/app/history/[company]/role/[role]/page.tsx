@@ -13,10 +13,11 @@ import BreadCrumbs from '@/components/Breadcrumbs';
 
 import styles from './styles.module.scss';
 
-function Role({params /*, searchParams*/}) {
+function Role({params , searchParams,}) {
     const company = workHistoryData.find(comp => comp.urlPath === params.company);
     
-    const role = company?.roles.find(role => role.urlPath === params.role)
+    const role = company?.roles.find(role => role.urlPath === params.role);
+    const {projectId} = searchParams || {};
 
     if(company && role) {
         const {images, awards} = company;
@@ -74,70 +75,71 @@ function Role({params /*, searchParams*/}) {
 
                         {
                             role.projects.map(project => (
-                            <Accordion key={project.name} // update this
-                            // expanded={true} //dev
-                            >
-                                <AccordionSummary
-                                    style={{alignItems: 'center'}}
-                                    expandIcon={<ExpandMoreIcon />}
-                                //   aria-controls="panel1bh-content"
-                                //   id="panel1bh-header"
+                                <Accordion key={project.name} // update this
+                                defaultExpanded={projectId === project.id}
+                                // expanded={true} //dev
                                 >
-                                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                                        {project.name}
-                                    </Typography>
-    
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                
-                                    <>
-                                    <Divider className={styles.roleDetailsDivider}/>
-                                    {
-                                        !!project.summary && (
-                                            <ContainerWithBetterName>
-                                                <p>{project.summary}</p>
-                                            </ContainerWithBetterName>
-                                        )
-                                    }
-
-                                    <Grid container spacing={2}>
+                                    <AccordionSummary
+                                        style={{alignItems: 'center'}}
+                                        expandIcon={<ExpandMoreIcon />}
+                                    //   aria-controls="panel1bh-content"
+                                    //   id="panel1bh-header"
+                                    >
+                                        <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                                            {project.name}
+                                        </Typography>
+        
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                    
+                                        <>
+                                        <Divider className={styles.roleDetailsDivider}/>
                                         {
-                                           !!project.contributions?.length && (
-                                                <Grid xs={12} md={12} lg={6}>
-                                                    <DescAndResponsibilites 
-                                                        listHeader={'Contributions'}
-                                                        resumeTasks={project.contributions}
-                                                    />
-                                                </Grid>
-                                           ) 
-                                        }
-                                        {
-                                            !!project.tools?.length && (
-                                                <Grid xs={12} md={6} lg={3}>
-                                                    <DescAndResponsibilites
-                                                        listHeader={'Tools'}
-                                                        resumeTasks={project.tools}
-                                                    />
-                                                </Grid>
+                                            !!project.summary && (
+                                                <ContainerWithBetterName>
+                                                    <p>{project.summary}</p>
+                                                </ContainerWithBetterName>
                                             )
                                         }
 
-                                        {
-                                            !!project.languages?.length && (
-                                                <Grid xs={12} md={6} lg={3}>
-                                                    <DescAndResponsibilites 
-                                                        listHeader={'Languages'}
-                                                        resumeTasks={project.languages}
-                                                    />
-                                                </Grid>
-                                        
-                                            )
-                                        }  
-                                    </Grid>
-                                    </>
-                                
-                                </AccordionDetails>
-                            </Accordion>
+                                        <Grid container spacing={2}>
+                                            {
+                                            !!project.contributions?.length && (
+                                                    <Grid xs={12} md={12} lg={6}>
+                                                        <DescAndResponsibilites 
+                                                            listHeader={'Contributions'}
+                                                            resumeTasks={project.contributions}
+                                                        />
+                                                    </Grid>
+                                            ) 
+                                            }
+                                            {
+                                                !!project.tools?.length && (
+                                                    <Grid xs={12} md={6} lg={3}>
+                                                        <DescAndResponsibilites
+                                                            listHeader={'Tools'}
+                                                            resumeTasks={project.tools}
+                                                        />
+                                                    </Grid>
+                                                )
+                                            }
+
+                                            {
+                                                !!project.languages?.length && (
+                                                    <Grid xs={12} md={6} lg={3}>
+                                                        <DescAndResponsibilites 
+                                                            listHeader={'Languages'}
+                                                            resumeTasks={project.languages}
+                                                        />
+                                                    </Grid>
+                                            
+                                                )
+                                            }  
+                                        </Grid>
+                                        </>
+                                    
+                                    </AccordionDetails>
+                                </Accordion>
                             ))
                         }
                                 

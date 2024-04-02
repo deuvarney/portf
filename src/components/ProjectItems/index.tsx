@@ -11,7 +11,7 @@ import styles from './styles.module.scss';
 import Link from "next/link";
 
 function WorkProjectItemCard(props) {
-    console.log('WorkProjectItemCard props', props)
+    // console.log('WorkProjectItemCard props', props)
     const {name, summary, tileImg, tools, languages, renderDivider, url} = props;
     const projectTileImg = tileImg || '/345x140.svg';
     return (
