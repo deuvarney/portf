@@ -30,7 +30,7 @@ function DescAndResponsibilities(props: DescAndResponsibilitiesProps) {
           <Typography variant="body2">{summary}</Typography>
         </ContainerWithBetterName>
       )}
-``
+
       {resumeTasks.length > 0 && (
         <ContainerWithBetterName key="responsibilities">
           <HeaderTypography variant={listHeaderVariant} sizeLevel={listHeaderSizeLevel}>
