@@ -133,7 +133,7 @@ export default function WorkHistory(){
                             const projects = role.projects.map(project => {
                                 return {
                                     ...project,
-                                    url: `${pathname}/${workCompany.urlPath}/role/${role.urlPath}?projectId=${project.id}#projects`,
+                                    url: `${pathname}/${workCompany.urlPath}/role/${role.urlPath}?projectId=${project.id}`,
                                 }
                             })
                             return (<WorkHistoryItem2 key={role.name} name={role.name} dates={role.dates} projects={projects} resumeTasks={role.resumeTasks}/>);
