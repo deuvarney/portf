@@ -13,7 +13,7 @@ type SchoolAwardsType = {
         summary: string,
         yearsAwarded: Array<string>,
     }>,
-    variant: 1|2|3|4,
+    variant?: 1|2|3|4,
 
 };
 
