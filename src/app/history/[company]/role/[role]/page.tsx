@@ -87,7 +87,7 @@ function Role({params, searchParams,}) {
                 </SectionContainer>
                 
                 <SectionContainer id={PROJECTS_ID}> {/* TODO: Look into using a component for handling ids */}
-                    <HeaderTypography variant="h3" centerText={true}>Projects</HeaderTypography>
+                    <HeaderTypography variant="h3" addBottomMargin={true}>Projects</HeaderTypography>
                     
 
                     {
