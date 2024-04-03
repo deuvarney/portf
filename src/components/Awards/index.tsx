@@ -11,7 +11,7 @@ type SchoolAwardsType = {
     awards?: Array<{
         name: string,
         summary: string,
-        yearsAwarded: Array<string>,
+        yearsAwarded: string[] | number[],
     }>,
     variant?: 1|2|3|4,
 
