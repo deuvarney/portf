@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 import { Typography, List, ListItem, ListItemText, Divider, ListItemButton } from "@mui/material";
 
 import { CalendarMonthOutlined, ChevronRight } from "@mui/icons-material";
@@ -6,75 +8,75 @@ import { ContainerWithBetterName } from "../SectionContainer";
 
 import styles from './styles.module.scss';
 
-function DescAndResponsibilites (props) {
 
+type DescAndResponsibilitiesProps = {
+  summary?: string;
+  resumeTasks: Array<{ name: string; date: string; url: string } | string>;
+  listHeader?: string;
+  listHeaderVariant?: 'h1'|'h2'|'h3'|'h4'|'h5'|'h6';
+  listHeaderSizeLevel?: 1|2|3|4|5|6|7|8;
+};
 
-    const {summary, resumeTasks} = props;
-    const listHeader = props.listHeader || 'Role Responsibilities';
-    // console.log('resumeTakses', resumeTasks);
-    return (
-        <>
-            {
-                !!summary && (
-                    <ContainerWithBetterName key={'summary'}>
-                        <HeaderTypography key={'roles-name'} variant="h4" className={styles.rolesName}>Role Description</HeaderTypography>
-                        <Typography key={'summary'} variant="body2">{summary}</Typography>
-                    </ContainerWithBetterName>
-                )
-            }
-            
-            {!!resumeTasks?.length && (
-                <ContainerWithBetterName key={'responsibilities'}>
-                    <Typography variant='h4'>{listHeader}</Typography>
-                    {/* <ul>
-                        {resumeTasks.map((resumeTask: string, index: number) => <li key={index}>{resumeTask}</li>)}
-                    </ul> */}
+function DescAndResponsibilities(props: DescAndResponsibilitiesProps) {
+  const { summary, resumeTasks = [], listHeader = 'Role Responsibilities', listHeaderVariant = 'h4', listHeaderSizeLevel = 4 } = props;
 
-                    <List sx={{ width: '100%' }}>
-                        { // TODO: Remove any
-                            resumeTasks.map((resumeTask: string |any , index: number) => {
+  return (
+    <>
+      {summary && (
+        <ContainerWithBetterName key="summary">
+          <HeaderTypography variant={listHeaderVariant} sizeLevel={listHeaderSizeLevel} className={styles.rolesName}>
+            Role Description
+          </HeaderTypography>
+          <Typography variant="body2">{summary}</Typography>
+        </ContainerWithBetterName>
+      )}
+``
+      {resumeTasks.length > 0 && (
+        <ContainerWithBetterName key="responsibilities">
+          <HeaderTypography variant={listHeaderVariant} sizeLevel={listHeaderSizeLevel}>
+            {listHeader}
+          </HeaderTypography>
 
-                                if (typeof resumeTask === 'string' || resumeTask instanceof String){
+          <List sx={{ width: '100%' }}>
+            {resumeTasks.map((task, index) => {
+              if (typeof task === 'string') {
+                return (
+                  <Fragment key={index}>
+                    <ListItem key={index} alignItems="flex-start">
+                      <ListItemText primary={task} />
+                    </ListItem>
+                    {resumeTasks.length - 1 !== index && (
+                      <Divider style={{ margin: `0 16px` }} component="li" />
+                    )}
+                  </Fragment>
+                );
+              }
 
-                                 return (
-                                <>
-                                    <ListItem key={index} alignItems="flex-start">
-                                        {/* <ListItemAvatar>
-                                        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                                        </ListItemAvatar> */}
-                                        <ListItemText
-                                            primary={resumeTask}
-                                            />
-                                    {/* <ListItemText>Test</ListItemText> */}
-                                    </ListItem>
-                                    {(resumeTasks.length - 1 !== index) && <Divider style={{margin: `0 16px`}} component="li" />}
-                                </>
-                                 );
-                            }
-                               
-                                        
-                            return (
-                                <>
-                                    <ListItemButton component="a" href={resumeTask.url}>
-                                        <ListItemText
-                                            primary={resumeTask.name}
-                                            secondary={<span className={styles.centerIconWithText}><CalendarMonthOutlined className={styles.roleCalendar}/>{resumeTask.date}</span>}
-                                            />
-                                            <ChevronRight/>
-                                    </ListItemButton>
-                                    {(resumeTasks.length - 1 !== index) && <Divider style={{margin: `0 16px`}} component="li" />}
-
-                                </>
-                            );
-                        
-                            })
-                        }
-                        
-                    </List>
-                </ContainerWithBetterName>
-            )}
-        </>
-    );
+              return (
+                <>
+                  <ListItemButton component="a" href={task.url}>
+                    <ListItemText
+                      primary={task.name}
+                      secondary={
+                        <span className={styles.centerIconWithText}>
+                          <CalendarMonthOutlined className={styles.roleCalendar} />
+                          {task.date}
+                        </span>
+                      }
+                    />
+                    <ChevronRight />
+                  </ListItemButton>
+                  {resumeTasks.length - 1 !== index && (
+                    <Divider style={{ margin: `0 16px` }} component="li" />
+                  )}
+                </>
+              );
+            })}
+          </List>
+        </ContainerWithBetterName>
+      )}
+    </>
+  );
 }
 
-export default DescAndResponsibilites;
+export default DescAndResponsibilities;

@@ -23,20 +23,6 @@ $tablet-breakpoint: 768px;
     text-align: right;
 }
 
-.groupTitle {
-    // margin-bottom: 18px;
-    margin: 0 32px 18px;
-    text-align: center;
-
-    @media (max-width: $tablet-breakpoint) {
-        // margin: 0 32px 18px;
-        margin-left: 24px;
-        margin-right: 24px;
-        
-        // padding-left: 0;
-        // padding-right: 0;
-    }
-}
 
 .groupName {
     margin-bottom: 24px;

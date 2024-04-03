@@ -19,10 +19,7 @@ function SchoolGroups(props) {
     }
     return (
         <ContainerWithBetterName>
-            {/* <h2>Groups</h2> */}
-            <Typography variant='h2' className={styles.groupTitle}>
-                {/* <GroupsIcon/> */}
-                Groups</Typography>
+            <HeaderTypography variant='h2'>Groups</HeaderTypography>
 
             { groups.map((group, idx)=> (
                 <>

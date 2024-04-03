@@ -9,6 +9,7 @@ import { ContainerWithBetterName } from "../SectionContainer";
 
 import styles from './styles.module.scss';
 import Link from "next/link";
+import HeaderTypography from "../HeaderTypography";
 
 function WorkProjectItemCard(props) {
     // console.log('WorkProjectItemCard props', props)
@@ -50,7 +51,7 @@ function ProjectItems(props) {
             {
                 !!projects?.length && (
                     <ContainerWithBetterName>
-                        <Typography variant="h4">Projects</Typography>
+                        <HeaderTypography variant="h4" addBottomMargin={true}>Projects</HeaderTypography>
                         <Grid container spacing={4} justifyContent={'start'}>
                             {projects.map((projectItem, idx) => 
                                 <WorkProjectItemCard

@@ -65,11 +65,13 @@ function Company({params, searchParams}) {
                 />
                 <MainContentContainerWithBetterName>
                     <ContainerWithBetterName>
-                        <HeaderTypography variant="h2" sizeLevel={4}>About the Company</HeaderTypography>
+                        <HeaderTypography variant="h2" sizeLevel={2} addBottomMargin={true}>About the Company</HeaderTypography>
                         <p>{company.summary}</p>
                     </ContainerWithBetterName>
                     <DescAndResponsibilites 
                         listHeader="Roles"
+                        listHeaderVariant="h2"
+                        listHeaderSizeLevel={2}
                         resumeTasks={items}
                     />
                     {
