@@ -22,15 +22,12 @@ function SchoolGroups(props) {
             <HeaderTypography variant='h2'>Groups</HeaderTypography>
 
             { groups.map((group, idx)=> (
-                <>
-                    <div className={styles.groupSection} key={idx}>
-                        <HeaderTypography variant="h3" sizeLevel={5} className={`${styles.groupName} ${styles.centerIconWithText}`}>{group.name}</HeaderTypography>
-                        <HeaderTypography variant="h4" sizeLevel={6}>{group.position}</HeaderTypography>
-                        <p className={`${styles.centerIconWithText} ${styles.groupRoleDuration}`}><CalendarMonthOutlinedIcon/>{group.dates?.start} - {group.dates?.end}</p>
-                        <Typography variant="body2"  className={`${styles.groupSummary}`}>{group.summary}</Typography>
-
-                    </div>
-                </>
+                <div className={styles.groupSection} key={idx}>
+                    <HeaderTypography variant="h3" sizeLevel={5} className={`${styles.groupName} ${styles.centerIconWithText}`}>{group.name}</HeaderTypography>
+                    <HeaderTypography variant="h4" sizeLevel={6}>{group.position}</HeaderTypography>
+                    <p className={`${styles.centerIconWithText} ${styles.groupRoleDuration}`}><CalendarMonthOutlinedIcon/>{group.dates?.start} - {group.dates?.end}</p>
+                    <Typography variant="body2"  className={`${styles.groupSummary}`}>{group.summary}</Typography>
+                </div>
             ))}
         </ContainerWithBetterName>
     );

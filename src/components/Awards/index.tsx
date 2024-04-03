@@ -27,24 +27,22 @@ function SchoolAwards({ awards: awardsList, variant = 2 }: SchoolAwardsType) {
         <ContainerWithBetterName>
             <HeaderTypography variant={`h${variant}`} sizeLevel={2}>Awards</HeaderTypography>
             { awardsList.map((award, idx) => (
-                <>
-                    <div key={idx} className={styles.awardSection}>
-                        <HeaderTypography variant={subHeader} sizeLevel={4} className={styles.awardName}>
-                            {award.name}
-                        </HeaderTypography>
-                        <Typography variant="body2" className={styles.awardSummary}>
-                            {award.summary}
-                        </Typography>
-                        <HeaderTypography variant={subSubHeader} sizeLevel={5} className={styles.yearsAwarded}>
-                            {'Years Awarded'}
-                        </HeaderTypography>
-                        {
-                            isSmallView ? 
-                                <BasicTimeline steps={award.yearsAwarded} />
-                                :  <HorizontalStepper steps={award.yearsAwarded} />
-                        }
-                    </div>
-                </>
+                <div key={idx} className={styles.awardSection}>
+                    <HeaderTypography variant={subHeader} sizeLevel={4} className={styles.awardName}>
+                        {award.name}
+                    </HeaderTypography>
+                    <Typography variant="body2" className={styles.awardSummary}>
+                        {award.summary}
+                    </Typography>
+                    <HeaderTypography variant={subSubHeader} sizeLevel={5} className={styles.yearsAwarded}>
+                        {'Years Awarded'}
+                    </HeaderTypography>
+                    {
+                        isSmallView ? 
+                            <BasicTimeline steps={award.yearsAwarded} />
+                            :  <HorizontalStepper steps={award.yearsAwarded} />
+                    }
+                </div>
             ))}
         </ContainerWithBetterName>
     );
