@@ -10,9 +10,19 @@ import { ContainerWithBetterName } from "../SectionContainer";
 import styles from './styles.module.scss';
 import Link from "next/link";
 import HeaderTypography from "../HeaderTypography";
+import { WorkHistoryProject } from "@/types/types";
 
-function WorkProjectItemCard(props) {
-    // console.log('WorkProjectItemCard props', props)
+type WorkProjectItemCardProps = {
+    name: string;
+    summary: string;
+    tileImg?: string;
+    tools: string[];
+    languages: string[];
+    renderDivider: boolean;
+    url: string;
+}
+
+function WorkProjectItemCard(props: WorkProjectItemCardProps) {
     const {name, summary, tileImg, tools, languages, renderDivider, url} = props;
     const projectTileImg = tileImg || '/345x140.svg';
     return (
@@ -44,8 +54,11 @@ function WorkProjectItemCard(props) {
     )
 }
 
-function ProjectItems(props) {
-    const {projects} = props;
+type ProjectsItemsType = (WorkHistoryProject & {url: string})[]
+type ProjectItemType = {projects: ProjectsItemsType}
+
+function ProjectItems(props: ProjectItemType) {
+    const {projects}: {projects: ProjectsItemsType } = props;
     return (
         <>
             {

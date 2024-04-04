@@ -1,4 +1,6 @@
-const MDAProject = {
+import type { SchoolHistory, WorkHistoryItem, WorkHistoryProject } from "@/types/types";
+
+const MDAProject: WorkHistoryProject= {
     name: "MicroStrategy Desktop Application",
     summary: "The MicroStrategy Desktop Application was a software program that allowed users to access, interact with, and analyze data from the MicroStrategy platform on their local computers. It provided features like offline data access, report viewing and editing, and dashboard exploration. This enabled users to work with data even without an internet connection, and offered data filtering, sorting, and drilling down for in-depth analysis.",
     tools: ['Electron','Jenkins', 'Service Workers', 'IndexedDB'],
@@ -20,7 +22,7 @@ const MDAProject = {
     id: 'mda',
 };
 
-const MAIProject = {
+const MAIProject: WorkHistoryProject= {
     name: "MicroStrategy AI Authoring",
     summary: "MicroStrategy AI Authoring is a tool leveraging natural language processing and machine learning to aid users in creating data-driven reports and dashboards. It translates user questions and requests into technical queries, generates insights, and builds reports without complex coding. This empowers less technical users to analyze data, democratize access to insights, and streamline report creation within organizations.",
     tools: ['Jenkins', 'LangChain'],
@@ -41,7 +43,7 @@ const MAIProject = {
     id: 'mai',
 }
 
-const PendoProject = {
+const PendoProject: WorkHistoryProject= {
     name: "PendoIO Integration",
     summary: "Pendo.IO is a digital adoption platform focused on improving user experience within software applications. It equips software companies with tools to guide users through their product, gather feedback, and understand user behavior.",
     tools: ['Jenkins', 'Tomcat'],
@@ -59,7 +61,7 @@ const PendoProject = {
     id: 'pendo',
 }
 
-const LibraryWebProject = {
+const LibraryWebProject: WorkHistoryProject= {
     name: "Library Web Application",
     summary: "MicroStrategy Library Web is a web-based portal within the MicroStrategy platform that functions as a central repository for various enterprise content and resources. It acts like a digital library, housing documents, reports, presentations, and other assets relevant to different business areas.",
     tools: ['Jenkins', 'ReactJS'],
@@ -79,7 +81,7 @@ const LibraryWebProject = {
     id: 'libraryWeb',
 }
 
-const CollabSvcProject = {
+const CollabSvcProject: WorkHistoryProject= {
     name: "Collaboration Service",
     summary: `MicroStrategy's Collaboration Service fosters secure, real-time collaboration within the MicroStrategy platform. Teams can discuss and analyze data, share insights, and make informed decisions directly within dashboards and dossiers, streamlining workflows and boosting productivity. Think of it as adding a layer of interactive discussion threads and an intuitive comments panel right on top of your data visualizations.
 
@@ -99,7 +101,7 @@ const CollabSvcProject = {
     id: 'collabSvc',
 }
 
-const AOLHelpProject = {
+const AOLHelpProject: WorkHistoryProject= {
     name: "AOL Help",
     summary: "AOL Help is a resource center offering support to AOL users through various channels like online articles, tutorials, forums, and live chat. Its goal was to assist users with troubleshooting technical issues, navigating AOL's features, and finding answers to their questions, aiming to empower users and enhance their overall experience.",
     tools: ['HapiJS', 'Jenkins'],
@@ -117,7 +119,7 @@ const AOLHelpProject = {
     id: 'aolHelp',
 }
 
-const AolPrefProject = {
+const AolPrefProject: WorkHistoryProject= {
     name: "AOL Preferences",
     summary: "AOL Preferences allowed users to personalize their web experience by adjusting settings across various AOL features like email, instant messaging, browsing, and more. Users could control aspects like notification preferences, content filtering, security options, and visual themes.",
     tools: ['Jenkins', 'Angular'],
@@ -135,7 +137,7 @@ const AolPrefProject = {
     id: 'aolPref',
 }
 
-const AolPaidSvcProject = {
+const AolPaidSvcProject: WorkHistoryProject= {
     name: "AOL Paid Services",
     summary: "AOL Paid Services provided premium features and content for a subscription fee. These included enhanced email storage, ad-free experiences, tech support, and access to exclusive content.",
     tools: ['Jenkins'],
@@ -153,7 +155,7 @@ const AolPaidSvcProject = {
     id: 'aolPaidSvc',
 }
 
-export const workHistoryData = [
+export const workHistoryData: WorkHistoryItem[] = [
 {
     name: 'MicroStrategy',
     summary: `MicroStrategy is a leading provider of enterprise analytics and mobility software, empowering organizations to make informed decisions and take action on their data. Their platform offers advanced analytics, data visualization, and mobile capabilities, enabling businesses to analyze large datasets, uncover insights, and drive performance improvements across various industries. With a focus on scalability, security, and usability, MicroStrategy helps businesses harness the power of data to gain a competitive edge in today's rapidly evolving market landscape.`,
@@ -423,8 +425,9 @@ export const workHistoryData = [
             "Developed and executed comprehensive test cases for individual user stories and regression testing using Test Link, ensuring software integrity and reliability.",
             "Automated regression testing procedures by designing and implementing test environments and scenarios utilizing Selenium and Cucumber, optimizing post-build deployment validation.",
         ]
-    },
-    ]
+        },
+    ],
+    awards: []
 },
 
 
@@ -475,11 +478,12 @@ export const workHistoryData = [
             `Maintained and updated the inventory for all company equipment through use of Microsoft Office and Sharepoint`,
             `Instructed staff on new IT initiatives and applications in order to increase productivity and understanding of programs`,
         ]
-    }]
+    }],
+    awards: [],
 },
 ];
 
-export const schoolHistory = [
+export const schoolHistory: SchoolHistory = [
     {
         name: `St. John's University`,
         level: 'College, Cum Laude',

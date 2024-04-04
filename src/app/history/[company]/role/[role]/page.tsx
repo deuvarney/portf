@@ -63,7 +63,7 @@ function Role({params, searchParams,}) {
             {company.name}
         </Link>,
         <Typography key="3" color="text.primary">
-            {role.urlPath.toUpperCase()}
+            {role.urlPath?.toUpperCase()}
         </Typography>,
     ];
     return (
