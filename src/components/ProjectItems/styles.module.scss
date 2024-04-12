@@ -1,10 +1,50 @@
+.cardActionArea {
+    &:focus,&:hover{
+        .cardMedia {
+            filter: grayscale(0);
+        }
+    }
+}
+
 .cardMedia {
     object-fit: cover;
     object-position: top;
     background: white;
     filter: grayscale(1);
+    transition: filter 0.3s ease-in-out;
 }
 
 .cardProjectName {
     font-size: 22px;
+}
+
+.cardContent {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fadeEffectElement {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Height of the fade effect */
+    background: linear-gradient(to bottom, rgba(48, 43, 43, 0), rgb(48, 43, 43)); // TODO: Abstract colors to colors file
+    mask-image: linear-gradient(to bottom, black 90%, transparent);
+}
+
+.cardBtnText {
+    padding-right: 8px;
+    text-transform: uppercase;
+}
+
+.cardActions {
+    justify-content: end;
+}
+
+.cardBtnLinkCont {
+    display: flex;
+    align-items: center;
+    padding: 4px 5px;
 }
