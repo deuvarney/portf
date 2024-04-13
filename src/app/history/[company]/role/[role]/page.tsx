@@ -14,58 +14,92 @@ import SectionContainer, { ContainerWithBetterName, MainContentContainerWithBett
 import BreadCrumbs from '@/components/Breadcrumbs';
 
 import styles from './styles.module.scss';
-import { useEffect } from 'react';
+import { useCallback, useEffect, useMemo, useRef, } from 'react';
 
-const PROJECTS_ID = 'projects';
+
+
+// TODO:  Move this to a centralized function
+/**
+ * Scroll the given HTML element into view, with the specified timeout in milliseconds.
+ * If the element is not yet in the DOM, it will be waited for using requestIdleCallback with a maximum timeout of 1 second.
+ * The function will return a promise that resolves when the element is scrolled into view.
+ * @param element - The HTML element to scroll into view.
+ * @param timeout - The timeout in milliseconds to wait for the element to be in the DOM.
+ * @returns - A promise that resolves when the element is scrolled into view.
+ */
+function scrollElementIntoView(element?: Element, timeout = 300) {
+    if (!element) { return; }
+    setTimeout(() => {
+        requestIdleCallback(() => {
+            element.scrollIntoView({
+                block: "start",
+                behavior: "smooth",
+                inline: 'nearest',
+            });
+        }, { timeout: 1000 });
+    }, timeout);
+}
+
 
 function Role({params, searchParams,}) {
-    const company = workHistoryData.find(comp => comp.urlPath === params.company);
-    
-    const role = company?.roles.find(role => role.urlPath === params.role);
+
+    let company;
+    let role;
+    for (const comp of workHistoryData) {
+      if (comp.urlPath === params.company) {
+        company = comp;
+        role = comp.roles.find(role => role.urlPath === params.role);
+        break;
+      }
+    }
+
     const {projectId} = searchParams || {};
+
+    const projectContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if(!projectId || !company || !role) { return; }
-        requestIdleCallback(() => {
-            const projectElement = document.getElementById(PROJECTS_ID);
-            if(projectElement) {
-                projectElement.scrollIntoView({block: 'start', inline: 'nearest', behavior: 'smooth'});
-            }
-        }, {timeout: 1000})
+        projectContainerRef.current && scrollElementIntoView(projectContainerRef.current);
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+    const onAccordionOpenChange = useCallback((event: React.SyntheticEvent, isExpanded: boolean) => {
+        if(isExpanded) {
+            event.currentTarget && scrollElementIntoView(event.currentTarget);
+        }
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+    const breadcrumbs = useMemo(() => {
+        return [
+            <Link 
+                underline="hover"
+                key="1"
+                color="inherit"
+                href="/history"
+            >
+                Experience
+            </Link>,
+            <Link
+                underline="hover"
+                key="2"
+                color="inherit"
+                href={`/history/${company?.urlPath}`}
+            >
+                {company?.name}
+            </Link>,
+            <Typography key="3" color="text.primary">
+                {role?.urlPath?.toUpperCase()}
+            </Typography>,
+        ];
+    }, [company, role]);
 
     if(!company || !role) {
         // Dev purposes, replace with an actual 404 page
         return (<p>Todo: render 404 page For Role</p>)
     }
 
-
     const {images} = company;
     const {resumeTasks} = role;
 
-    const breadcrumbs = [
-        <Link 
-            underline="hover"
-            key="1"
-            color="inherit"
-            href="/history"
-            // onClick={handleClick}
-        >
-            Experience
-        </Link>,
-        <Link
-            underline="hover"
-            key="2"
-            color="inherit"
-            href={`/history/${company.urlPath}`}
-        //   onClick={handleClick}
-        >
-            {company.name}
-        </Link>,
-        <Typography key="3" color="text.primary">
-            {role.urlPath?.toUpperCase()}
-        </Typography>,
-    ];
     return (
         <>
             <BreadCrumbs breadcrumbs={breadcrumbs} />
@@ -77,7 +111,6 @@ function Role({params, searchParams,}) {
                 largeLogo={images?.largeLogo}
                 backgroundPositionFocus={images?.largePositionFocus}
                 largeBackgroundImg={images?.largeBackground}
-            
             />
             <MainContentContainerWithBetterName>
                 <SectionContainer>
@@ -86,7 +119,7 @@ function Role({params, searchParams,}) {
                     />
                 </SectionContainer>
                 
-                <SectionContainer id={PROJECTS_ID}> {/* TODO: Look into using a component for handling ids */}
+                <SectionContainer ref={projectContainerRef}> {/* TODO: Look into using a component for handling ids */}
                     <SectionTitleContainer>
                         <HeaderTypography variant="h3" addBottomMargin={true}>Projects</HeaderTypography>
                     </SectionTitleContainer>
@@ -95,6 +128,7 @@ function Role({params, searchParams,}) {
                         role.projects.map(project => (
                             <Accordion key={project.name} // update this
                             defaultExpanded={projectId === project.id}
+                            onChange={onAccordionOpenChange}
                             // expanded={true} //dev
                             >
                                 <AccordionSummary
@@ -109,7 +143,6 @@ function Role({params, searchParams,}) {
     
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                
                                     <>
                                     <Divider className={styles.roleDetailsDivider}/>
                                     {
@@ -119,17 +152,16 @@ function Role({params, searchParams,}) {
                                             </ContainerWithBetterName>
                                         )
                                     }
-
                                     <Grid container spacing={2}>
                                         {
-                                        !!project.contributions?.length && (
-                                                <Grid xs={12} md={12} lg={6}>
-                                                    <DescAndResponsibilites 
-                                                        listHeader={'Contributions'}
-                                                        resumeTasks={project.contributions}
-                                                    />
-                                                </Grid>
-                                        ) 
+                                            !!project.contributions?.length && (
+                                                    <Grid xs={12} md={12} lg={6}>
+                                                        <DescAndResponsibilites 
+                                                            listHeader={'Contributions'}
+                                                            resumeTasks={project.contributions}
+                                                        />
+                                                    </Grid>
+                                            ) 
                                         }
                                         {
                                             !!project.tools?.length && (
@@ -160,11 +192,7 @@ function Role({params, searchParams,}) {
                             </Accordion>
                         ))
                     }
-                            
-                                
-                        
                 </SectionContainer>
-
             </MainContentContainerWithBetterName>
         </>
     )

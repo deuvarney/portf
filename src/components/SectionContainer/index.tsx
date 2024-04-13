@@ -1,14 +1,23 @@
+import { LegacyRef, forwardRef } from 'react';
 import styles from './styles.module.scss';
+// TODO: Create cleaner reusable implementation
 
-function SectionContainer(props) {
+type SectionContainerProps = {
+    className?: string;
+    children: React.ReactNode | React.ReactNode[];
+}
+
+const SectionContainer = forwardRef((props: SectionContainerProps, ref: LegacyRef<HTMLElement> | null) => {
     const {className = '', ...rest} = props;
     return (
-        <section className={`${styles.sectionContainer} ${className}`} 
+        <section ref={ref} className={`${styles.sectionContainer} ${className}`} 
             {...rest}>
             {props.children}
         </section>
     );
-}
+});
+
+SectionContainer.displayName = 'SectionContainer';
 
 export default SectionContainer;
 
