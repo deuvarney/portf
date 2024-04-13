@@ -15,30 +15,7 @@ import BreadCrumbs from '@/components/Breadcrumbs';
 
 import styles from './styles.module.scss';
 import { useCallback, useEffect, useMemo, useRef, } from 'react';
-
-
-
-// TODO:  Move this to a centralized function
-/**
- * Scroll the given HTML element into view, with the specified timeout in milliseconds.
- * If the element is not yet in the DOM, it will be waited for using requestIdleCallback with a maximum timeout of 1 second.
- * The function will return a promise that resolves when the element is scrolled into view.
- * @param element - The HTML element to scroll into view.
- * @param timeout - The timeout in milliseconds to wait for the element to be in the DOM.
- * @returns - A promise that resolves when the element is scrolled into view.
- */
-function scrollElementIntoView(element?: Element, timeout = 300) {
-    if (!element) { return; }
-    setTimeout(() => {
-        requestIdleCallback(() => {
-            element.scrollIntoView({
-                block: "start",
-                behavior: "smooth",
-                inline: 'nearest',
-            });
-        }, { timeout: 1000 });
-    }, timeout);
-}
+import { scrollElementIntoView } from '@/utils/domUtils';
 
 
 function Role({params, searchParams,}) {

@@ -3,7 +3,7 @@
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import { ArrowForwardIos, CalendarMonthOutlined, } from "@mui/icons-material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import styles from './styles.module.scss';
 
@@ -17,6 +17,7 @@ import ProjectItems from '@/components/ProjectItems';
 import HeaderTypography from '@/components/HeaderTypography';
 import { getProgramLangInfo, getToolInfo } from '@/utils/toolsUtil';
 import { WorkHistoryRole } from '@/types/types';
+import { scrollElementIntoView } from '@/utils/domUtils';
 
 function ToolItem({tool, flipped}) {
 
@@ -72,9 +73,16 @@ function WorkHistoryItem2(props: WorkHistoryRole){
     const {name, summary, dates, projects = [], resumeTasks = []} = props;
     const resumeTasksTrimmed = resumeTasks.slice(0, 3);
 
+    const onAccordionOpenChange = useCallback((event: React.SyntheticEvent, isExpanded: boolean) => {
+        if(isExpanded) {
+            event.currentTarget && scrollElementIntoView(event.currentTarget);
+        }
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
     return (
         <Accordion 
-                // expanded={true} //dev
+            onChange={onAccordionOpenChange}
+            // expanded={true} //dev
         >
             <AccordionSummary
                 style={{alignItems: 'center'}}
