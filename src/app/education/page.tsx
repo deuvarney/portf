@@ -33,7 +33,7 @@ function SchoolGroups({ groups }: { groups: SchoolGroup[] }) {
                         </HeaderTypography>
                         <p className={styles.groupRoleDuration}>
                             <CalendarMonthOutlinedIcon />
-                            {start} - {end}
+                            <span className={styles.groupRoleDurationText}>{start} - {end}</span>
                         </p>
                         <Typography variant="body2" className={styles.groupSummary}>
                             {group.summary}

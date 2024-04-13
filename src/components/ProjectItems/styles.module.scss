@@ -1,7 +1,7 @@
 .cardActionArea {
     &:focus,&:hover{
         .cardMedia {
-            filter: grayscale(0);
+            filter: grayscale(0); // TODO: Make this behavior global
         }
     }
 }

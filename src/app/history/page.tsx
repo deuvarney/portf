@@ -16,6 +16,7 @@ import { usePathname } from 'next/navigation';
 import ProjectItems from '@/components/ProjectItems';
 import HeaderTypography from '@/components/HeaderTypography';
 import { getProgramLangInfo, getToolInfo } from '@/utils/toolsUtil';
+import { WorkHistoryRole } from '@/types/types';
 
 function ToolItem({tool, flipped}) {
 
@@ -67,7 +68,7 @@ function LanguageChip({language}: {language: string;}) {
 }
 
 
-function WorkHistoryItem2(props){
+function WorkHistoryItem2(props: WorkHistoryRole){
     const {name, summary, dates, projects = [], resumeTasks = []} = props;
     const resumeTasksTrimmed = resumeTasks.slice(0, 3);
 
@@ -84,7 +85,7 @@ function WorkHistoryItem2(props){
             <Typography sx={{ width: '33%', flexShrink: 0 }}>
                 {name}
             </Typography>
-            <Typography sx={{ color: 'text.secondary' }}><span className={styles.roleDate}><CalendarMonthOutlined className={styles.roleCalendar}/> {dates}</span></Typography>
+            <Typography sx={{ color: 'text.secondary' }} display={'flex'}><span className={styles.roleDate}><CalendarMonthOutlined className={styles.roleCalendar}/> {dates}</span></Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <Divider className={styles.roleDetailsDivider} />
@@ -113,7 +114,6 @@ export default function WorkHistory(){
                 workHistoryData.map((workCompany, idx) => (
                     <section key={idx} className={styles.sectionContainer}>
                         <div className={styles.sectionTopHeader}>
-                            {/* <h2 className="company-name"></h2> */}
                             <Link
                                 href={`${pathname}/${workCompany.urlPath}`}
                                 className={styles.workHistoryLink}

@@ -20,9 +20,13 @@ $tablet-breakpoint: 768px;
 
 
 .groupRoleDuration {
-    text-align: right;
+    display: flex;
+    padding: 12px 0;
 }
 
+.groupRoleDurationText {
+    padding-left: 4px;
+}
 
 .groupName {
     margin-bottom: 24px;
@@ -32,12 +36,7 @@ $tablet-breakpoint: 768px;
     margin-bottom: 24px;
 }
 
-// .years-awarded {
-//     margin-bottom: 32px
-// }
-
 .group-divider {
-    // margin-bottom: 24px;
     margin: 32px 0;
 }
     
@@ -45,25 +44,12 @@ $tablet-breakpoint: 768px;
 
 
 .groupSection {
-    // margin-bottom: 48px;
-    // background-color: rgb(50, 50, 50);
-
-    // background-color: #222;
-
     margin: 16px 32px;
     padding: 24px;
-    // background-color: #404246;
-    // background-color: #393939;;
     background-color: #272727;;
 
-    // &.even {
-    //     // background-color: rgb(60, 60, 60);
-    // }
     @media (max-width: $tablet-breakpoint) {
         margin-left: 0;
         margin-right: 0;
-        
-        // padding-left: 0;
-        // padding-right: 0;
     }
 }
