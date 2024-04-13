@@ -19,7 +19,6 @@ function Company({params, searchParams}) {
 
     if(company){
         const {images, awards} = company;
-        // console.log('###compnay', images);
 
         const items = company.roles.map(role => {
             return {
