@@ -28,3 +28,10 @@ export function MainContentContainerWithBetterName(props) {
     )
 }
 
+export function SectionTitleContainer(props) {
+    return (
+        <div className={styles.sectionTitleContainer}>
+            {props.children}
+        </div>
+    )
+}

@@ -10,7 +10,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import { Accordion, AccordionDetails, AccordionSummary, Divider, Link, Typography } from "@mui/material";
 import HeaderTypography from '@/components/HeaderTypography';
-import SectionContainer, { ContainerWithBetterName, MainContentContainerWithBetterName } from '@/components/SectionContainer';
+import SectionContainer, { ContainerWithBetterName, MainContentContainerWithBetterName, SectionTitleContainer } from '@/components/SectionContainer';
 import BreadCrumbs from '@/components/Breadcrumbs';
 
 import styles from './styles.module.scss';
@@ -87,8 +87,9 @@ function Role({params, searchParams,}) {
                 </SectionContainer>
                 
                 <SectionContainer id={PROJECTS_ID}> {/* TODO: Look into using a component for handling ids */}
-                    <HeaderTypography variant="h3" addBottomMargin={true}>Projects</HeaderTypography>
-                    
+                    <SectionTitleContainer>
+                        <HeaderTypography variant="h3" addBottomMargin={true}>Projects</HeaderTypography>
+                    </SectionTitleContainer>
 
                     {
                         role.projects.map(project => (
