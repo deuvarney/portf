@@ -31,9 +31,10 @@ function AppHeaders({children}) {
     useEffect(() => {
         updateBodyClass(bodyClassTheme)
     }, [bodyClassTheme])
+    const lightDarkTheme= theme === Themes.DARK || theme === Themes.TWILIGHT ? darkTheme : lightTheme;
 
     return (
-        <ThemeProvider theme={theme === Themes.DARK || theme === Themes.TWILIGHT ? darkTheme : lightTheme}>
+        <ThemeProvider theme={lightDarkTheme}>
             <CssBaseline />
             <ResponsiveAppBar/>
             {children}

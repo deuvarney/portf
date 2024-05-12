@@ -7,7 +7,7 @@ export enum Themes {
     DARK = 'dark',
 }
 
-const LightThemeContext = createContext({ theme: Themes, toggleTheme: (): void => { } });
+const LightThemeContext = createContext({ theme: Themes.DARK, toggleTheme: (): void => { } });
 
 export const useTheme = () => useContext(LightThemeContext);
 
