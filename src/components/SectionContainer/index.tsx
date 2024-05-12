@@ -10,7 +10,7 @@ type SectionContainerProps = {
 const SectionContainer = forwardRef((props: SectionContainerProps, ref: LegacyRef<HTMLElement> | null) => {
     const {className = '', ...rest} = props;
     return (
-        <section ref={ref} className={`${styles.sectionContainer} ${className}`} 
+        <section ref={ref} className={`${className} ${styles.sectionContainer}`} 
             {...rest}>
             {props.children}
         </section>

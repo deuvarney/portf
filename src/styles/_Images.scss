@@ -1,0 +1,14 @@
+@import "Themes.scss";
+
+@mixin image-filter($class-name,$gray-scale: 1) {
+    @at-root :global(.#{$app-theme-dark}) #{$class-name} {
+        filter: grayscale($gray-scale);
+
+        &:hover, &:focus {
+            filter: grayscale(0);
+        }
+    }
+
+    transition: filter 0.3s ease-in;
+
+}

@@ -1,4 +1,6 @@
 // TODO: Centralize measurements
+@import "../../styles/AppBase";
+
 $mobile-breakpoint: 480px;
 
 .locationBackgroundImg {
@@ -7,8 +9,8 @@ $mobile-breakpoint: 480px;
     background-size: cover;
     max-height: 385px;
     min-height: 80vh;
-    filter: grayscale(1);
     position: relative;
+    @include image-filter(&);
 }
 
 .locationLogoContainer {
@@ -42,6 +44,10 @@ $mobile-breakpoint: 480px;
     right: 24px;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 32px 24px;
+
+    @include appThemeLightWrapper(&){
+        color: $color-light-text;
+    }
 
     @media (max-width: $mobile-breakpoint) {
         bottom: 0;

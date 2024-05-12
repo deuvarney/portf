@@ -16,10 +16,58 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Settings } from '@mui/icons-material';
 
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import TwilightIcon from '@mui/icons-material/WbTwilight';
+import { useTheme, Themes } from '@/hooks/ThemeContext';
+
 const pages = [['Home', '/home'], ['Work History', '/history'], ['Education', '/education'], ['Contact', '/contact'],];
-// Education
-// Awards
 const settings = ['(Dev) Go Todo Page', '(Dev)Font Size +/-', '(Dev)Light/Dark Mode', '(Dev)Language',];
+
+function LightModeContainer() {
+
+  const { theme, toggleTheme } = useTheme();
+
+  const onIconClick = () => {
+    toggleTheme();
+  }
+
+  const getIcon = React.useCallback(() => {
+    let ThemeComponentIcon;
+    let tooltipTitle;
+
+    switch (theme) {
+      case Themes.LIGHT:
+        ThemeComponentIcon = <Brightness7Icon />;
+        tooltipTitle = 'Light Mode';
+        break;
+      case Themes.TWILIGHT:
+        ThemeComponentIcon = <TwilightIcon />;
+        tooltipTitle = 'Twilight Mode';
+        break;
+      default:
+        ThemeComponentIcon = <DarkModeIcon />;
+        tooltipTitle = 'Dark Mode';
+    }
+    return [ThemeComponentIcon, tooltipTitle]
+  }, [theme]);
+
+  const [Icon, tooltipTitle] = getIcon();
+
+  return (
+    <Tooltip title={tooltipTitle}>
+      <IconButton
+        onClick={onIconClick}
+        // size="small"
+        // sx={{ ml: 2 }}
+        style={{ color: 'white' }}
+        aria-label="switch theme"
+      >
+        {Icon}
+      </IconButton>
+    </Tooltip>
+  )
+};
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -100,14 +148,14 @@ function ResponsiveAppBar() {
             >
               {pages.map(([pageName, pathnamez]) => (
                 <MenuItem key={pageName} onClick={() => onPageClick(pathnamez)}>
-                    <Link key={pageName} href={pathnamez}>
-                        <Typography style={{
-                            textDecoration: pathnamez.includes(pathname) ? 'underline 4px': '',
-                            fontWeight: pathnamez.includes(pathname) ? 'bolder': '',
-                            textUnderlineOffset: pathnamez.includes(pathname) ? '6px': '',
-                        }} 
-                            textAlign="center">{pageName}</Typography>
-                    </Link>
+                  <Link key={pageName} href={pathnamez}>
+                    <Typography style={{
+                      textDecoration: pathnamez.includes(pathname) ? 'underline 4px' : '',
+                      fontWeight: pathnamez.includes(pathname) ? 'bolder' : '',
+                      textUnderlineOffset: pathnamez.includes(pathname) ? '6px' : '',
+                    }}
+                      textAlign="center">{pageName}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -133,29 +181,31 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map(([pageName, pathnamez]) => (
-                <Link key={pageName} href={pathnamez}>
-              <Button
-                key={pageName}
-                onClick={() => onPageClick(pathnamez)}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-                style={{
+              <Link key={pageName} href={pathnamez}>
+                <Button
+                  key={pageName}
+                  onClick={() => onPageClick(pathnamez)}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  style={{
                     // color: pathnamez === pathname ? '#19B5FE': '',
-                    textDecoration: pathnamez === pathname ? 'underline 4px': '',
-                    fontWeight: pathnamez === pathname ? 'bolder': '',
-                    textUnderlineOffset: pathnamez === pathname ? '6px': '',
-                }}
-              >
-                {pageName}
-              </Button>
+                    textDecoration: pathnamez === pathname ? 'underline 4px' : '',
+                    fontWeight: pathnamez === pathname ? 'bolder' : '',
+                    textUnderlineOffset: pathnamez === pathname ? '6px' : '',
+                  }}
+                >
+                  {pageName}
+                </Button>
               </Link>
             ))}
           </Box>
+
+          <LightModeContainer />
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
-                <Settings/>
+                <Settings />
               </IconButton>
             </Tooltip>
             <Menu

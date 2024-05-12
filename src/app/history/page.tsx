@@ -18,6 +18,7 @@ import HeaderTypography from '@/components/HeaderTypography';
 import { getProgramLangInfo, getToolInfo } from '@/utils/toolsUtil';
 import { WorkHistoryRole } from '@/types/types';
 import { scrollElementIntoView } from '@/utils/domUtils';
+import SectionContainer from '@/components/SectionContainer';
 
 function ToolItem({tool, flipped}) {
 
@@ -120,7 +121,7 @@ export default function WorkHistory(){
             <HeaderTypography variant='h1' className={styles.mainHeading} centerText={true} sizeLevel={2}>Professional Experience</HeaderTypography>
             {
                 workHistoryData.map((workCompany, idx) => (
-                    <section key={idx} className={styles.sectionContainer}>
+                    <SectionContainer key={idx} className={styles.sectionContainer}>
                         <div className={styles.sectionTopHeader}>
                             <Link
                                 href={`${pathname}/${workCompany.urlPath}`}
@@ -146,7 +147,7 @@ export default function WorkHistory(){
                             })
                             return (<WorkHistoryItem2 key={role.name} name={role.name} dates={role.dates} projects={projects} resumeTasks={role.resumeTasks}/>);
                         })}
-                    </section>
+                    </SectionContainer>
                 ))
             }
         </main>

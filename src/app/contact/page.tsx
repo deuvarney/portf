@@ -11,6 +11,8 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions, Grid } from '@mui/material';
 
+import styles from './styles.module.scss';
+
 type ContactCardProps = {
     text: string;
     icon: JSX.Element;
@@ -39,17 +41,17 @@ function ContactCard(props: ContactCardProps) {
                             </Typography>
                         </CardContent>
                     </Link>
-                </CardActionArea>
-                <CardActions>
-                    <Link target="_blank" rel="noopener noreferrer" href={value}>
-                        <Button size="small" color="primary">
-                            {openText}
+                    <CardActions>
+                        <Link target="_blank" rel="noopener noreferrer" href={value}>
+                            <Button size="small" color="primary">
+                                {openText}
+                            </Button>
+                        </Link>
+                        <Button onClick={() => saveToClipboard(copyValue)} size="small" color="primary">
+                            Copy
                         </Button>
-                    </Link>
-                    <Button onClick={() => saveToClipboard(copyValue)} size="small" color="primary">
-                        Copy
-                    </Button>
-                </CardActions>
+                    </CardActions>
+                </CardActionArea>
             </Card>
         </Grid>
     );
@@ -61,7 +63,7 @@ function ContactPage() {
             <Grid container spacing={4} justifyContent={'center'} sx={{ marginTop: 6, marginBottom: 6 }}>
                 <ContactCard
                     text="+1 (123) 456-7890"
-                    icon={<PhoneIcon sx={{ fontSize: 128 }} />}
+                    icon={<PhoneIcon sx={{ fontSize: 128 }} className={`${styles.phone} ${styles.contactCard}`} />}
                     value="tel:11234567890"
                     openText="Call"
                     copyValue="+1 (123) 456-7890"
@@ -69,7 +71,7 @@ function ContactPage() {
 
                 <ContactCard
                     text="Email Deuvarney1@aol.com"
-                    icon={<EmailIcon sx={{ fontSize: 128 }} />}
+                    icon={<EmailIcon sx={{ fontSize: 128 }} className={`${styles.email} ${styles.contactCard}`} />}
                     value="mailto:deuvarney1@aol.com"
                     openText="Email"
                     copyValue="deuvarney1@aol.com"
@@ -77,14 +79,14 @@ function ContactPage() {
 
                 <ContactCard
                     text="Deuvarney @ LinkedIn"
-                    icon={<LinkedInIcon sx={{ fontSize: 128 }} />}
+                    icon={<LinkedInIcon sx={{ fontSize: 128 }} className={`${styles.linkedin} ${styles.contactCard}`} />}
                     value="https://www.linkedin.com/in/deuvarney"
                     openText="Open"
                 />
 
                 <ContactCard
                     text="Deuvarney @ GitHub"
-                    icon={<GitHubIcon sx={{ fontSize: 128 }} />}
+                    icon={<GitHubIcon sx={{ fontSize: 128 }} className={`${styles.github} ${styles.contactCard}`} />}
                     value="https://github.com/deuvarney"
                 />
             </Grid>

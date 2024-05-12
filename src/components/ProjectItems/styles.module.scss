@@ -1,7 +1,9 @@
+@import "../../styles/AppBase";
+
 .cardActionArea {
     &:focus,&:hover{
         .cardMedia {
-            filter: grayscale(0); // TODO: Make this behavior global
+            @include image-filter(&, 0);
         }
     }
 }
@@ -10,8 +12,7 @@
     object-fit: cover;
     object-position: top;
     background: white;
-    filter: grayscale(1);
-    transition: filter 0.3s ease-in-out;
+    @include image-filter(&);
 }
 
 .cardProjectName {
@@ -32,6 +33,12 @@
     height: 20px; /* Height of the fade effect */
     background: linear-gradient(to bottom, rgba(48, 43, 43, 0), rgb(48, 43, 43)); // TODO: Abstract colors to colors file
     mask-image: linear-gradient(to bottom, black 90%, transparent);
+
+    @include appThemeLightWrapper(&){
+        background: linear-gradient(to bottom, rgba(48, 43, 43, 0), rgb(218, 218, 218)); // TODO: Abstract colors to colors file
+        mask-image: linear-gradient(to bottom, white 90%, transparent);
+    }
+
 }
 
 .cardBtnText {

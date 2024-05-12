@@ -12,28 +12,28 @@ import { Email, GitHub, Launch, LinkedIn, Phone, Close } from '@mui/icons-materi
 const actions = [
   { name: 'Call',
     icon: (
-        <Link className={styles.speedDialLink} target="_blank" rel="noopener noreferrer" href={"tel:11234567890"}>
+        <Link className={`${styles.phone} ${styles.speedDialLink}`} target="_blank" rel="noopener noreferrer" href={"tel:11234567890"}>
             <Phone/>
         </Link>
     )
     },
     { name: 'Email',
     icon: (
-        <Link className={styles.speedDialLink} target="_blank" rel="noopener noreferrer" href={"mailto:deuvarney1@aol.com"}>
+        <Link className={`${styles.email} ${styles.speedDialLink}`} target="_blank" rel="noopener noreferrer" href={"mailto:deuvarney1@aol.com"}>
             <Email/>
         </Link>
     )
     },
     { name: 'LinkedIn',
     icon: (
-        <Link className={styles.speedDialLink} target="_blank" rel="noopener noreferrer" href={"https://www.linkedin.com/in/deuvarney"}>
+        <Link className={`${styles.linkedin} ${styles.speedDialLink}`} target="_blank" rel="noopener noreferrer" href={"https://www.linkedin.com/in/deuvarney"}>
             <LinkedIn/>
         </Link>
     )
     },
     { name: 'Github',
     icon: (
-        <Link className={styles.speedDialLink} target="_blank" rel="noopener noreferrer" href={"https://github.com/deuvarney"}>
+        <Link className={`${styles.github} ${styles.speedDialLink}`} target="_blank" rel="noopener noreferrer" href={"https://github.com/deuvarney"}>
             <GitHub />
         </Link>
     )
@@ -61,6 +61,7 @@ export default function CustomSpeedDial() {
                     key={action.name}
                     icon={action.icon}
                     tooltipTitle={action.name}
+                    className={styles.speedDialAction}
                 />
                 ))}
             </SpeedDial>

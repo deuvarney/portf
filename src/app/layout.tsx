@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import AppHeaders from '@/components/AppHeaders'
+import { ThemeProvider } from '@/hooks/ThemeContext';
 
 // import '@fontsource/roboto/300.css';
 // import '@fontsource/roboto/400.css';
@@ -23,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-          <AppHeaders>
-            {children}
-          </AppHeaders>
+        <ThemeProvider>
+            <AppHeaders>
+              {children}
+            </AppHeaders>
+          </ThemeProvider>
         </body>
     </html>
   )

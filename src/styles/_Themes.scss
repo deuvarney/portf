@@ -1,0 +1,21 @@
+$app-theme-light: app-theme-light;
+$app-theme-dark: app-theme-dark;
+$app-theme-twilight: app-theme-twilight;
+
+@mixin appThemeLightWrapper($class-name) {
+    @at-root :global(.#{$app-theme-light}) #{$class-name} {
+        @content;
+    }
+}
+
+@mixin appThemeDarkWrapper($class-name) {
+    @at-root :global(.#{$app-theme-dark}) #{$class-name} {
+        @content;
+    }
+}
+
+@mixin appThemeTwilightWrapper($class-name) {
+    @at-root :global(.#{$app-theme-twilight}) #{$class-name} {
+        @content;
+    }
+}

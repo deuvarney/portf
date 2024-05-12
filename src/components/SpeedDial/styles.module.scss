@@ -1,3 +1,38 @@
+@import "../../styles/AppBase";
+
+.speedDialAction {
+    background-color: $icon-background-color-dark;
+
+    @include appThemeLightWrapper(&) {
+        background-color: $color-light-text;
+    }
+}
+
 .speedDialLink {
     display: flex;
+
+    @include appThemeDarkWrapper(&) {
+        color: $color-default-icon;
+    }
+}
+
+.linkedin {
+    color: $color-linkedin;
+}
+
+.github {
+    color: $color-default-icon;
+
+    @include appThemeLightWrapper(&) {
+        color: $color-github;
+    }
+}
+
+.email {
+    color: $color-email;
+}
+
+
+.phone {
+    color: $color-phone;
 }

@@ -1,7 +1,6 @@
+@import '../../styles/AppBase';
 
 // TODO: Centralize measurements
-$mobile-breakpoint: 480px;
-$tablet-breakpoint: 768px;
 
 
 // TODO: Add this to a central functs file
@@ -46,7 +45,11 @@ $tablet-breakpoint: 768px;
 .groupSection {
     margin: 16px 32px;
     padding: 24px;
-    background-color: #272727;;
+    background-color: $section-background-color-dark2;
+    @include appThemeLightWrapper(&){
+        background-color: $section-background-color-light2;
+    }
+
 
     @media (max-width: $tablet-breakpoint) {
         margin-left: 0;

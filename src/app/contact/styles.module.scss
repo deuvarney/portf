@@ -1,0 +1,28 @@
+@import '../../styles/AppBase';
+
+.contactCard{
+
+    @include appThemeDarkWrapper(&) {
+        color: $color-default-icon;
+    }
+}
+
+.github {
+    color: $color-default-icon;
+
+    @include appThemeLightWrapper(&) {
+        color: $color-github;
+    }
+}
+
+.linkedin {
+    color: $color-linkedin;
+}
+
+.email {
+    color: $color-email;
+}
+
+.phone {
+    color: $color-phone;
+}
