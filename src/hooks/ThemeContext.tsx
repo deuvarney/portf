@@ -1,34 +1,34 @@
 "use client";
-import { createContext, useContext, useState } from 'react';
+import { Themes } from '@/constants/themes';
+import { createContext, useState } from 'react';
+import { setCookie } from 'cookies-next';
 
-export enum Themes {
-    LIGHT = 'light',
-    TWILIGHT = 'twilight',
-    DARK = 'dark',
-}
 
-const LightThemeContext = createContext({ theme: Themes.DARK, toggleTheme: (): void => { } });
+// The following line will be hydrated by Next.js
+export const LightThemeContext = createContext({theme: Themes.DARK, toggleTheme: () => {}});
 
-export const useTheme = () => useContext(LightThemeContext);
+export const ThemeProvider = ({serverTheme, children}) => {
 
-export const  ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = useState(Themes.DARK);
+    const [theme, setTheme] = useState(serverTheme);
 
     const toggleTheme = () => {
+        let updatedTheme;
         switch (theme) {
             case Themes.DARK:
-                setTheme(Themes.LIGHT);
+                updatedTheme = Themes.LIGHT;
                 break;
             case Themes.LIGHT:
-                setTheme(Themes.TWILIGHT);
+                updatedTheme = Themes.TWILIGHT;
                 break;
             case Themes.TWILIGHT:
-                setTheme(Themes.DARK);
+                updatedTheme = Themes.DARK;
                 break;
             default:
-                setTheme(Themes.DARK);
+                updatedTheme = Themes.DARK;
                 break;
         }
+        setTheme(updatedTheme);
+        setCookie('theme', updatedTheme);
     };
 
     const providerValue = { theme, toggleTheme };

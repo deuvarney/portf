@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { cookies } from 'next/headers'
 import './globals.css'
 import AppHeaders from '@/components/AppHeaders'
 import { ThemeProvider } from '@/hooks/ThemeContext';
+import { Themes } from '@/constants/themes'
 
 // import '@fontsource/roboto/300.css';
 // import '@fontsource/roboto/400.css';
@@ -21,14 +23,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const cookieStore = cookies()
+  const theme = cookieStore.get('theme')?.value || Themes.DARK;
+
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider>
+      <body className={`${inter.className}`}>
+        <ThemeProvider serverTheme={theme}>
             <AppHeaders>
               {children}
             </AppHeaders>
-          </ThemeProvider>
+        </ThemeProvider>
         </body>
     </html>
   )

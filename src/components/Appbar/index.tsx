@@ -19,14 +19,15 @@ import { Settings } from '@mui/icons-material';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import TwilightIcon from '@mui/icons-material/WbTwilight';
-import { useTheme, Themes } from '@/hooks/ThemeContext';
+import { LightThemeContext } from '@/hooks/ThemeContext';
+import { Themes } from '@/constants/themes';
 
 const pages = [['Home', '/home'], ['Work History', '/history'], ['Education', '/education'], ['Contact', '/contact'],];
 const settings = ['(Dev) Go Todo Page', '(Dev)Font Size +/-', '(Dev)Light/Dark Mode', '(Dev)Language',];
 
 function LightModeContainer() {
 
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = React.useContext(LightThemeContext);
 
   const onIconClick = () => {
     toggleTheme();
