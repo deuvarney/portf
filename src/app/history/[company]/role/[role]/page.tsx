@@ -114,7 +114,7 @@ function Role({params, searchParams,}) {
                                 //   aria-controls="panel1bh-content"
                                 //   id="panel1bh-header"
                                 >
-                                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                                    <Typography sx={{ width: '100%', flexShrink: 0 }}>
                                         {project.name}
                                     </Typography>
     
@@ -125,7 +125,21 @@ function Role({params, searchParams,}) {
                                     {
                                         !!project.summary && (
                                             <ContainerWithBetterName>
-                                                <p>{project.summary}</p>
+                                                <div className={styles.projectDescContainer}>
+                                                    <div className={styles.projectImgWrapper}>
+                                                        <img 
+                                                            src={project.tileImg} 
+                                                            className={styles.projectImg}
+                                                        >
+                                                        </img>
+                                                        <div className={styles.projectImgOverlay} 
+                                                        ></div>
+                                                    </div>
+                                                    <div className={styles.projectNameContainer}> 
+                                                        <HeaderTypography variant="h3" addBottomMargin={true} className={styles.projectName}>{project.name}</HeaderTypography>
+                                                    </div>
+                                                </div>
+                                                <p className={styles.projectSummary}>{project.summary}</p>  
                                             </ContainerWithBetterName>
                                         )
                                     }
