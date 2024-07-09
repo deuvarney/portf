@@ -1,6 +1,10 @@
 type ProjectLink = {
     title: string;
     link: string;
+    linkText?: string;
+    img?: string;
+    id: number | string;
+    summary: string;
 };
 
 export type WorkHistoryProject = {

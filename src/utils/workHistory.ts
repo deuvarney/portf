@@ -15,8 +15,11 @@ const MDAProject: WorkHistoryProject= {
     ],
     links: [
         {
-            title: 'Read About It',
-            link: 'https://www.primecubeit.com/blog/2020/10/13/new-microstrategy-application-which-mirrors-functionality-from-microstrategy-library'
+            id: 'primmeCuteIt',
+            title: 'See What Others Are Saying',
+            summary: 'See what others are saying about the project in this Prime Cube It blog post.',
+            link: 'https://www.primecubeit.com/blog/2020/10/13/new-microstrategy-application-which-mirrors-functionality-from-microstrategy-library',
+            linkText: 'Read About It',
         }
     ],
     id: 'mda',
@@ -35,10 +38,22 @@ const MAIProject: WorkHistoryProject= {
         'Created & Presented educational content explaining how the underlying technology behind ChatGPT functions within the MicroStrategy AI Authoring platform',
     ],
     links: [
-        // {
-        //     title: 'Read About It',
-        //     link: 'https://www.primecubeit.com/blog/2020/10/13/new-microstrategy-application-which-mirrors-functionality-from-microstrategy-library'
-        // }
+        {
+            id: 'mstrAuthoringAI Dasbhoard',
+            title: 'Try it out',
+            img: '/projectImages/mstrAIProjectTile.jpeg',
+            summary: 'Try out the MicroStrategy AI Authoring platform in the MicroStrategy Library Authoring dashboard for yourself. (Auto Dashboard button in top right of the page)', 
+            link: 'https://demo.microstrategy.com/MicroStrategyLibrary/app/38328E048D427571975C388F7C402AD8/FF81504CEA4C3C51198F2CB1A9062FEE/W396501--K396454/edit',
+            linkText: 'Try out the Demo',
+        },
+        {
+            id: 'mstrAIPost',
+            title: 'Learn More About It',
+            img: '/projectImages/mstrAIProjectTile.jpeg',
+            summary: 'Learn more about this project in the MicroStrategy AI post.', 
+            link: 'https://www.microstrategy.com/enterprise-analytics/ai-chatbot-for-apps',
+            linkText: 'Read About It',
+        },
     ],
     id: 'mai',
 }
@@ -74,9 +89,13 @@ const LibraryWebProject: WorkHistoryProject= {
     tileImg: '/projectImages/libraryWebProjectTile.png',
     links: [
         {
-            title: 'Check It Out',
-            link: 'https://demo.microstrategy.com/MicroStrategyLibrary/app'
-        }
+            id: 'mstrLibrary',
+            title: 'Try it out',
+            img: '/projectImages/libraryWebProjectTile.png',
+            summary: 'Try out the MicroStrategy Library platform dashboard for yourself.', 
+            link: 'https://demo.microstrategy.com/MicroStrategyLibrary/app',
+            linkText: 'Try out the Demo',
+        },
     ],
     id: 'libraryWeb',
 }
@@ -94,9 +113,13 @@ const CollabSvcProject: WorkHistoryProject= {
     tileImg: '/projectImages/collabSvcProjectTile.png',
     links: [
         {
-            title: 'Check It Out',
-            link: 'https://demo.microstrategy.com:3000'
-        }
+            id: 'mstrLibraryCollabSvc',
+            title: 'Try it out',
+            img: '/projectImages/collabSvcProjectTile.png',
+            summary: 'Try out the MicroStrategy Collaboration Service through the MicroStrategy Library platform dashboard for yourself. (Use the Collaboration button in top right of the page)', 
+            link: 'https://demo.microstrategy.com/MicroStrategyLibrary/app/38328E048D427571975C388F7C402AD8/FF81504CEA4C3C51198F2CB1A9062FEE/W396501--K396454',
+            linkText: 'Try out the Demo',
+        },
     ],
     id: 'collabSvc',
 }
@@ -111,10 +134,10 @@ const AOLHelpProject: WorkHistoryProject= {
     ],
     tileImg: '/projectImages/aolHelpProjectTile2.png',
     links: [
-        {
-            title: 'Check It Out',
-            link: 'https://demo.microstrategy.com:3000'
-        }
+        // {
+        //     title: 'Check It Out',
+        //     link: 'https://demo.microstrategy.com:3000'
+        // }
     ],
     id: 'aolHelp',
 }

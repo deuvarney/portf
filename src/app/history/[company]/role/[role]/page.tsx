@@ -16,6 +16,7 @@ import BreadCrumbs from '@/components/Breadcrumbs';
 import styles from './styles.module.scss';
 import { useCallback, useEffect, useMemo, useRef, } from 'react';
 import { scrollElementIntoView } from '@/utils/domUtils';
+import ResourceCard from '@/components/SharedCard';
 
 
 function Role({params, searchParams,}) {
@@ -177,6 +178,35 @@ function Role({params, searchParams,}) {
                                             )
                                         }  
                                     </Grid>
+
+                                    {
+                                        !!project.links?.length && (
+                                            <ContainerWithBetterName>
+                                                <HeaderTypography 
+                                                    variant="h3" 
+                                                    addBottomMargin={true} 
+                                                    className={styles.projectName}>Resources</HeaderTypography>
+                                                <Grid container spacing={2}>
+                                                    {
+                                                        project.links.map(projectLink => (
+                                                            <Grid key={projectLink.id} xs={12} md={6} lg={4}>
+                                                                <ResourceCard 
+                                                                    key={projectLink.id}
+                                                                    name={projectLink.title} 
+                                                                    summary={projectLink.summary} 
+                                                                    projectTileImg={projectLink.img || '/backgrounds/newspaper-background-torn-paper.webp'}
+                                                                    url={projectLink.link}
+                                                                    linkText={projectLink.linkText}
+                                                                />
+                                                            </Grid>
+                                                        ))
+                                                    }
+                                                </Grid>
+                                            </ContainerWithBetterName>
+                                        )
+                                    }
+                                    
+                                    
                                     </>
                                 
                                 </AccordionDetails>
