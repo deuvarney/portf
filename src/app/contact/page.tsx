@@ -70,11 +70,11 @@ function ContactPage() {
                 />
 
                 <ContactCard
-                    text="Email Deuvarney1@aol.com"
+                    text="Email Deuvarneysanderson@gmail.com"
                     icon={<EmailIcon sx={{ fontSize: 128 }} className={`${styles.email} ${styles.contactCard}`} />}
-                    value="mailto:deuvarney1@aol.com"
+                    value="mailto:deuvarneysanderson@gmail.com"
                     openText="Email"
-                    copyValue="deuvarney1@aol.com"
+                    copyValue="deuvarneysanderson@gmail.com"
                 />
 
                 <ContactCard

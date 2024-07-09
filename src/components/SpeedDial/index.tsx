@@ -19,7 +19,7 @@ const actions = [
     },
     { name: 'Email',
     icon: (
-        <Link className={`${styles.email} ${styles.speedDialLink}`} target="_blank" rel="noopener noreferrer" href={"mailto:deuvarney1@aol.com"}>
+        <Link className={`${styles.email} ${styles.speedDialLink}`} target="_blank" rel="noopener noreferrer" href={"mailto:deuvarneysanderson@gmail.com"}>
             <Email/>
         </Link>
     )
