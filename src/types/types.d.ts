@@ -7,13 +7,16 @@ type ProjectLink = {
     summary: string;
 };
 
+export type WorkHistoryProjectEnhancedContributions = {title: string, summary: string}[]
+
 export type WorkHistoryProject = {
     name: string;
     summary: string;
     tools: string[];
     languages: string[];
     tileImg: string;
-    contributions: string[];
+    detailedContributions?: WorkHistoryProjectEnhancedContributions;
+    contributions?: string[];
     links?: ProjectLink[];
     id: string;
 };
