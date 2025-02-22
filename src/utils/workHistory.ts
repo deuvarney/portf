@@ -61,11 +61,30 @@ const MAIProject: WorkHistoryProject= {
 const PendoProject: WorkHistoryProject= {
     name: "PendoIO Integration",
     summary: "Pendo.IO is a digital adoption platform focused on improving user experience within software applications. It equips software companies with tools to guide users through their product, gather feedback, and understand user behavior.",
-    tools: ['Jenkins', 'Tomcat'],
-    languages: ['Ruby', 'JavaScript', 'Java'],
+    tools: ['Jenkins', 'Tomcat', 'Springboot', 'ESLint', 'Pendo Debugger', 'Pendo Scripts', 'Pendo Campaigns'],
+    languages: ['AST', 'JavaScript', 'Java'],
     tileImg: '/projectImages/pendoProjectTile2.webp',
-    contributions: [
-        'Established and implemented best practices for analytics development',
+    detailedContributions: [
+        {
+            title: 'Analytics Development Excellence Framework',
+            summary: 'Designed and established comprehensive best practices for analytics development across the organization, creating a structured approach that significantly improved data quality, consistency, and actionability. This framework enabled teams to make more informed, data-driven decisions while reducing implementation inconsistencies and technical debt.',
+        },
+        {
+            title: 'Cross-Functional Pendo Integration Leadership',
+            summary: 'Orchestrated cross-departmental collaboration between Design, Product, Cloud, Security, Legal, Marketing, and Pendo Account Management teams to successfully integrate Pendo analytics into the core product stack. This coordination ensured that diverse stakeholder requirements were addressed while maintaining technical integrity, resulting in a unified analytics solution that served multiple organizational needs.'
+        },
+        {
+            title: 'Enterprise-Wide Pendo Implementation Standards',
+            summary: 'Developed and implemented standardized guidelines for Pendo implementation across all organizational teams, creating a consistent foundation for analytics integration in future features, initiatives, and marketing campaigns. These standards streamlined development workflows, reduced onboarding time for new team members, and ensured uniform data collection methodologies across the product ecosystem.'
+        },
+        {
+            title: 'Automated Pendo Development Quality Assurance',
+            summary: 'Engineered custom ESLint plugins and internal Node.js modules specifically designed to enforce Pendo development best practices, automating quality control processes for analytics implementations. This technical solution prevented common implementation errors, enforced coding standards, and significantly reduced the need for manual code reviews related to analytics integrations.'
+        },
+        {
+            title: 'Pendo Analytics CI/CD Pipeline Architecture',
+            summary: 'Architected and implemented a sophisticated CI/CD pipeline specifically optimized for Pendo analytics integration and testing across multiple interconnected projects with complex upstream and downstream dependencies. This pipeline accelerated deployment cycles, improved testing coverage, and ensured analytics functionality remained consistent across all product updates and releases.'
+        },
     ],
     links: [
         // {
@@ -84,7 +103,6 @@ const LibraryWebProject: WorkHistoryProject= {
     contributions: [
         'Architected and Implemented Automated Pipelines for Deployment and Testing',
         'Established 508 compliance guidelines',
-        '',
     ],
     tileImg: '/projectImages/libraryWebProjectTile.png',
     links: [
@@ -194,8 +212,23 @@ export const workHistoryData: WorkHistoryItem[] = [
     },
     roles: [
         {
+            name: "Principal Software Engineer",
+            dates: "December 2022 - Current",
+            urlPath: "pse",
+            summary: "Led creation of architectural documents for global teams, enabling simultaneous service modifications. Developed scalable desktop apps with Electron. Mentored junior engineers and facilitated feature design discussions for efficient implementation.",
+            projects:[
+                PendoProject,
+            ],
+            resumeTasks: [
+                "Architect Engineering documents and lead for multiple teams to reference when implementing new features in order to effectively modify a Service simultaneously across multiple teams around the world.",
+                "Building highly scalable and efficient desktop applications utilizing Electron",
+                "Mentoring associate/junior level engineers",
+                "Create, review and conduct discussions for feature design documents in order to provide insight for an efficient and scalable implementation.",
+            ],
+        },
+        {
             name: "Senior Software Engineer",
-            dates: "October 2019 - Current",
+            dates: "October 2019 - December 2022",
             urlPath: "sse",
             summary: "Led creation of architectural documents for global teams, enabling simultaneous service modifications. Developed scalable desktop apps with Electron. Mentored junior engineers and facilitated feature design discussions for efficient implementation.",
             projects:[

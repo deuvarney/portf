@@ -11,11 +11,12 @@ import styles from './styles.module.scss';
 
 type DescAndResponsibilitiesProps = {
   summary?: string;
-  resumeTasks: Array<{ name: string; date: string; url: string } | string>;
+  resumeTasks?: Array<{ name: string; date: string; url: string } | string>;
   listHeader?: string;
-  listHeaderVariant?: 'h1'|'h2'|'h3'|'h4'|'h5'|'h6';
-  listHeaderSizeLevel?: 1|2|3|4|5|6|7|8;
-};
+  listHeaderVariant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  listHeaderSizeLevel?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+  children?: React.ReactNode;
+}
 
 function DescAndResponsibilities(props: DescAndResponsibilitiesProps) {
   const { summary, resumeTasks = [], listHeader = 'Role Responsibilities', listHeaderVariant = 'h4', listHeaderSizeLevel = 4 } = props;
@@ -28,6 +29,15 @@ function DescAndResponsibilities(props: DescAndResponsibilitiesProps) {
             Role Description
           </HeaderTypography>
           <Typography variant="body2">{summary}</Typography>
+        </ContainerWithBetterName>
+      )}
+
+      { !!props.children && (
+        <ContainerWithBetterName key="children">
+          <HeaderTypography variant={listHeaderVariant} sizeLevel={listHeaderSizeLevel}>
+            {listHeader}
+          </HeaderTypography>
+          {props.children}
         </ContainerWithBetterName>
       )}
 
