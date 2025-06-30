@@ -30,6 +30,7 @@
     width: auto;
     height: auto;
     border-radius: 12px;
+    margin: auto;
     @include image-filter(&);
 }
 
