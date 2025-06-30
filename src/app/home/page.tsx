@@ -10,64 +10,70 @@ import CustomSpeedDial from '@/components/SpeedDial';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import { FlipWords } from '@/components/ui/flip-words';
 import { shuffleArray } from '@/utils/dataStrucUtils';
+import { CardBody, CardContainer } from '@/components/ui/3d-card-efffect';
 
 const attributes = [
-  "Innovative", "Analytical", "Methodical", "Versatile", "Efficient",
-  "Scalable", "Robust", "Optimized", "Strategic", "Creative",
-  "Logical", "Adaptable", "Resourceful", "Intuitive", "Persistent",
-  "Thorough", "Collaborative", "Meticulous", "Proactive", "Reliable",
-  "Dedicated", "Focused", "Agile", "Disciplined", "Driven"
+    "Innovative", "Analytical", "Methodical", "Versatile", "Efficient",
+    "Scalable", "Robust", "Optimized", "Strategic", "Creative",
+    "Logical", "Adaptable", "Resourceful", "Intuitive", "Persistent",
+    "Thorough", "Collaborative", "Meticulous", "Proactive", "Reliable",
+    "Dedicated", "Focused", "Agile", "Disciplined", "Driven"
 ];
 
 let dotsCount = 1;
 function addTexToEveryNth(words: string[], name = "Deuvarney", count = 0) {
-  const result: string[] = [name];
-  
-  for (let i = 0; i < words.length; i++) {
-    result.push(words[i]);
+    const result: string[] = [name];
 
-    // Check if current position is a multiple of count (every nth item)
-    if ((i + 1) % count === 0) {
-        const val = name+ ".".repeat(dotsCount)
-      result.push(val);
-      dotsCount += 1;
+    for (let i = 0; i < words.length; i++) {
+        result.push(words[i]);
+
+        // Check if current position is a multiple of count (every nth item)
+        if ((i + 1) % count === 0) {
+            const val = name + ".".repeat(dotsCount)
+            result.push(val);
+            dotsCount += 1;
+        }
     }
-  }
-  
-  return result;
+
+    return result;
 }
 
 
-export default function Home(){
+export default function Home() {
     const flippedwords = addTexToEveryNth(shuffleArray(attributes), 'Deuvarney', 5);
 
     return (
         <>
-            <BackgroundBeams/>           
+            <BackgroundBeams />
             <div className={styles.mainContent}>
                 <Grid container>
-                    <Grid xs={12} md={8} 
-                        className={styles.introCont} 
+                    <Grid xs={12} md={8}
+                        className={styles.introCont}
                     >
                         <HeaderTypography variant="h1" sizeLevel={2}>
-                            Hi There, I am <wbr/><FlipWords words={flippedwords}/>
+                            Hi There, I am <wbr /><FlipWords words={flippedwords} />
                         </HeaderTypography>
                         <p className={styles.aboutMe}>I am a results-driven developer with a focus on Building Tomorrow&apos;s Solutions, Today.</p>
                     </Grid>
-                    <Grid xs={12} md={4} 
-                        className={styles.avatarImgCont} 
+                    <Grid xs={12} md={4}
+                        className={styles.avatarImgCont}
                     >
-                        <Image 
-                            className={styles.avatarImg}
-                            alt="Deuvarney's Avatar Profile Picture" 
-                            src="/avatarPic1.jpeg" 
-                            width={512} 
-                            height={512}
-                        />
-                    </Grid>            
+                        <CardContainer rotationStrength={10}>
+                            <CardBody>
+                                <Image
+                                    className={styles.avatarImg}
+                                    alt="Deuvarney's Avatar Profile Picture"
+                                    src="/avatarPic1.jpeg"
+                                    width={512}
+                                    height={512}
+                                />
+                            </CardBody>
+                        </CardContainer>
+
+                    </Grid>
                 </Grid>
                 <div className={styles.speedDialCont}>
-                    <CustomSpeedDial/>
+                    <CustomSpeedDial />
                 </div>
             </div>
         </>
@@ -75,6 +81,6 @@ export default function Home(){
 }
 
 export const metadata: Metadata = {
-  title: 'Home',
-  description: 'Homepage for Deuvarney\'s portfolio.',
+    title: 'Home',
+    description: 'Homepage for Deuvarney\'s portfolio.',
 }
