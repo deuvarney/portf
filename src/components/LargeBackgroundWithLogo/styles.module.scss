@@ -11,6 +11,7 @@ $mobile-breakpoint: 480px;
     min-height: 80vh;
     position: relative;
     @include image-filter(&);
+    @include opaqueToVisibile();
 }
 
 .locationLogoContainer {
@@ -36,6 +37,8 @@ $mobile-breakpoint: 480px;
         // width: 100%;
         
     }
+
+    @include opaqueToVisibile(.2s)
 }
 
 .locationBackgroundImgContent {

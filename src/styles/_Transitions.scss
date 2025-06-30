@@ -1,0 +1,28 @@
+@mixin opaqueToVisibile($delay: 0s){
+    opacity: 1;
+    transition: opacity .5s $delay;
+
+    @starting-style{
+        opacity: 0;
+    }
+}
+
+@mixin translateUp(){
+    translate: none;
+    transition: translate .8s;
+
+    @starting-style{
+        translate: 0 2rem;
+    }
+}
+
+@mixin opaqueAndTranslateUp(){
+    opacity: 1;
+    translate: none;
+    transition: opacity .5s, translate .8s;
+
+    @starting-style{
+        opacity: 0;
+        translate: 0 2rem;
+    }
+}

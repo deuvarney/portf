@@ -25,6 +25,8 @@
         padding-left: 0;
         padding-right: 0;
     }
+
+    @include opaqueAndTranslateUp();
 }
 
 .containerGetBetterName {
@@ -35,6 +37,8 @@
     @include appThemeLightWrapper(&){
         background-color: $section-background-color-light1;
     }
+
+    @include opaqueAndTranslateUp();
 }
 
 
