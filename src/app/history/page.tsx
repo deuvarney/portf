@@ -1,4 +1,4 @@
-'use client'
+import type { Metadata } from 'next'
 
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import { ArrowForwardIos, CalendarMonthOutlined, } from "@mui/icons-material";
@@ -12,13 +12,15 @@ import { Accordion, AccordionDetails, AccordionSummary, Chip, Divider, List, Lis
 import Image from "next/image";
 import DescAndResponsibilites from '@/components/DescAndResponsibilities';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+
 import ProjectItems from '@/components/ProjectItems';
 import HeaderTypography from '@/components/HeaderTypography';
 import { getProgramLangInfo, getToolInfo } from '@/utils/toolsUtil';
 import { WorkHistoryRole } from '@/types/types';
 import { scrollElementIntoView } from '@/utils/domUtils';
 import SectionContainer from '@/components/SectionContainer';
+import { FadeInImage } from '@/components/FadeInImg';
+import WorkHistoryItem from './WorkHistoryItem';
 
 function ToolItem({tool, flipped}) {
 
@@ -70,51 +72,8 @@ function LanguageChip({language}: {language: string;}) {
 }
 
 
-function WorkHistoryItem2(props: WorkHistoryRole){
-    const {name, summary, dates, projects = [], resumeTasks = []} = props;
-    const resumeTasksTrimmed = resumeTasks.slice(0, 3);
-
-    const onAccordionOpenChange = useCallback((event: React.SyntheticEvent, isExpanded: boolean) => {
-        if(isExpanded) {
-            event.currentTarget && scrollElementIntoView(event.currentTarget);
-        }
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-    return (
-        <Accordion 
-            onChange={onAccordionOpenChange}
-            // expanded={true} //dev
-        >
-            <AccordionSummary
-                style={{alignItems: 'center'}}
-                expandIcon={<ExpandMoreIcon />}
-            //   aria-controls="panel1bh-content"
-            //   id="panel1bh-header"
-            >
-            <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                {name}
-            </Typography>
-            <Typography sx={{ color: 'text.secondary' }} display={'flex'}><span className={styles.roleDate}><CalendarMonthOutlined className={styles.roleCalendar}/> {dates}</span></Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-                <Divider className={styles.roleDetailsDivider} />
-                
-                <DescAndResponsibilites
-                    summary={summary}
-                    resumeTasks={resumeTasksTrimmed}
-                />
-                
-                <ProjectItems projects={projects} />
-            
-            </AccordionDetails>
-        </Accordion>
-   
-    );
-}
-
-
 export default function WorkHistory(){
-    const pathname = usePathname();
+    // const pathname = usePathname();
     return (
     <>
         <main className={styles.main}>
@@ -124,10 +83,10 @@ export default function WorkHistory(){
                     <SectionContainer key={idx} className={styles.sectionContainer}>
                         <div className={styles.sectionTopHeader}>
                             <Link
-                                href={`${pathname}/${workCompany.urlPath}`}
+                                href={`history/${workCompany.urlPath}`}
                                 className={styles.workHistoryLink}
                             >
-                                <Image 
+                                <FadeInImage 
                                     className={styles.companyLogo}
                                     src={workCompany.logo}
                                     alt={`${workCompany.name} Logo`}
@@ -142,10 +101,10 @@ export default function WorkHistory(){
                             const projects = role.projects.map(project => {
                                 return {
                                     ...project,
-                                    url: `${pathname}/${workCompany.urlPath}/role/${role.urlPath}?projectId=${project.id}`,
+                                    url: `history/${workCompany.urlPath}/role/${role.urlPath}?projectId=${project.id}`,
                                 }
                             })
-                            return (<WorkHistoryItem2 key={role.name} name={role.name} dates={role.dates} projects={projects} resumeTasks={role.resumeTasks}/>);
+                            return (<WorkHistoryItem key={role.name} name={role.name} dates={role.dates} projects={projects} resumeTasks={role.resumeTasks}/>);
                         })}
                     </SectionContainer>
                 ))
@@ -153,4 +112,9 @@ export default function WorkHistory(){
         </main>
     </>
     );
+}
+
+export const metadata: Metadata = {
+  title: 'Work History',
+  description: 'The tremendous tales of Deuvarney\'s work history.',
 }

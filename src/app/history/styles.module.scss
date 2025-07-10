@@ -33,7 +33,8 @@
 .companyLogo {
     margin-right: 36px;
     box-shadow: 1px 1px 10px darkgrey;
-    @include image-filter(&);
+    aspect-ratio: 16/11;
+    @include image-filter(&, 1, ('opacity .5s ease-in-out'));
 
     @media (max-width: $tablet-breakpoint) {
         width: 90px;

@@ -1,6 +1,20 @@
 @import "Themes.scss";
 
-@mixin image-filter($class-name,$gray-scale: 1) {
+// @mixin image-filter($class-name,$gray-scale: 1) {
+//     @at-root :global(.#{$app-theme-dark}) #{$class-name} {
+//         filter: grayscale($gray-scale);
+
+//         &:hover, &:focus {
+//             filter: grayscale(0);
+//         }
+//     }
+
+//     transition: filter 0.3s ease-in;
+
+// }
+
+
+@mixin image-filter($class-name, $gray-scale: 1, $additional-properties: ()) {
     @at-root :global(.#{$app-theme-dark}) #{$class-name} {
         filter: grayscale($gray-scale);
 
@@ -9,6 +23,18 @@
         }
     }
 
-    transition: filter 0.3s ease-in;
-
+    // Build transition from list of properties
+    $base-transition: filter 0.3s ease-in;
+    
+    @if length($additional-properties) > 0 {
+        $all-transitions: ($base-transition,);
+        
+        @each $property in $additional-properties {
+            $all-transitions: append($all-transitions, $property, comma);
+        }
+        
+        transition: $all-transitions;
+    } @else {
+        transition: $base-transition;
+    }
 }

@@ -31,7 +31,7 @@
     height: auto;
     border-radius: 12px;
     margin: auto;
-    @include image-filter(&);
+    @include image-filter(&, 1, ('opacity .5s ease-in-out'));
 }
 
 .avatarImgCont {

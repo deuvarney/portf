@@ -1,5 +1,4 @@
-'use client'
-
+import type { Metadata } from 'next'
 import { schoolHistory } from '@/utils/workHistory';
 import Typography from '@mui/material/Typography';
 import styles from  './styles.module.scss';
@@ -81,3 +80,7 @@ function Education(){
 }
 
 export default Education;
+export const metadata: Metadata = {
+  title: 'Education',
+  description: 'Education information for Deuvarney.',
+}

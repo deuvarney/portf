@@ -1,3 +1,5 @@
+'use client'
+
 import { useMediaQuery, Typography } from "@mui/material";
 import HorizontalStepper from "../HorizontalStepper";
 import BasicTimeline from "../Timeline";

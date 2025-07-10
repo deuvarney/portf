@@ -11,6 +11,7 @@ import { BackgroundBeams } from '@/components/ui/background-beams';
 import { FlipWords } from '@/components/ui/flip-words';
 import { shuffleArray } from '@/utils/dataStrucUtils';
 import { CardBody, CardContainer } from '@/components/ui/3d-card-efffect';
+import { FadeInImage } from '@/components/FadeInImg';
 
 const attributes = [
     "Innovative", "Analytical", "Methodical", "Versatile", "Efficient",
@@ -60,7 +61,7 @@ export default function Home() {
                     >
                         <CardContainer rotationStrength={10}>
                             <CardBody>
-                                <Image
+                                <FadeInImage
                                     className={styles.avatarImg}
                                     alt="Deuvarney's Avatar Profile Picture"
                                     src="/avatarPic1.jpeg"

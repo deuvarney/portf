@@ -1,5 +1,3 @@
-'use client'
-
 import SchoolAwards from "@/components/Awards";
 import BreadCrumbs from "@/components/Breadcrumbs";
 import DescAndResponsibilites from "@/components/DescAndResponsibilities";
@@ -9,20 +7,20 @@ import { ContainerWithBetterName, MainContentContainerWithBetterName } from "@/c
 import { workHistoryData } from "@/utils/workHistory";
 import { Typography } from "@mui/material";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Metadata } from "next/types";
 
 
 
 function Company({params, searchParams}) {
+    console.log('params', params, searchParams)
     const company = workHistoryData.find(comp => comp.urlPath === params.company);
-    const pathname = usePathname();
 
     if(company){
         const {images, awards} = company;
 
         const items = company.roles.map(role => {
             return {
-                url: `${pathname}/role/${role.urlPath}`,
+                url: `/history/${params.company}/role/${role.urlPath}`,
                 name: role.name,
                 date: role.dates,
             }
@@ -85,3 +83,17 @@ function Company({params, searchParams}) {
 }
 
 export default Company;
+
+export async function generateMetadata({ params }): Promise<Metadata> {
+const company = workHistoryData.find((comp) => comp.urlPath === params.company);
+  if (company) {
+    return {
+      title: `${company.name} - Work History`,
+      description: company.summary,
+    };
+  }
+  return {
+    title: 'Work History Company',
+    description: 'Work history company information for Deuvarney\'s portfolio.',
+  };
+}
