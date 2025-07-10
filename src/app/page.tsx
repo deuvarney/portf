@@ -1,7 +1,16 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import { redirect, RedirectType } from 'next/navigation'
+
 
  function Home() {
+
+ // if the environment is in production, force redirect to the home page
+  if (process.env.NODE_ENV === 'production') {
+    redirect('/home', RedirectType.replace)
+  }
+  
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
