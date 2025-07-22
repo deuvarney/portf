@@ -1,23 +1,18 @@
 import type { Metadata } from 'next'
 
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
-import { ArrowForwardIos, CalendarMonthOutlined, } from "@mui/icons-material";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import React, { useCallback } from 'react';
+import { ArrowForwardIos } from "@mui/icons-material";
+import React from 'react';
 
 import styles from './styles.module.scss';
 
 import {workHistoryData} from '../../utils/workHistory';
-import { Accordion, AccordionDetails, AccordionSummary, Chip, Divider, List, ListItem, ListItemText, Typography } from "@mui/material";
+import { Chip } from "@mui/material";
 import Image from "next/image";
-import DescAndResponsibilites from '@/components/DescAndResponsibilities';
 import Link from 'next/link';
 
-import ProjectItems from '@/components/ProjectItems';
 import HeaderTypography from '@/components/HeaderTypography';
 import { getProgramLangInfo, getToolInfo } from '@/utils/toolsUtil';
-import { WorkHistoryRole } from '@/types/types';
-import { scrollElementIntoView } from '@/utils/domUtils';
 import SectionContainer from '@/components/SectionContainer';
 import { FadeInImage } from '@/components/FadeInImg';
 import WorkHistoryItem from './WorkHistoryItem';
@@ -72,10 +67,9 @@ function LanguageChip({language}: {language: string;}) {
 }
 
 
-export default function WorkHistory(){
-    // const pathname = usePathname();
+export default async function WorkHistory(){
+
     return (
-    <>
         <main className={styles.main}>
             <HeaderTypography variant='h1' className={styles.mainHeading} centerText={true} sizeLevel={2}>Professional Experience</HeaderTypography>
             {
@@ -110,7 +104,6 @@ export default function WorkHistory(){
                 ))
             }
         </main>
-    </>
     );
 }
 
