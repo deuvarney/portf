@@ -1,0 +1,262 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient backgrounds -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.05"/>
+    </linearGradient>
+    
+    <linearGradient id="phoneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:0.6"/>
+    </linearGradient>
+    
+    <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8edea;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#fed6e3;stop-opacity:0.5"/>
+    </linearGradient>
+    
+    <linearGradient id="signalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)"/>
+  
+  <!-- Floating phone signal symbols -->
+  <g opacity="0.3">
+    <text x="100" y="150" font-family="Arial, sans-serif" font-size="32" fill="#667eea">📞</text>
+    <text x="300" y="300" font-family="Arial, sans-serif" font-size="28" fill="#764ba2">📱</text>
+    <text x="800" y="200" font-family="Arial, sans-serif" font-size="30" fill="#4facfe">📞</text>
+    <text x="1000" y="400" font-family="Arial, sans-serif" font-size="34" fill="#00f2fe">📱</text>
+    <text x="200" y="600" font-family="Arial, sans-serif" font-size="26" fill="#a8edea">📞</text>
+    <text x="900" y="650" font-family="Arial, sans-serif" font-size="29" fill="#fed6e3">📱</text>
+    <text x="450" y="120" font-family="Arial, sans-serif" font-size="31" fill="#667eea">📞</text>
+    <text x="650" y="450" font-family="Arial, sans-serif" font-size="27" fill="#764ba2">📱</text>
+    <text x="50" y="400" font-family="Arial, sans-serif" font-size="33" fill="#4facfe">📞</text>
+    <text x="1100" y="150" font-family="Arial, sans-serif" font-size="30" fill="#00f2fe">📱</text>
+    
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="0,0; 0,-15; 0,0"
+      dur="5s"
+      repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Mobile Phone 1 -->
+  <g transform="translate(150,250)">
+    <rect width="45" height="80" rx="8" fill="url(#phoneGradient)" stroke="#4facfe" stroke-width="2"/>
+    <rect x="5" y="15" width="35" height="50" rx="3" fill="#fff" opacity="0.9"/>
+    <circle cx="22.5" cy="72" r="4" fill="#4facfe"/>
+    <rect x="15" y="8" width="15" height="2" rx="1" fill="#4facfe"/>
+    
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="150,250; 150,235; 150,250"
+      dur="6s"
+      repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Mobile Phone 2 -->
+  <g transform="translate(500,400)">
+    <rect width="40" height="70" rx="7" fill="url(#phoneGradient)" stroke="#00f2fe" stroke-width="2"/>
+    <rect x="4" y="12" width="32" height="46" rx="2" fill="#fff" opacity="0.9"/>
+    <circle cx="20" cy="63" r="3" fill="#00f2fe"/>
+    <rect x="13" y="7" width="14" height="2" rx="1" fill="#00f2fe"/>
+    
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="500,400; 500,385; 500,400"
+      dur="8s"
+      repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Mobile Phone 3 -->
+  <g transform="translate(800,500)">
+    <rect width="48" height="85" rx="9" fill="url(#phoneGradient)" stroke="#a8edea" stroke-width="2"/>
+    <rect x="5" y="16" width="38" height="53" rx="3" fill="#fff" opacity="0.9"/>
+    <circle cx="24" cy="76" r="4" fill="#a8edea"/>
+    <rect x="16" y="9" width="16" height="2" rx="1" fill="#a8edea"/>
+    
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="800,500; 800,488; 800,500"
+      dur="5s"
+      repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Landline Phone 1 -->
+  <g transform="translate(350,150)">
+    <rect width="55" height="35" rx="4" fill="url(#phoneGradient)" stroke="#fed6e3" stroke-width="2"/>
+    <rect x="8" y="8" width="39" height="19" rx="2" fill="#fff" opacity="0.8"/>
+    <circle cx="12" cy="12" r="1.5" fill="#fed6e3"/>
+    <circle cx="17" cy="12" r="1.5" fill="#fed6e3"/>
+    <circle cx="22" cy="12" r="1.5" fill="#fed6e3"/>
+    <circle cx="12" cy="17" r="1.5" fill="#fed6e3"/>
+    <circle cx="17" cy="17" r="1.5" fill="#fed6e3"/>
+    <circle cx="22" cy="17" r="1.5" fill="#fed6e3"/>
+    <path d="M 45,20 Q 52,15 58,25" stroke="#fed6e3" stroke-width="2" fill="none"/>
+    
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="350,150; 350,138; 350,150"
+      dur="7s"
+      repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Landline Phone 2 -->
+  <g transform="translate(950,350)">
+    <rect width="52" height="32" rx="4" fill="url(#phoneGradient)" stroke="#667eea" stroke-width="2"/>
+    <rect x="7" y="7" width="38" height="18" rx="2" fill="#fff" opacity="0.8"/>
+    <circle cx="11" cy="11" r="1.5" fill="#667eea"/>
+    <circle cx="16" cy="11" r="1.5" fill="#667eea"/>
+    <circle cx="21" cy="11" r="1.5" fill="#667eea"/>
+    <circle cx="11" cy="16" r="1.5" fill="#667eea"/>
+    <circle cx="16" cy="16" r="1.5" fill="#667eea"/>
+    <circle cx="21" cy="16" r="1.5" fill="#667eea"/>
+    <path d="M 42,18 Q 48,14 54,22" stroke="#667eea" stroke-width="2" fill="none"/>
+    
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="950,350; 950,335; 950,350"
+      dur="9s"
+      repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Headphones -->
+  <g transform="translate(100,550)">
+    <path d="M 15,0 Q 32.5,0 50,0" stroke="#764ba2" stroke-width="4" fill="none"/>
+    <circle cx="15" cy="0" r="8" fill="url(#phoneGradient)" stroke="#764ba2" stroke-width="2"/>
+    <circle cx="50" cy="0" r="8" fill="url(#phoneGradient)" stroke="#764ba2" stroke-width="2"/>
+    
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="100,550; 100,538; 100,550"
+      dur="6.5s"
+      repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Sound Waves 1 -->
+  <g transform="translate(250,180)" opacity="0.6">
+    <path d="M 0,0 Q 15,-10 30,0 Q 45,10 60,0" stroke="#4facfe" stroke-width="2" fill="none">
+      <animate attributeName="d" values="M 0,0 Q 15,-10 30,0 Q 45,10 60,0;M 0,0 Q 15,10 30,0 Q 45,-10 60,0;M 0,0 Q 15,-10 30,0 Q 45,10 60,0" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 0,8 Q 15,-2 30,8 Q 45,18 60,8" stroke="#00f2fe" stroke-width="1.5" fill="none">
+      <animate attributeName="d" values="M 0,8 Q 15,-2 30,8 Q 45,18 60,8;M 0,8 Q 15,18 30,8 Q 45,-2 60,8;M 0,8 Q 15,-2 30,8 Q 45,18 60,8" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 0,-8 Q 15,-18 30,-8 Q 45,2 60,-8" stroke="#a8edea" stroke-width="1.5" fill="none">
+      <animate attributeName="d" values="M 0,-8 Q 15,-18 30,-8 Q 45,2 60,-8;M 0,-8 Q 15,2 30,-8 Q 45,-18 60,-8;M 0,-8 Q 15,-18 30,-8 Q 45,2 60,-8" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Sound Waves 2 -->
+  <g transform="translate(600,350)" opacity="0.6">
+    <path d="M 0,0 Q 12,-8 24,0 Q 36,8 48,0" stroke="#fed6e3" stroke-width="2" fill="none">
+      <animate attributeName="d" values="M 0,0 Q 12,-8 24,0 Q 36,8 48,0;M 0,0 Q 12,8 24,0 Q 36,-8 48,0;M 0,0 Q 12,-8 24,0 Q 36,8 48,0" dur="2.8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 0,6 Q 12,-2 24,6 Q 36,14 48,6" stroke="#667eea" stroke-width="1.5" fill="none">
+      <animate attributeName="d" values="M 0,6 Q 12,-2 24,6 Q 36,14 48,6;M 0,6 Q 12,14 24,6 Q 36,-2 48,6;M 0,6 Q 12,-2 24,6 Q 36,14 48,6" dur="3.2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Signal Bars 1 -->
+  <g transform="translate(400,250)" opacity="0.7">
+    <rect x="0" y="20" width="8" height="10" fill="#4facfe">
+      <animate attributeName="height" values="10;25;10" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="20;5;20" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="12" y="15" width="8" height="15" fill="#00f2fe">
+      <animate attributeName="height" values="15;30;15" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="15;0;15" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="24" y="10" width="8" height="20" fill="#a8edea">
+      <animate attributeName="height" values="20;35;20" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="10;-5;10" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="36" y="5" width="8" height="25" fill="#fed6e3">
+      <animate attributeName="height" values="25;40;25" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="5;-10;5" dur="2.2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Signal Bars 2 -->
+  <g transform="translate(750,480)" opacity="0.7">
+    <rect x="0" y="18" width="6" height="8" fill="#667eea">
+      <animate attributeName="height" values="8;20;8" dur="2.3s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="18;6;18" dur="2.3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="10" y="14" width="6" height="12" fill="#764ba2">
+      <animate attributeName="height" values="12;24;12" dur="2.8s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="14;2;14" dur="2.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="20" y="10" width="6" height="16" fill="#4facfe">
+      <animate attributeName="height" values="16;28;16" dur="3.1s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="10;-2;10" dur="3.1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Call Bubbles -->
+  <g opacity="0.4">
+    <circle cx="200" cy="400" r="15" fill="#4facfe">
+      <animate attributeName="r" values="15;25;15" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <ellipse cx="210" cy="420" rx="4" ry="3" fill="#4facfe">
+      <animate attributeName="rx" values="4;8;4" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="3;6;3" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <circle cx="850" cy="250" r="12" fill="#00f2fe">
+      <animate attributeName="r" values="12;20;12" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <ellipse cx="858" cy="268" rx="3" ry="2" fill="#00f2fe">
+      <animate attributeName="rx" values="3;6;3" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="2;4;2" dur="5s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <circle cx="550" cy="600" r="18" fill="#a8edea">
+      <animate attributeName="r" values="18;28;18" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <ellipse cx="562" cy="622" rx="5" ry="4" fill="#a8edea">
+      <animate attributeName="rx" values="5;9;5" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="4;7;4" dur="6s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  
+  <!-- Connection lines -->
+  <g opacity="0.2">
+    <line x1="195" y1="280" x2="530" y2="430" stroke="#667eea" stroke-width="2" stroke-dasharray="8,8">
+      <animate attributeName="stroke-dashoffset" values="0;16" dur="3s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="530" y1="430" x2="830" y2="530" stroke="#764ba2" stroke-width="2" stroke-dasharray="6,6">
+      <animate attributeName="stroke-dashoffset" values="0;12" dur="4s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="370" y1="185" x2="980" y2="385" stroke="#4facfe" stroke-width="1.5" stroke-dasharray="10,10">
+      <animate attributeName="stroke-dashoffset" values="0;20" dur="2.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Signal transmission paths -->
+  <g opacity="0.3">
+    <path d="M 100,100 Q 300,80 500,120 Q 700,160 900,140" stroke="#fed6e3" stroke-width="2" fill="none" stroke-dasharray="12,12">
+      <animate attributeName="stroke-dashoffset" values="0;24" dur="4s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M 50,700 Q 250,680 450,700 Q 650,720 850,700 Q 1000,680 1150,720" stroke="#a8edea" stroke-width="1.5" fill="none" stroke-dasharray="8,8">
+      <animate attributeName="stroke-dashoffset" values="0;16" dur="5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

@@ -7,10 +7,15 @@ import { Grid } from '@mui/material';
 import styles from './styles.module.scss';
 import { Metadata } from 'next';
 import { ContactCard } from './ContactCard';
+import { StickyBanner } from '@/components/ui/sticky-banner';
+import Link from 'next/link';
 
 function ContactPage() {
     return (
         <main>
+            <StickyBanner className="bg-gradient-to-b from-blue-500 to-blue-600">
+                <Link href="/contactBeta"><p>Click here to check out the upcoming/beta version of this page!</p></Link>
+            </StickyBanner>
             <Grid container spacing={4} justifyContent={'center'} sx={{ marginTop: 6, marginBottom: 6 }}>
                 <ContactCard
                     text="+1 (123) 456-7890"
@@ -48,6 +53,6 @@ function ContactPage() {
 export default ContactPage;
 
 export const metadata: Metadata = {
-  title: 'Contact Me',
-  description: 'Contact information for Deuvarney',
+    title: 'Contact Me',
+    description: 'Contact information for Deuvarney',
 }
