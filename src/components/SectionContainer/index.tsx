@@ -10,7 +10,7 @@ type SectionContainerProps = {
 const SectionContainer = forwardRef((props: SectionContainerProps, ref: LegacyRef<HTMLElement> | null) => {
     const {className = '', ...rest} = props;
     return (
-        <section ref={ref} className={`${className} ${styles.sectionContainer}`} 
+        <section ref={ref} className={`${styles.sectionContainer} ${className}`} 
             {...rest}>
             {props.children}
         </section>
@@ -23,7 +23,7 @@ export default SectionContainer;
 
 export function ContainerWithBetterName(props) {
     return (
-        <div className={styles.containerGetBetterName}>
+        <div className={styles.containerGetBetterName + ' ' + (props.className|| '')}>
             {props.children}
         </div>
     )

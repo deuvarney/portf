@@ -22,7 +22,7 @@ import TwilightIcon from '@mui/icons-material/WbTwilight';
 import { LightThemeContext } from '@/hooks/ThemeContext';
 import { Themes } from '@/constants/themes';
 
-const pages = [['Home', '/home'], ['Work History', '/history'], ['Education', '/education'], ['Contact', '/contact'],];
+const pages = [['Home', '/home'], ['Work History', '/history'], ['Education', '/education'], ['Projects', '/projects'], ['Contact', '/contact'],];
 const settings = ['(Dev) Go Todo Page', '(Dev)Font Size +/-', '(Dev)Light/Dark Mode', '(Dev)Language',];
 
 function LightModeContainer() {

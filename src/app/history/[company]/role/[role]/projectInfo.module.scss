@@ -1,11 +1,10 @@
 @import '../../../../../styles/AppBase';
 
-
-// TODO: much of the styles are copied from projectinfo.module.scss. Consolidate this later
 .roleDetailsDivider {
     position: relative;
     bottom: 12px;
 }
+
 
 
 .projectDescContainer {
@@ -26,8 +25,10 @@
     @include image-filter(&);
 
     @media (max-width: $tablet-breakpoint) {
-        width: auto;
+        width: 100%;
         height: 364px;
+        object-fit: cover;
+
     }
 }
 

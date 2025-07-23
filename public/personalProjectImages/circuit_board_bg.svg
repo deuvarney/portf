@@ -1,0 +1,108 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="circuitBg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#0f1419"/>
+      <stop offset="100%" style="stop-color:#000000"/>
+    </radialGradient>
+    
+    <linearGradient id="circuitGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ff00;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#00ff00;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#00ff00;stop-opacity:0"/>
+    </linearGradient>
+    
+    <filter id="circuitFilter">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1200" height="800" fill="url(#circuitBg)"/>
+  
+  <!-- Circuit paths -->
+  <g class="circuit-paths">
+    <!-- Horizontal traces -->
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#00ff00" stroke-width="8" opacity="0.6"/>
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="#00ff00" stroke-width="6" opacity="0.5"/>
+    <line x1="0" y1="600" x2="1200" y2="600" stroke="#00ff00" stroke-width="10" opacity="0.7"/>
+    
+    <!-- Vertical traces -->
+    <line x1="300" y1="0" x2="300" y2="800" stroke="#00ff00" stroke-width="7" opacity="0.6"/>
+    <line x1="600" y1="0" x2="600" y2="800" stroke="#00ff00" stroke-width="5" opacity="0.5"/>
+    <line x1="900" y1="0" x2="900" y2="800" stroke="#00ff00" stroke-width="9" opacity="0.7"/>
+    
+    <!-- L-shaped connections -->
+    <path d="M 100 100 L 300 100 L 300 200" stroke="#00ff00" stroke-width="6" fill="none" opacity="0.6"/>
+    <path d="M 600 200 L 600 300 L 900 300" stroke="#00ff00" stroke-width="7" fill="none" opacity="0.7"/>
+    <path d="M 300 400 L 450 400 L 450 600" stroke="#00ff00" stroke-width="5" fill="none" opacity="0.5"/>
+    <path d="M 900 500 L 1100 500 L 1100 600" stroke="#00ff00" stroke-width="8" fill="none" opacity="0.6"/>
+  </g>
+  
+  <!-- Circuit components -->
+  <g class="components">
+    <!-- Resistors -->
+    <rect x="290" y="190" width="20" height="20" fill="#333" stroke="#00ff00" stroke-width="3" filter="url(#circuitFilter)">
+      <animate attributeName="fill" values="#333;#00ff00;#333" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="590" y="390" width="20" height="20" fill="#333" stroke="#00ff00" stroke-width="3" filter="url(#circuitFilter)">
+      <animate attributeName="fill" values="#333;#00ff00;#333" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Capacitors -->
+    <circle cx="450" cy="400" r="12" fill="#222" stroke="#00aaff" stroke-width="4" filter="url(#circuitFilter)">
+      <animate attributeName="r" values="12;18;12" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#00aaff;#00ffff;#00aaff" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="900" cy="300" r="15" fill="#222" stroke="#ff6600" stroke-width="4" filter="url(#circuitFilter)">
+      <animate attributeName="r" values="15;22;15" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#ff6600;#ffaa00;#ff6600" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- IC chips -->
+    <rect x="570" y="570" width="60" height="60" fill="#111" stroke="#00ff00" stroke-width="4" filter="url(#circuitFilter)">
+      <animate attributeName="stroke" values="#00ff00;#00ffaa;#00ff00" dur="5s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="250" y="350" width="100" height="40" fill="#111" stroke="#ff3366" stroke-width="4" filter="url(#circuitFilter)">
+      <animate attributeName="stroke" values="#ff3366;#ff6699;#ff3366" dur="4.5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Electrical signals -->
+  <g class="signals">
+    <circle cx="0" cy="200" r="8" fill="#00ff00" filter="url(#circuitFilter)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1200,0; 1200,0; 0,0" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0;0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="300" cy="0" r="6" fill="#00aaff" filter="url(#circuitFilter)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,800; 0,800; 0,0" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="0" cy="400" r="10" fill="#ff6600" filter="url(#circuitFilter)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1200,0; 1200,0; 0,0" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0;0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Connection points -->
+  <g class="connection-points">
+    <circle cx="300" cy="200" r="8" fill="#ffff00" filter="url(#circuitFilter)">
+      <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="600" cy="400" r="6" fill="#ff3366" filter="url(#circuitFilter)">
+      <animate attributeName="r" values="6;10;6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="900" cy="600" r="10" fill="#00ffaa" filter="url(#circuitFilter)">
+      <animate attributeName="r" values="10;15;10" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
