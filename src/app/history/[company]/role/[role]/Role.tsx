@@ -20,6 +20,7 @@ import styles from './styles.module.scss';
 import { useCallback, useEffect, useMemo, useRef, } from 'react';
 import { scrollElementIntoView } from '@/utils/domUtils';
 import ResourceCard from '@/components/SharedCard';
+import ProjectInfo from './ProjectInfo';
 
 
 export default function Role({ company, role, projectId}) {
@@ -113,23 +114,7 @@ export default function Role({ company, role, projectId}) {
                                         <Divider className={styles.roleDetailsDivider} />
                                         {
                                             !!project.summary && (
-                                                <ContainerWithBetterName>
-                                                    <div className={styles.projectDescContainer}>
-                                                        <div className={styles.projectImgWrapper}>
-                                                            <img
-                                                                src={project.tileImg}
-                                                                className={styles.projectImg}
-                                                            >
-                                                            </img>
-                                                            <div className={styles.projectImgOverlay}
-                                                            ></div>
-                                                        </div>
-                                                        <div className={styles.projectNameContainer}>
-                                                            <HeaderTypography variant="h3" addBottomMargin={true} className={styles.projectName}>{project.name}</HeaderTypography>
-                                                        </div>
-                                                    </div>
-                                                    <p className={styles.projectSummary}>{project.summary}</p>
-                                                </ContainerWithBetterName>
+                                               <ProjectInfo name={project.name} summary={project.summary} tileImgSrc={project.tileImg} />
                                             )
                                         }
                                         <Grid container spacing={2}>

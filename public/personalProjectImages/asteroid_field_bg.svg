@@ -1,0 +1,379 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Space background gradient -->
+    <radialGradient id="spaceBg" cx="30%" cy="40%" r="70%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </radialGradient>
+    
+    <!-- Asteroid gradients -->
+    <radialGradient id="asteroidGrad1" cx="30%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#8b7355"/>
+      <stop offset="50%" style="stop-color:#6b5b47"/>
+      <stop offset="100%" style="stop-color:#4a3f35"/>
+    </radialGradient>
+    
+    <radialGradient id="asteroidGrad2" cx="40%" cy="25%" r="70%">
+      <stop offset="0%" style="stop-color:#9a8269"/>
+      <stop offset="50%" style="stop-color:#7a6b56"/>
+      <stop offset="100%" style="stop-color:#5a4f42"/>
+    </radialGradient>
+    
+    <radialGradient id="asteroidGrad3" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" style="stop-color:#a69080"/>
+      <stop offset="50%" style="stop-color:#86756a"/>
+      <stop offset="100%" style="stop-color:#665a54"/>
+    </radialGradient>
+    
+    <radialGradient id="asteroidGrad4" cx="25%" cy="40%" r="55%">
+      <stop offset="0%" style="stop-color:#7d6b5a"/>
+      <stop offset="50%" style="stop-color:#6d5b4a"/>
+      <stop offset="100%" style="stop-color:#5d4b3a"/>
+    </radialGradient>
+    
+    <!-- Glow effect for cosmic dust -->
+    <filter id="cosmicGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Asteroid shadow filter -->
+    <filter id="asteroidShadow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Space background -->
+  <rect width="1200" height="800" fill="url(#spaceBg)"/>
+  
+  <!-- Stars -->
+  <g class="stars">
+    <circle cx="100" cy="80" r="1.5" fill="#ffffff" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="150" r="1" fill="#ffffff" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="100" r="1.2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="200" r="0.8" fill="#ffffff" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="120" r="1.3" fill="#ffffff" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="180" r="1" fill="#ffffff" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="700" r="1.1" fill="#ffffff" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="750" r="0.9" fill="#ffffff" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1000" cy="720" r="1.4" fill="#ffffff" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Large Asteroids -->
+  <g class="large-asteroids">
+    <!-- Asteroid 1 -->
+    <g class="asteroid-1">
+      <polygon points="180,250 220,230 270,245 290,280 275,320 235,340 190,335 160,305 165,275" 
+               fill="url(#asteroidGrad1)" filter="url(#asteroidShadow)"/>
+      <!-- Surface details -->
+      <circle cx="210" cy="270" r="8" fill="#3a2f25" opacity="0.6"/>
+      <circle cx="250" cy="290" r="6" fill="#3a2f25" opacity="0.5"/>
+      <circle cx="220" cy="310" r="4" fill="#3a2f25" opacity="0.7"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 225 292; 360 225 292" dur="30s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,-30; 100,20; 150,-10; 200,30" dur="60s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <!-- Asteroid 2 -->
+    <g class="asteroid-2">
+      <polygon points="650,150 700,140 750,160 780,200 770,250 730,280 680,275 640,250 630,200" 
+               fill="url(#asteroidGrad2)" filter="url(#asteroidShadow)"/>
+      <!-- Surface details -->
+      <circle cx="690" cy="190" r="10" fill="#4a3f35" opacity="0.6"/>
+      <circle cx="720" cy="220" r="7" fill="#4a3f35" opacity="0.5"/>
+      <circle cx="710" cy="250" r="5" fill="#4a3f35" opacity="0.7"/>
+      <ellipse cx="670" cy="240" rx="12" ry="6" fill="#4a3f35" opacity="0.4"/>
+      <animateTransform attributeName="transform" type="rotate" values="360 705 210; 0 705 210" dur="25s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -80,40; -160,-20; -240,60; -320,0" dur="80s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <!-- Asteroid 3 -->
+    <g class="asteroid-3">
+      <polygon points="900,450 950,440 1000,465 1020,510 1000,560 960,580 910,575 880,545 885,500" 
+               fill="url(#asteroidGrad3)" filter="url(#asteroidShadow)"/>
+      <!-- Surface details -->
+      <circle cx="930" cy="490" r="9" fill="#5a4f42" opacity="0.6"/>
+      <circle cx="970" cy="520" r="6" fill="#5a4f42" opacity="0.5"/>
+      <circle cx="950" cy="540" r="7" fill="#5a4f42" opacity="0.7"/>
+      <circle cx="920" cy="520" r="4" fill="#5a4f42" opacity="0.8"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 950 512; 360 950 512" dur="35s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 60,80; 120,-40; 180,100; 240,20" dur="70s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+  
+  <!-- Medium Asteroids -->
+  <g class="medium-asteroids">
+    <!-- Asteroid 4 -->
+    <g class="asteroid-4">
+      <polygon points="400,350 430,340 460,355 470,385 455,415 425,425 395,415 385,385" 
+               fill="url(#asteroidGrad4)" filter="url(#asteroidShadow)"/>
+      <circle cx="415" cy="375" r="5" fill="#4d4237" opacity="0.6"/>
+      <circle cx="440" cy="395" r="3" fill="#4d4237" opacity="0.7"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 427 382; 360 427 382" dur="20s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,50; -200,-30; -300,70; -400,10" dur="90s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <!-- Asteroid 5 -->
+    <g class="asteroid-5">
+      <polygon points="100,500 125,495 150,510 155,535 145,560 120,565 95,555 90,530" 
+               fill="url(#asteroidGrad1)" filter="url(#asteroidShadow)"/>
+      <circle cx="115" cy="525" r="4" fill="#3a2f25" opacity="0.6"/>
+      <circle cx="135" cy="540" r="3" fill="#3a2f25" opacity="0.7"/>
+      <animateTransform attributeName="transform" type="rotate" values="360 122 530; 0 122 530" dur="15s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 150,-60; 300,40; 450,-80; 600,20" dur="100s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <!-- Asteroid 6 -->
+    <g class="asteroid-6">
+      <polygon points="1050,300 1075,295 1100,310 1105,335 1095,360 1070,365 1045,355 1040,330" 
+               fill="url(#asteroidGrad2)" filter="url(#asteroidShadow)"/>
+      <circle cx="1065" cy="325" r="4" fill="#4a3f35" opacity="0.6"/>
+      <circle cx="1080" cy="340" r="2" fill="#4a3f35" opacity="0.8"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 1072 330; 360 1072 330" dur="18s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -120,80; -240,-40; -360,60; -480,0" dur="85s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+  
+  <!-- Small Asteroids and Debris -->
+  <g class="small-asteroids">
+    <!-- Small asteroid 1 -->
+    <g class="small-ast-1">
+      <polygon points="300,600 315,598 330,608 332,623 325,638 310,640 295,635 293,620" 
+               fill="url(#asteroidGrad3)"/>
+      <circle cx="312" cy="619" r="2" fill="#5a4f42" opacity="0.7"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 312 619; 360 312 619" dur="12s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 200,-100; 400,50; 600,-75; 800,25" dur="110s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <!-- Small asteroid 2 -->
+    <g class="small-ast-2">
+      <polygon points="800,680 810,678 820,685 822,695 818,705 808,707 798,702 796,692" 
+               fill="url(#asteroidGrad4)"/>
+      <circle cx="809" cy="692" r="1.5" fill="#4d4237" opacity="0.8"/>
+      <animateTransform attributeName="transform" type="rotate" values="360 809 692; 0 809 692" dur="10s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -150,60; -300,-80; -450,40; -600,-20" dur="95s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <!-- Small asteroid 3 -->
+    <g class="small-ast-3">
+      <polygon points="500,50 510,48 520,55 522,65 518,75 508,77 498,72 496,62" 
+               fill="url(#asteroidGrad1)"/>
+      <circle cx="509" cy="62" r="1" fill="#3a2f25" opacity="0.9"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 509 62; 360 509 62" dur="8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 100,150; 200,-100; 300,200; 400,-50" dur="120s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+  
+  <!-- Cosmic Dust and Particles -->
+  <g class="cosmic-dust">
+    <circle cx="150" cy="400" r="2" fill="#d4af37" opacity="0.4" filter="url(#cosmicGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 800,-200; 1600,100" dur="50s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="50s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="600" cy="200" r="1.5" fill="#cd853f" opacity="0.3" filter="url(#cosmicGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -500,300; -1000,-100" dur="60s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.3;0" dur="60s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="1000" cy="600" r="1.8" fill="#daa520" opacity="0.5" filter="url(#cosmicGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -600,-400; -1200,200" dur="45s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="45s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="400" cy="100" r="1.2" fill="#b8860b" opacity="0.4" filter="url(#cosmicGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 300,500; 600,-200" dur="55s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="55s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Distant Asteroids (smaller, for depth) -->
+  <g class="distant-asteroids" opacity="0.6">
+    <circle cx="50" cy="200" r="3" fill="#6b5b47">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1200,100; 2400,-50" dur="150s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="150s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="1150" cy="400" r="2.5" fill="#7a6b56">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -1200,150; -2400,-100" dur="140s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="140s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="600" cy="0" r="4" fill="#86756a">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 200,800; 400,-200" dur="160s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="160s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Asteroid trails -->
+  <g class="trails" opacity="0.2">
+    <line x1="225" y1="292" x2="200" y2="300" stroke="#8b7355" stroke-width="1">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 50,-30; 100,20; 150,-10; 200,30" dur="60s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="705" y1="210" x2="680" y2="220" stroke="#9a8269" stroke-width="1">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -80,40; -160,-20; -240,60; -320,0" dur="80s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="950" y1="512" x2="925" y2="522" stroke="#a69080" stroke-width="1">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 60,80; 120,-40; 180,100; 240,20" dur="70s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Spaceship -->
+  <g class="spaceship">
+    <g class="ship-body">
+      <!-- Main hull -->
+      <polygon points="80,400 110,390 140,395 150,400 140,405 110,410 80,400" 
+               fill="#c0c0c0" stroke="#888888" stroke-width="1" filter="url(#asteroidShadow)"/>
+      
+      <!-- Cockpit -->
+      <ellipse cx="135" cy="400" rx="8" ry="4" fill="#4444aa" opacity="0.8"/>
+      
+      <!-- Wings -->
+      <polygon points="95,390 105,385 115,390 110,395 100,395" fill="#a0a0a0"/>
+      <polygon points="95,410 105,415 115,410 110,405 100,405" fill="#a0a0a0"/>
+      
+      <!-- Engine details -->
+      <rect x="75" y="397" width="8" height="6" fill="#666666"/>
+      
+      <!-- Engine glow -->
+      <circle cx="70" cy="400" r="4" fill="#00aaff" opacity="0.8" filter="url(#cosmicGlow)">
+        <animate attributeName="r" values="4;7;4" dur="0.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="0.3s" repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Engine trail -->
+      <ellipse cx="60" cy="400" rx="15" ry="3" fill="#0088ff" opacity="0.4">
+        <animate attributeName="rx" values="15;25;15" dur="0.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.4;0.1;0.4" dur="0.5s" repeatCount="indefinite"/>
+      </ellipse>
+      
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; 80,-50; 160,30; 240,-40; 320,20; 400,-30; 480,40; 560,-20; 640,10; 720,-25; 800,35" 
+                        dur="40s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" 
+                        values="0 115 400; 5 115 400; -3 115 400; 7 115 400; -2 115 400; 4 115 400; 0 115 400" 
+                        dur="8s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+  
+  <!-- Missiles -->
+  <g class="missiles">
+    <!-- Missile 1 -->
+    <g class="missile-1">
+      <ellipse cx="160" cy="400" rx="8" ry="2" fill="#ff4444" filter="url(#cosmicGlow)"/>
+      <ellipse cx="155" cy="400" rx="3" ry="1" fill="#ffaaaa"/>
+      <!-- Missile trail -->
+      <ellipse cx="145" cy="400" rx="12" ry="1.5" fill="#ff6666" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="0.2s" repeatCount="indefinite"/>
+      </ellipse>
+      
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; 200,-60; 400,40; 600,-80; 800,60; 1000,-40; 1200,20" 
+                        dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;1;1;1;0" dur="8s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Missile 2 -->
+    <g class="missile-2">
+      <ellipse cx="160" cy="400" rx="8" ry="2" fill="#ff4444" filter="url(#cosmicGlow)"/>
+      <ellipse cx="155" cy="400" rx="3" ry="1" fill="#ffaaaa"/>
+      <!-- Missile trail -->
+      <ellipse cx="145" cy="400" rx="12" ry="1.5" fill="#ff6666" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="0.2s" repeatCount="indefinite"/>
+      </ellipse>
+      
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; 180,80; 360,-100; 540,120; 720,-60; 900,100; 1080,-20; 1260,40" 
+                        dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0;1;1;1;1;1;0" dur="10s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Missile 3 -->
+    <g class="missile-3">
+      <ellipse cx="160" cy="400" rx="8" ry="2" fill="#ff4444" filter="url(#cosmicGlow)"/>
+      <ellipse cx="155" cy="400" rx="3" ry="1" fill="#ffaaaa"/>
+      <!-- Missile trail -->
+      <ellipse cx="145" cy="400" rx="12" ry="1.5" fill="#ff6666" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="0.2s" repeatCount="indefinite"/>
+      </ellipse>
+      
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; 220,-100; 440,80; 660,-120; 880,100; 1100,-80; 1320,60" 
+                        dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0;0;0;0;1;1;1;1;0" dur="12s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  
+  <!-- Explosion effects -->
+  <g class="explosions">
+    <!-- Explosion 1 -->
+    <g class="explosion-1" opacity="0">
+      <circle cx="800" cy="340" r="0" fill="#ffaa00" filter="url(#cosmicGlow)">
+        <animate attributeName="r" values="0;0;0;30;0" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0;0;1;0" dur="8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="800" cy="340" r="0" fill="#ff4444" filter="url(#cosmicGlow)">
+        <animate attributeName="r" values="0;0;0;20;0" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0;0;0.8;0" dur="8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="800" cy="340" r="0" fill="#ffffff" filter="url(#cosmicGlow)">
+        <animate attributeName="r" values="0;0;0;10;0" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0;0;0.6;0" dur="8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Explosion 2 -->
+    <g class="explosion-2" opacity="0">
+      <circle cx="540" cy="520" r="0" fill="#ffaa00" filter="url(#cosmicGlow)">
+        <animate attributeName="r" values="0;0;0;0;0;25;0" dur="10s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0;0;0;0;1;0" dur="10s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="540" cy="520" r="0" fill="#ff4444" filter="url(#cosmicGlow)">
+        <animate attributeName="r" values="0;0;0;0;0;18;0" dur="10s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0;0;0;0;0.8;0" dur="10s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="540" cy="520" r="0" fill="#ffffff" filter="url(#cosmicGlow)">
+        <animate attributeName="r" values="0;0;0;0;0;8;0" dur="10s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0;0;0;0;0.6;0" dur="10s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Muzzle flash -->
+  <g class="muzzle-flash">
+    <circle cx="150" cy="400" r="0" fill="#ffffff" filter="url(#cosmicGlow)">
+      <animate attributeName="r" values="0;8;0;0;0;0;0;0;0;6;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;7;0" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0" dur="8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; 80,-50; 160,30; 240,-40; 320,20; 400,-30; 480,40; 560,-20; 640,10; 720,-25; 800,35" 
+                        dur="40s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

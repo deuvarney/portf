@@ -1,0 +1,164 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="networkBg" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" style="stop-color:#0a0a15"/>
+      <stop offset="100%" style="stop-color:#000000"/>
+    </radialGradient>
+    
+    <radialGradient id="nodeGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1"/>
+      <stop offset="70%" style="stop-color:#0088ff;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#004488;stop-opacity:0.3"/>
+    </radialGradient>
+    
+    <filter id="networkGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#00aaff" opacity="0.8"/>
+    </marker>
+  </defs>
+  
+  <rect width="1200" height="800" fill="url(#networkBg)"/>
+  
+  <!-- Network connections -->
+  <g class="connections">
+    <!-- Main hub connections -->
+    <line x1="600" y1="400" x2="200" y2="150" stroke="#00aaff" stroke-width="4" opacity="0.6" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dasharray" values="0,800;800,0;0,800" dur="6s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="600" y1="400" x2="1000" y2="200" stroke="#00aaff" stroke-width="5" opacity="0.7" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dasharray" values="0,600;600,0;0,600" dur="5s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="600" y1="400" x2="300" y2="650" stroke="#00aaff" stroke-width="4" opacity="0.6" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dasharray" values="0,700;700,0;0,700" dur="7s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="600" y1="400" x2="900" y2="600" stroke="#00aaff" stroke-width="6" opacity="0.8" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dasharray" values="0,500;500,0;0,500" dur="4s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- Secondary connections -->
+    <line x1="200" y1="150" x2="400" y2="100" stroke="#ff6600" stroke-width="3" opacity="0.5" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dasharray" values="0,400;400,0;0,400" dur="8s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="1000" y1="200" x2="1100" y2="350" stroke="#ff6600" stroke-width="3" opacity="0.5" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dasharray" values="0,350;350,0;0,350" dur="6s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="300" y1="650" x2="500" y2="700" stroke="#ff6600" stroke-width="3" opacity="0.5" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dasharray" values="0,450;450,0;0,450" dur="9s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- Curved connections -->
+    <path d="M 200,150 Q 400,300 600,400" stroke="#00ff88" stroke-width="4" fill="none" opacity="0.6" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dasharray" values="0,600;600,0;0,600" dur="10s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M 900,600 Q 750,500 600,400" stroke="#00ff88" stroke-width="5" fill="none" opacity="0.7" marker-end="url(#arrowhead)">
+      <animate attributeName="stroke-dasharray" values="0,500;500,0;0,500" dur="8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Network nodes -->
+  <g class="nodes">
+    <!-- Central hub -->
+    <circle cx="600" cy="400" r="25" fill="url(#nodeGradient)" filter="url(#networkGlow)">
+      <animate attributeName="r" values="25;35;25" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="600" y="408" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="12" font-weight="bold">HUB</text>
+    
+    <!-- Primary nodes -->
+    <circle cx="200" cy="150" r="18" fill="#00aaff" filter="url(#networkGlow)">
+      <animate attributeName="r" values="18;25;18" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#00aaff;#00ffff;#00aaff" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <text x="200" y="155" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="10">DB</text>
+    
+    <circle cx="1000" cy="200" r="20" fill="#00aaff" filter="url(#networkGlow)">
+      <animate attributeName="r" values="20;28;20" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#00aaff;#00ffff;#00aaff" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <text x="1000" y="205" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="10">API</text>
+    
+    <circle cx="300" cy="650" r="16" fill="#00aaff" filter="url(#networkGlow)">
+      <animate attributeName="r" values="16;22;16" dur="2.8s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#00aaff;#00ffff;#00aaff" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <text x="300" y="655" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="9">WEB</text>
+    
+    <circle cx="900" cy="600" r="22" fill="#00aaff" filter="url(#networkGlow)">
+      <animate attributeName="r" values="22;30;22" dur="4.2s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#00aaff;#00ffff;#00aaff" dur="4.2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="900" y="605" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="10">CDN</text>
+    
+    <!-- Secondary nodes -->
+    <circle cx="400" cy="100" r="12" fill="#ff6600" filter="url(#networkGlow)">
+      <animate attributeName="r" values="12;16;12" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="1100" cy="350" r="14" fill="#ff6600" filter="url(#networkGlow)">
+      <animate attributeName="r" values="14;18;14" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="500" cy="700" r="10" fill="#ff6600" filter="url(#networkGlow)">
+      <animate attributeName="r" values="10;14;10" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Satellite nodes -->
+    <circle cx="100" cy="300" r="8" fill="#ff3366" filter="url(#networkGlow)">
+      <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="1150" cy="500" r="6" fill="#ff3366" filter="url(#networkGlow)">
+      <animate attributeName="r" values="6;10;6" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="50" cy="600" r="7" fill="#ff3366" filter="url(#networkGlow)">
+      <animate attributeName="r" values="7;11;7" dur="2.3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Data packets -->
+  <g class="data-packets">
+    <circle cx="600" cy="400" r="6" fill="#00ff00" filter="url(#networkGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -400,-250; -400,-250" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="600" cy="400" r="5" fill="#ffff00" filter="url(#networkGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 400,-200; 400,-200" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="600" cy="400" r="7" fill="#ff00ff" filter="url(#networkGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -300,250; -300,250" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Network status indicators -->
+  <g class="status-indicators">
+    <rect x="50" y="50" width="120" height="30" fill="#001122" stroke="#00aaff" stroke-width="2" opacity="0.8"/>
+    <text x="110" y="70" text-anchor="middle" fill="#00aaff" font-family="monospace" font-size="12">STATUS: ONLINE</text>
+    <circle cx="180" cy="65" r="4" fill="#00ff00">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <rect x="1030" y="50" width="140" height="30" fill="#001122" stroke="#ff6600" stroke-width="2" opacity="0.8"/>
+    <text x="1100" y="70" text-anchor="middle" fill="#ff6600" font-family="monospace" font-size="11">TRAFFIC: HIGH</text>
+    <circle cx="1160" cy="65" r="4" fill="#ff6600">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

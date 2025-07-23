@@ -1,0 +1,278 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Entertainment background -->
+    <radialGradient id="tvBg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#1e1b4b"/>
+      <stop offset="50%" style="stop-color:#312e81"/>
+      <stop offset="100%" style="stop-color:#1e1b4b"/>
+    </radialGradient>
+    
+    <!-- Screen gradients -->
+    <linearGradient id="screenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000"/>
+      <stop offset="50%" style="stop-color:#1f2937"/>
+      <stop offset="100%" style="stop-color:#000000"/>
+    </linearGradient>
+    
+    <!-- Colorful stream gradients -->
+    <linearGradient id="streamRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#ef4444;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:0"/>
+    </linearGradient>
+    
+    <linearGradient id="streamBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0"/>
+    </linearGradient>
+    
+    <linearGradient id="streamGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#10b981;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0"/>
+    </linearGradient>
+    
+    <!-- TV glow effect -->
+    <filter id="tvGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Screen scanlines -->
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="1" height="4">
+      <rect width="1" height="2" fill="#ffffff" opacity="0.02"/>
+      <rect y="2" width="1" height="2" fill="transparent"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#tvBg)"/>
+  
+  <!-- TV Screens -->
+  <g class="tv-screens">
+    <!-- Large main screen -->
+    <g class="main-screen">
+      <rect x="300" y="150" width="300" height="200" rx="15" fill="url(#screenGradient)" filter="url(#tvGlow)"/>
+      <rect x="310" y="160" width="280" height="180" rx="8" fill="#000000"/>
+      <rect x="310" y="160" width="280" height="180" rx="8" fill="url(#scanlines)"/>
+      
+      <!-- Screen content -->
+      <rect x="320" y="170" width="60" height="40" fill="#ef4444" opacity="0.8">
+        <animate attributeName="fill" values="#ef4444;#f87171;#ef4444" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="390" y="170" width="60" height="40" fill="#3b82f6" opacity="0.8">
+        <animate attributeName="fill" values="#3b82f6;#60a5fa;#3b82f6" dur="2.5s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="460" y="170" width="60" height="40" fill="#10b981" opacity="0.8">
+        <animate attributeName="fill" values="#10b981;#34d399;#10b981" dur="1.8s" repeatCount="indefinite"/>
+      </rect>
+      
+      <!-- Play button -->
+      <polygon points="420,250 420,290 460,270" fill="#ffffff" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;0.5;0.9" dur="3s" repeatCount="indefinite"/>
+      </polygon>
+      
+      <animateTransform attributeName="transform" type="translate" values="0,0; 100,50; 200,-30; 300,80; 400,-20" dur="60s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Smaller floating screens -->
+    <g class="small-screen-1">
+      <rect x="100" y="400" width="120" height="80" rx="8" fill="url(#screenGradient)" filter="url(#tvGlow)"/>
+      <rect x="105" y="405" width="110" height="70" rx="4" fill="#000000"/>
+      <rect x="110" y="410" width="100" height="60" fill="#8b5cf6" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
+      </rect>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 200,-100; 400,150; 600,-80; 800,100" dur="80s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 160 440; 360 160 440" dur="20s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <g class="small-screen-2">
+      <rect x="800" y="500" width="150" height="100" rx="10" fill="url(#screenGradient)" filter="url(#tvGlow)"/>
+      <rect x="808" y="508" width="134" height="84" rx="5" fill="#000000"/>
+      <circle cx="875" cy="550" r="25" fill="#f59e0b" opacity="0.7">
+        <animate attributeName="r" values="25;30;25" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -300,100; -600,-200; -900,150; -1200,-50" dur="90s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="360 875 550; 0 875 550" dur="25s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <!-- Mini screen grid -->
+    <g class="mini-screens">
+      <rect x="1000" y="100" width="60" height="40" rx="4" fill="url(#screenGradient)" filter="url(#tvGlow)"/>
+      <rect x="1005" y="105" width="50" height="30" fill="#ec4899" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      
+      <rect x="1000" y="160" width="60" height="40" rx="4" fill="url(#screenGradient)" filter="url(#tvGlow)"/>
+      <rect x="1005" y="165" width="50" height="30" fill="#06b6d4" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2.5s" repeatCount="indefinite"/>
+      </rect>
+      
+      <rect x="1070" y="100" width="60" height="40" rx="4" fill="url(#screenGradient)" filter="url(#tvGlow)"/>
+      <rect x="1075" y="105" width="50" height="30" fill="#84cc16" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1.5s" repeatCount="indefinite"/>
+      </rect>
+      
+      <rect x="1070" y="160" width="60" height="40" rx="4" fill="url(#screenGradient)" filter="url(#tvGlow)"/>
+      <rect x="1075" y="165" width="50" height="30" fill="#f97316" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.4;0.8" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      
+      <animateTransform attributeName="transform" type="translate" values="0,0; -200,300; -400,-150; -600,250; -800,-100" dur="70s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  
+  <!-- Broadcast signals -->
+  <g class="broadcast-signals">
+    <!-- Signal waves -->
+    <circle cx="450" cy="250" r="50" fill="none" stroke="#ef4444" stroke-width="3" opacity="0.6">
+      <animate attributeName="r" values="50;80;50" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="450" cy="250" r="40" fill="none" stroke="#ef4444" stroke-width="2" opacity="0.8">
+      <animate attributeName="r" values="40;70;40" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Transmission tower -->
+    <line x1="450" y1="350" x2="450" y2="300" stroke="#ffffff" stroke-width="4" filter="url(#tvGlow)"/>
+    <line x1="440" y1="320" x2="460" y2="320" stroke="#ffffff" stroke-width="2"/>
+    <line x1="445" y1="310" x2="455" y2="310" stroke="#ffffff" stroke-width="2"/>
+    
+    <animateTransform attributeName="transform" type="translate" values="0,0; 100,50; 200,-30; 300,80; 400,-20" dur="60s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- Data streams -->
+  <g class="data-streams">
+    <line x1="0" y1="100" x2="100" y2="100" stroke="url(#streamRed)" stroke-width="6" filter="url(#tvGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1200,0; 1200,0; 0,0" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0;0" dur="8s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="0" y1="300" x2="80" y2="300" stroke="url(#streamBlue)" stroke-width="8" filter="url(#tvGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1200,0; 1200,0; 0,0" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0;0" dur="6s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="0" y1="500" x2="120" y2="500" stroke="url(#streamGreen)" stroke-width="5" filter="url(#tvGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1200,0; 1200,0; 0,0" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0;0" dur="10s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="0" y1="700" x2="90" y2="700" stroke="#f59e0b" stroke-width="7" filter="url(#tvGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1200,0; 1200,0; 0,0" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0;0" dur="7s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Entertainment icons -->
+  <g class="entertainment-icons">
+    <!-- Movie camera -->
+    <g class="camera-icon">
+      <rect x="150" y="200" width="40" height="25" rx="5" fill="#374151" filter="url(#tvGlow)"/>
+      <circle cx="175" cy="212" r="8" fill="#6b7280"/>
+      <circle cx="175" cy="212" r="5" fill="#000000"/>
+      <rect x="190" y="207" width="8" height="10" fill="#374151"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 400,300; 800,-100; 1200,200" dur="100s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="100s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Microphone -->
+    <g class="mic-icon">
+      <ellipse cx="700" cy="350" rx="8" ry="15" fill="#6b7280" filter="url(#tvGlow)"/>
+      <rect x="695" y="365" width="10" height="15" fill="#374151"/>
+      <line x1="690" y1="380" x2="710" y2="380" stroke="#6b7280" stroke-width="2"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -300,-200; -600,250; -900,-150" dur="85s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="85s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Music note -->
+    <g class="music-note">
+      <circle cx="950" cy="400" r="6" fill="#8b5cf6" filter="url(#tvGlow)"/>
+      <line x1="956" y1="400" x2="956" y2="370" stroke="#8b5cf6" stroke-width="3"/>
+      <path d="M 956,370 Q 970,365 970,375" stroke="#8b5cf6" stroke-width="3" fill="none"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -400,200; -800,-300; -1200,150" dur="95s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" dur="95s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  
+  <!-- Channel indicators -->
+  <g class="channel-indicators">
+    <rect x="50" y="50" width="100" height="40" fill="#000000" stroke="#ef4444" stroke-width="2" filter="url(#tvGlow)"/>
+    <text x="100" y="75" text-anchor="middle" fill="#ef4444" font-family="monospace" font-size="14" font-weight="bold">LIVE</text>
+    <circle cx="130" cy="70" r="4" fill="#ef4444">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    
+    <rect x="1050" y="50" width="100" height="40" fill="#000000" stroke="#10b981" stroke-width="2" filter="url(#tvGlow)"/>
+    <text x="1100" y="75" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="12" font-weight="bold">HD 4K</text>
+  </g>
+  
+  <!-- Floating media elements -->
+  <g class="media-elements">
+    <!-- Play buttons -->
+    <polygon points="200,600 200,640 235,620" fill="#ffffff" opacity="0.6" filter="url(#tvGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 800,-400; 1600,200" dur="40s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="40s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Pause button -->
+    <g class="pause-btn">
+      <rect x="600" y="650" width="8" height="25" fill="#ffffff" opacity="0.5"/>
+      <rect x="615" y="650" width="8" height="25" fill="#ffffff" opacity="0.5"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -400,-500; -800,300" dur="50s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="50s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Volume bars -->
+    <g class="volume-bars">
+      <rect x="800" y="100" width="4" height="10" fill="#3b82f6" opacity="0.7"/>
+      <rect x="810" y="95" width="4" height="15" fill="#3b82f6" opacity="0.7"/>
+      <rect x="820" y="90" width="4" height="20" fill="#3b82f6" opacity="0.7"/>
+      <rect x="830" y="85" width="4" height="25" fill="#3b82f6" opacity="0.7"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -600,600; -1200,-300" dur="60s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="60s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  
+  <!-- Subtitle bars -->
+  <g class="subtitle-bars">
+    <rect x="300" y="720" width="600" height="8" fill="#000000" opacity="0.8"/>
+    <rect x="310" y="722" width="580" height="4" fill="#ffffff" opacity="0.6">
+      <animate attributeName="width" values="0;580;0" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="400" y="740" width="400" height="8" fill="#000000" opacity="0.8"/>
+    <rect x="410" y="742" width="380" height="4" fill="#ffffff" opacity="0.6">
+      <animate attributeName="width" values="0;380;0" dur="15s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Colorful particles -->
+  <g class="colorful-particles">
+    <circle cx="100" cy="300" r="3" fill="#ef4444" filter="url(#tvGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1000,200; 2000,-400" dur="30s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="30s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="1100" cy="600" r="4" fill="#3b82f6" filter="url(#tvGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -1000,-300; -2000,600" dur="35s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="35s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="600" cy="50" r="2" fill="#10b981" filter="url(#tvGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -400,700; -800,-200" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="25s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="200" cy="750" r="5" fill="#8b5cf6" filter="url(#tvGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 800,-600; 1600,300" dur="40s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="40s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

@@ -1,0 +1,219 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Retro background gradient -->
+    <radialGradient id="retroBg" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" style="stop-color:#1a0033"/>
+      <stop offset="50%" style="stop-color:#0d001a"/>
+      <stop offset="100%" style="stop-color:#000000"/>
+    </radialGradient>
+    
+    <!-- Neon glow effect -->
+    <filter id="neonGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Snake body gradient -->
+    <linearGradient id="snakeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff00"/>
+      <stop offset="50%" style="stop-color:#00cc00"/>
+      <stop offset="100%" style="stop-color:#008800"/>
+    </linearGradient>
+    
+    <!-- Food gradient -->
+    <radialGradient id="foodGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ff0080"/>
+      <stop offset="100%" style="stop-color:#cc0066"/>
+    </radialGradient>
+    
+    <!-- Grid pattern -->
+    <pattern id="gameGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="transparent"/>
+      <rect width="38" height="38" x="1" y="1" fill="none" stroke="#00ff00" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#retroBg)"/>
+  
+  <!-- Game grid overlay -->
+  <rect width="1200" height="800" fill="url(#gameGrid)"/>
+  
+  <!-- Border -->
+  <rect x="40" y="40" width="1120" height="720" fill="none" stroke="#00ff00" stroke-width="6" filter="url(#neonGlow)"/>
+  
+  <!-- Animated snake segments -->
+  <g class="snake-segments">
+    <!-- Snake head -->
+    <g class="snake-head">
+      <rect x="200" y="200" width="35" height="35" fill="url(#snakeGradient)" filter="url(#neonGlow)">
+        <animate attributeName="fill" values="#00ff00;#00ff88;#00ff00" dur="1s" repeatCount="indefinite"/>
+      </rect>
+      <!-- Eyes -->
+      <circle cx="215" cy="210" r="3" fill="#ffffff"/>
+      <circle cx="225" cy="210" r="3" fill="#ffffff"/>
+      <circle cx="215" cy="210" r="1.5" fill="#000000"/>
+      <circle cx="225" cy="210" r="1.5" fill="#000000"/>
+      
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; 120,0; 120,80; 240,80; 240,160; 360,160; 360,240; 480,240; 480,160; 600,160; 600,80; 720,80; 720,0; 840,0" 
+                        dur="20s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Snake body segments -->
+    <g class="snake-body-1">
+      <rect x="160" y="200" width="35" height="35" fill="#00cc00" filter="url(#neonGlow)"/>
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; 120,0; 120,80; 240,80; 240,160; 360,160; 360,240; 480,240; 480,160; 600,160; 600,80; 720,80; 720,0; 840,0" 
+                        dur="20s" repeatCount="indefinite"/>
+    </g>
+    
+    <g class="snake-body-2">
+      <rect x="120" y="200" width="35" height="35" fill="#009900" filter="url(#neonGlow)"/>
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; 120,0; 120,80; 240,80; 240,160; 360,160; 360,240; 480,240; 480,160; 600,160; 600,80; 720,80; 720,0; 840,0" 
+                        dur="20s" repeatCount="indefinite"/>
+    </g>
+    
+    <g class="snake-body-3">
+      <rect x="80" y="200" width="35" height="35" fill="#007700" filter="url(#neonGlow)"/>
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; 120,0; 120,80; 240,80; 240,160; 360,160; 360,240; 480,240; 480,160; 600,160; 600,80; 720,80; 720,0; 840,0" 
+                        dur="20s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  
+  <!-- Floating food items -->
+  <g class="food-items">
+    <!-- Apple -->
+    <g class="food-1">
+      <rect x="500" y="300" width="30" height="30" rx="15" fill="url(#foodGradient)" filter="url(#neonGlow)">
+        <animate attributeName="fill" values="#ff0080;#ff3399;#ff0080" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="510" y="285" width="6" height="8" fill="#00ff00"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 200,150; 400,-100; 600,200; 800,-150" dur="25s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 515 315; 360 515 315" dur="8s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <!-- Cherry -->
+    <g class="food-2">
+      <circle cx="700" cy="500" r="12" fill="#ff0000" filter="url(#neonGlow)">
+        <animate attributeName="fill" values="#ff0000;#ff6666;#ff0000" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="720" cy="490" r="12" fill="#ff0000" filter="url(#neonGlow)">
+        <animate attributeName="fill" values="#ff0000;#ff6666;#ff0000" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M 710,485 Q 705,475 710,470" stroke="#00ff00" stroke-width="3" fill="none"/>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -300,100; -600,-200; -900,150; -1200,-100" dur="30s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 710 490; 360 710 490" dur="5s" repeatCount="indefinite" additive="sum"/>
+    </g>
+    
+    <!-- Banana -->
+    <g class="food-3">
+      <ellipse cx="300" cy="600" rx="20" ry="8" fill="#ffff00" filter="url(#neonGlow)" transform="rotate(30 300 600)">
+        <animate attributeName="fill" values="#ffff00;#ffff99;#ffff00" dur="2.5s" repeatCount="indefinite"/>
+      </ellipse>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 400,-300; 800,100; 1200,-200" dur="35s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 300 600; 360 300 600" dur="10s" repeatCount="indefinite" additive="sum"/>
+    </g>
+  </g>
+  
+  <!-- Score display -->
+  <g class="score-display">
+    <rect x="60" y="60" width="200" height="50" fill="#000000" stroke="#00ff00" stroke-width="2" filter="url(#neonGlow)"/>
+    <text x="80" y="85" fill="#00ff00" font-family="monospace" font-size="16" font-weight="bold" filter="url(#neonGlow)">SCORE:</text>
+    <text x="160" y="85" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" filter="url(#neonGlow)">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+      42850
+    </text>
+  </g>
+  
+  <!-- Level indicator -->
+  <g class="level-display">
+    <rect x="940" y="60" width="200" height="50" fill="#000000" stroke="#ff0080" stroke-width="2" filter="url(#neonGlow)"/>
+    <text x="960" y="85" fill="#ff0080" font-family="monospace" font-size="16" font-weight="bold" filter="url(#neonGlow)">LEVEL:</text>
+    <text x="1030" y="85" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" filter="url(#neonGlow)">
+      <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
+      07
+    </text>
+  </g>
+  
+  <!-- Power-up indicators -->
+  <g class="power-ups">
+    <!-- Speed boost -->
+    <g class="speed-boost">
+      <rect x="800" y="150" width="25" height="25" fill="#ffff00" filter="url(#neonGlow)">
+        <animate attributeName="fill" values="#ffff00;#ffaa00;#ffff00" dur="1s" repeatCount="indefinite"/>
+      </rect>
+      <text x="812" y="168" text-anchor="middle" fill="#000000" font-family="monospace" font-size="12" font-weight="bold">S</text>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,200; -200,-150; -300,250; -400,-100" dur="40s" repeatCount="indefinite"/>
+    </g>
+    
+    <!-- Extra points -->
+    <g class="bonus-points">
+      <rect x="400" y="500" width="25" height="25" fill="#00ffff" filter="url(#neonGlow)">
+        <animate attributeName="fill" values="#00ffff;#0088ff;#00ffff" dur="1.2s" repeatCount="indefinite"/>
+      </rect>
+      <text x="412" y="518" text-anchor="middle" fill="#000000" font-family="monospace" font-size="12" font-weight="bold">+</text>
+      <animateTransform attributeName="transform" type="translate" values="0,0; 300,-200; 600,150; 900,-100" dur="45s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  
+  <!-- Retro particles -->
+  <g class="retro-particles">
+    <rect x="100" y="300" width="8" height="8" fill="#ff00ff" filter="url(#neonGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 1000,200; 2000,-400" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="15s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="1100" y="400" width="6" height="6" fill="#00ffff" filter="url(#neonGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -1000,-300; -2000,600" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="18s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="600" y="100" width="10" height="10" fill="#ffff00" filter="url(#neonGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -400,600; -800,-200" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="12s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="200" y="700" width="4" height="4" fill="#ff0080" filter="url(#neonGlow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 800,-600; 1600,200" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="20s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Glitch effects -->
+  <g class="glitch-effects">
+    <rect x="300" y="400" width="600" height="2" fill="#00ff00" opacity="0">
+      <animate attributeName="opacity" values="0;0.8;0" dur="0.1s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="300;320;280;310;290" dur="0.1s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="500" y="600" width="200" height="1" fill="#ff0080" opacity="0">
+      <animate attributeName="opacity" values="0;0.6;0" dur="0.15s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="500;515;485;505;495" dur="0.15s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Scanlines -->
+  <g class="scanlines" opacity="0.1">
+    <rect x="0" y="0" width="1200" height="2" fill="#00ff00">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,800; 0,1600" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="0" y="0" width="1200" height="1" fill="#ffffff">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,800; 0,1600" dur="4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Corner decorations -->
+  <g class="corner-decor">
+    <rect x="60" y="740" width="40" height="40" fill="none" stroke="#00ff00" stroke-width="3" filter="url(#neonGlow)"/>
+    <rect x="1100" y="740" width="40" height="40" fill="none" stroke="#ff0080" stroke-width="3" filter="url(#neonGlow)"/>
+    <rect x="60" y="20" width="40" height="40" fill="none" stroke="#ffff00" stroke-width="3" filter="url(#neonGlow)"/>
+    <rect x="1100" y="20" width="40" height="40" fill="none" stroke="#00ffff" stroke-width="3" filter="url(#neonGlow)"/>
+  </g>
+</svg>
